@@ -1,0 +1,9 @@
+{
+  "name": "deltav-landing",
+  "scripts": {
+    "build": "html-minifier-terser src/index.html -o dist/index.html --collapse-whitespace --remove-comments --minify-css true --minify-js true"
+  },
+  "devDependencies": {
+    "html-minifier-terser": "^7.2.0"
+  }
+}
