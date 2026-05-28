@@ -87,8 +87,8 @@ body{
 #hero{
   min-height:100vh;
   display:flex;
-  align-items:flex-start;
-  padding:clamp(4.5rem,10vh,7rem) 0 clamp(3rem,6vh,5rem);
+  align-items:center;
+  padding:clamp(5rem,10vh,7rem) 0 clamp(3rem,6vh,5rem);
   position:relative;
 }
 .hero-inner{
@@ -96,54 +96,45 @@ body{
   width:100%;
   margin:0 auto;
   padding:0 clamp(1.25rem,5vw,4rem);
+  display:grid;
+  grid-template-columns:5fr 7fr;
+  gap:0;
+  align-items:center;
 }
-.hero-eyebrow{
-  font-family:var(--font-mono);
-  font-size:0.7rem;
-  letter-spacing:0.2em;
-  text-transform:uppercase;
-  color:var(--accent-bright);
-  margin-bottom:var(--space-sm);
-  opacity:0;
-  transform:translateY(12px);
-  animation:fadeup 0.6s ease 0.1s forwards;
-}
-.hero-headline{
-  font-family:var(--font-display);
-  font-size:clamp(2.8rem,6.5vw,7rem);
-  font-weight:700;
-  line-height:0.96;
-  letter-spacing:-0.01em;
-  text-transform:uppercase;
-  color:var(--text);
-  margin-bottom:clamp(2rem,4vw,3.5rem);
-  opacity:0;
-  transform:translateY(16px);
-  animation:fadeup 0.65s ease 0.2s forwards;
-  max-width:22ch;
+@media(max-width:768px){
+  #hero{align-items:flex-start;padding-top:4.5rem}
+  .hero-inner{grid-template-columns:1fr}
 }
 
-/* ── DEFINITION (directly under headline) ────────── */
-.hero-def{
-  max-width:60ch;
-  margin-bottom:clamp(2.5rem,5vw,4rem);
+/* left col — definition */
+.hero-left{
+  padding-right:clamp(2rem,4vw,4rem);
+  border-right:1px solid var(--border);
   opacity:0;
   transform:translateY(14px);
-  animation:fadeup 0.65s ease 0.35s forwards;
+  animation:fadeup 0.65s ease 0.1s forwards;
 }
-.def-label{
-  font-family:var(--font-mono);
-  font-size:0.65rem;
-  letter-spacing:0.25em;
-  text-transform:uppercase;
-  color:var(--text-dimmer);
-  margin-bottom:0.75rem;
+@media(max-width:768px){
+  .hero-left{
+    border-right:none;
+    border-bottom:1px solid var(--border);
+    padding-right:0;
+    padding-bottom:clamp(2rem,5vw,3rem);
+    margin-bottom:clamp(2rem,5vw,3rem);
+  }
 }
-.def-rule{
-  border:none;
-  border-top:1px solid var(--border);
-  margin-bottom:1.5rem;
+
+/* right col — headline + cta */
+.hero-right{
+  padding-left:clamp(2rem,4vw,4rem);
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
 }
+@media(max-width:768px){
+  .hero-right{padding-left:0}
+}
+
 .def-body{
   font-family:var(--font-mono);
   font-size:clamp(0.75rem,1vw,0.85rem);
@@ -171,16 +162,18 @@ body{
   margin-left:0.1em;
 }
 
-.hero-sub{
-  font-family:var(--font-mono);
-  font-size:clamp(0.78rem,1.1vw,0.9rem);
-  color:var(--text-dim);
-  max-width:52ch;
-  line-height:1.65;
-  margin-bottom:clamp(2rem,4vw,3rem);
+.hero-headline{
+  font-family:var(--font-display);
+  font-size:clamp(2.8rem,6.5vw,7.5rem);
+  font-weight:700;
+  line-height:0.93;
+  letter-spacing:-0.01em;
+  text-transform:uppercase;
+  color:var(--text);
+  margin-bottom:clamp(2rem,4vw,3.5rem);
   opacity:0;
-  transform:translateY(12px);
-  animation:fadeup 0.65s ease 0.5s forwards;
+  transform:translateY(16px);
+  animation:fadeup 0.65s ease 0.25s forwards;
 }
 .hero-cta{
   display:inline-block;
@@ -195,7 +188,7 @@ body{
   transition:background 0.2s,color 0.2s,border-color 0.2s;
   opacity:0;
   transform:translateY(10px);
-  animation:fadeup 0.6s ease 0.65s forwards;
+  animation:fadeup 0.6s ease 0.4s forwards;
 }
 .hero-cta:hover{
   background:var(--accent);
@@ -510,11 +503,7 @@ footer{
 <!-- ══ HERO ══════════════════════════════════════════ -->
 <section id="hero">
   <div class="hero-inner">
-    <p class="hero-eyebrow">POC Studio · Deep Tech</p>
-    <h1 class="hero-headline">We build the POC your team won't.</h1>
-    <div class="hero-def">
-      <p class="def-label">Designation</p>
-      <hr class="def-rule">
+    <div class="hero-left">
       <div class="def-body">
         <p class="def-term">Δv &nbsp;/ˈdɛltə viː/ &nbsp;— &nbsp;astronautics</p>
         <p style="margin-top:1.1rem">
@@ -531,8 +520,10 @@ footer{
         </p>
       </div>
     </div>
-    <p class="hero-sub">For founders sitting on technically complex ideas they haven't pulled the trigger on. We take the risk off the table.</p>
-    <a class="hero-cta" href="#intake">We're listening</a>
+    <div class="hero-right">
+      <h1 class="hero-headline">We build the POC your team won't.</h1>
+      <a class="hero-cta" href="#intake">We're listening</a>
+    </div>
   </div>
 </section>
 
