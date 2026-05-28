@@ -301,6 +301,13 @@ body{
   transition:background 0.2s;
 }
 .domain-cell:hover{background:var(--bg-surface)}
+.domain-cell-icon{
+  width:20px;
+  height:20px;
+  color:var(--accent-bright);
+  margin-bottom:0.75rem;
+  display:block;
+}
 .domain-cell-code{
   font-family:var(--font-mono);
   font-size:0.6rem;
@@ -565,28 +572,94 @@ footer{
     <p class="section-label">Mission Parameters — Problem Classes</p>
     <div class="domain-grid">
       <div class="domain-cell">
+        <svg class="domain-cell-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 10s3.5-7 9-7 9 7 9 7-3.5 7-9 7-9-7-9-7z"/><circle cx="10" cy="10" r="2.5"/></svg>
         <p class="domain-cell-code">CV-01</p>
         <p class="domain-cell-name">Computer vision &amp; autonomous inspection systems</p>
       </div>
       <div class="domain-cell">
+        <svg class="domain-cell-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="3"/><path d="M10 1v2.5M10 16.5V19M1 10h2.5M16.5 10H19M3.15 3.15l1.77 1.77M15.08 15.08l1.77 1.77M3.15 16.85l1.77-1.77M15.08 4.92l1.77-1.77"/></svg>
         <p class="domain-cell-code">IA-02</p>
         <p class="domain-cell-name">Industrial automation &amp; control systems</p>
       </div>
       <div class="domain-cell">
+        <svg class="domain-cell-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="10" height="10" rx="1"/><path d="M7 5V2M10 5V2M13 5V2M7 15v3M10 15v3M13 15v3M5 7H2M5 10H2M5 13H2M15 7h3M15 10h3M15 13h3"/></svg>
         <p class="domain-cell-code">ES-03</p>
         <p class="domain-cell-name">Embedded systems &amp; hardware-software integration</p>
       </div>
       <div class="domain-cell">
+        <svg class="domain-cell-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="3" cy="7" r="1.5"/><circle cx="3" cy="13" r="1.5"/><circle cx="10" cy="4" r="1.5"/><circle cx="10" cy="10" r="1.5"/><circle cx="10" cy="16" r="1.5"/><circle cx="17" cy="10" r="1.5"/><path d="M4.5 7L8.5 4M4.5 7L8.5 10M4.5 13L8.5 10M4.5 13L8.5 16M11.5 4L15.5 10M11.5 10L15.5 10M11.5 16L15.5 10"/></svg>
         <p class="domain-cell-code">ML-04</p>
         <p class="domain-cell-name">AI/ML systems for domain-specific inference</p>
       </div>
       <div class="domain-cell">
+        <svg class="domain-cell-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="1" width="4" height="5" rx="1"/><path d="M10 6v3"/><rect x="7" y="9" width="6" height="5" rx="1"/><path d="M10 14v2"/><path d="M7 16h6"/></svg>
         <p class="domain-cell-code">RB-05</p>
         <p class="domain-cell-name">Robotics &amp; sensor fusion</p>
       </div>
       <div class="domain-cell">
+        <svg class="domain-cell-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="17" r="1.5"/><path d="M6.5 13.5a5 5 0 0 1 7 0"/><path d="M3.5 10a9.5 9.5 0 0 1 13 0"/><path d="M1 6.5a14 14 0 0 1 18 0"/></svg>
         <p class="domain-cell-code">IO-06</p>
         <p class="domain-cell-name">IoT &amp; edge compute architectures</p>
+      </div>
+      <div class="domain-cell">
+        <svg class="domain-cell-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12h18v-3l-3-5H4L1 9v3z"/><circle cx="5.5" cy="15" r="2"/><circle cx="14.5" cy="15" r="2"/><path d="M7.5 12V9M12.5 12V9"/></svg>
+        <p class="domain-cell-code">FM-07</p>
+        <p class="domain-cell-name">Fleet management &amp; vehicle telematics</p>
+      </div>
+      <div class="domain-cell">
+        <svg class="domain-cell-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18V9l8-6 8 6v9"/><path d="M2 12h4l2-3 2 5 2-2h6"/></svg>
+        <p class="domain-cell-code">SH-08</p>
+        <p class="domain-cell-name">Structural health monitoring &amp; predictive failure detection</p>
+      </div>
+      <div class="domain-cell">
+        <svg class="domain-cell-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="1" width="10" height="10" rx="1"/><rect x="9" y="9" width="10" height="10" rx="1"/></svg>
+        <p class="domain-cell-code">DT-09</p>
+        <p class="domain-cell-name">Digital twin &amp; real-time simulation systems</p>
+      </div>
+      <div class="domain-cell">
+        <svg class="domain-cell-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 1L2 4.5v5c0 5.5 4.5 8.5 8 9.5 3.5-1 8-4 8-9.5v-5L10 1z"/><path d="M7 10l2 2 4-4"/></svg>
+        <p class="domain-cell-code">OT-10</p>
+        <p class="domain-cell-name">OT/ICS cybersecurity &amp; anomaly detection</p>
+      </div>
+      <div class="domain-cell">
+        <svg class="domain-cell-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15a9 9 0 0 1 14 0"/><path d="M10 15L7 7"/><circle cx="10" cy="15" r="1.5"/></svg>
+        <p class="domain-cell-code">SC-11</p>
+        <p class="domain-cell-name">SCADA &amp; process control systems</p>
+      </div>
+      <div class="domain-cell">
+        <svg class="domain-cell-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2.5a4 4 0 0 1 0 5.66L5 18.16a2 2 0 0 1-2.83-2.83L12.17 5.33A4 4 0 0 1 15 2.5z"/><path d="M15.5 5l-1.5-1.5"/></svg>
+        <p class="domain-cell-code">PM-12</p>
+        <p class="domain-cell-name">Predictive maintenance &amp; condition monitoring</p>
+      </div>
+      <div class="domain-cell">
+        <svg class="domain-cell-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2C7 2 4.5 4.5 4.5 7.5c0 4.5 5.5 10.5 5.5 10.5s5.5-6 5.5-10.5C15.5 4.5 13 2 10 2z"/><circle cx="10" cy="7.5" r="2"/></svg>
+        <p class="domain-cell-code">GS-13</p>
+        <p class="domain-cell-name">Geospatial intelligence &amp; mapping systems</p>
+      </div>
+      <div class="domain-cell">
+        <svg class="domain-cell-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 16Q6 16 10 10Q14 4 18 4"/><path d="M15 2l3 2-3 2"/></svg>
+        <p class="domain-cell-code">AU-14</p>
+        <p class="domain-cell-name">Autonomous systems &amp; motion planning</p>
+      </div>
+      <div class="domain-cell">
+        <svg class="domain-cell-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5h14M18 5l-2-2M18 5l-2 2"/><path d="M2 10h14M18 10l-2-2M18 10l-2 2"/><path d="M2 15h14M18 15l-2-2M18 15l-2 2"/></svg>
+        <p class="domain-cell-code">DA-15</p>
+        <p class="domain-cell-name">Real-time data pipelines &amp; industrial analytics</p>
+      </div>
+      <div class="domain-cell">
+        <svg class="domain-cell-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="4" r="2"/><circle cx="3" cy="15" r="2"/><circle cx="17" cy="15" r="2"/><circle cx="10" cy="11" r="2"/><path d="M10 6v3M10 11L5 15M10 11l5 4M5 15h10"/></svg>
+        <p class="domain-cell-code">MA-16</p>
+        <p class="domain-cell-name">Multi-agent systems &amp; swarm coordination</p>
+      </div>
+      <div class="domain-cell">
+        <svg class="domain-cell-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="7" width="6" height="6" rx="1"/><rect x="13" y="7" width="6" height="6" rx="1"/><path d="M7 10h6"/><path d="M10 8v4"/></svg>
+        <p class="domain-cell-code">MI-17</p>
+        <p class="domain-cell-name">System integration middleware &amp; protocol translation</p>
+      </div>
+      <div class="domain-cell">
+        <svg class="domain-cell-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 1L4 11h7l-2 8 9-12h-7l2-6z"/></svg>
+        <p class="domain-cell-code">EN-18</p>
+        <p class="domain-cell-name">Energy systems &amp; grid-edge optimization</p>
       </div>
     </div>
     <p class="domain-cut">If your idea fits a weekend hackathon, this isn't for you.</p>
