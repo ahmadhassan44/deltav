@@ -1,8 +1,8 @@
-# CLAUDE.md — Delta-V Landing Page
+# CLAUDE.md — DeltaV Landing Page
 
 ## Project Brief
 
-This is the landing page for **Delta-V** — a small, elite student engineering team operating as a **POC studio for industry**. The model: we reach out to CEOs and CTOs at deep-tech engineering firms who have technically complex, PMF-uncertain ideas sitting on the shelf — ideas too research-heavy to staff, too uncertain to budget. We take one idea, build the POC as our Final Year Project (a full academic year of focused engineering), and hand it back so they can validate the market.
+This is the landing page for **DeltaV** — a small, elite student engineering team operating as a **POC studio for industry**. The model: we reach out to CEOs and CTOs at deep-tech engineering firms who have technically complex, PMF-uncertain ideas sitting on the shelf — ideas too research-heavy to staff, too uncertain to budget. We take one idea, build the POC as our Final Year Project (a full academic year of focused engineering), and hand it back so they can validate the market.
 
 Target audience: **C-level executives and technical founders** at niche, domain-specific engineering companies — think robotics, industrial automation, defense-tech, IoT/embedded systems, computer vision. Not SaaS, not CRUD apps.
 
@@ -10,15 +10,15 @@ Target audience: **C-level executives and technical founders** at niche, domain-
 
 ## Name & Domain
 
-**Team name:** Delta-V (written as **ΔV** in display contexts, **Delta-V** in body text)
+**Team name:** DeltaV (written as **ΔV** in display contexts, **DeltaV** in body text)
 
 **Domain:** `deltav.build`
 
 **Why the name — and this must appear on the page:**
 
-Delta-v (Δv) is a term from astronautics. It is the measure of the impulse required to change an object's trajectory — the single number that determines whether a spacecraft reaches orbit or falls back to earth. The more delta-v a system has, the more it can change where it's going.
+DeltaV (Δv) is a term from astronautics. It is the measure of the impulse required to change an object's trajectory — the single number that determines whether a spacecraft reaches orbit or falls back to earth. The more DeltaV a system has, the more it can change where it's going.
 
-The name maps directly to what the team does: we are the delta-v for ideas that are stuck. Ideas with real technical depth, real potential, but no trajectory. We give them the impulse to move — from concept to proof of concept — so the people who own them can figure out where they're going next.
+The name maps directly to what the team does: we are the DeltaV for ideas that are stuck. Ideas with real technical depth, real potential, but no trajectory. We give them the impulse to move — from concept to proof of concept — so the people who own them can figure out where they're going next.
 
 This definition must be used verbatim (or close to it) on the website, rendered in a way that feels like a technical specification or mission brief — not marketing copy. Think of how Palantir explains "Gotham" or how DARPA titles a program. Clinical, precise, purposeful.
 
@@ -95,7 +95,7 @@ Full viewport height. This is the first thing they see.
 
 Content:
 
-- Team name: **ΔV** — displayed as a small badge top-left. Render the delta symbol (Δ) large and the V tight beside it, monospaced feel. On hover, expand to show "Delta-V" in a lighter weight beside it
+- Team name: **ΔV** — displayed as a small badge top-left. Render the delta symbol (Δ) large and the V tight beside it, monospaced feel. On hover, expand to show "DeltaV" in a lighter weight beside it
 - Main headline (large, commanding): Something in the vein of:
 
   > "We build the POC your team won't."
@@ -116,7 +116,7 @@ No nav bar. No hamburger menu. No logo beyond the team name badge.
 
 ### Section 1.5 — The Definition (sits directly below the hero fold, no hard section break)
 
-Immediately below the hero fold, before the model explanation, render the scientific definition of delta-v as a technical brief. Style it like a classified document entry or a DARPA program description — left-aligned, monospaced font, subtle horizontal rule above, a dim label ("DESIGNATION") above the rule.
+Immediately below the hero fold, before the model explanation, render the scientific definition of DeltaV as a technical brief. Style it like a classified document entry or a DARPA program description — left-aligned, monospaced font, subtle horizontal rule above, a dim label ("DESIGNATION") above the rule.
 
 Suggested render:
 
@@ -125,19 +125,19 @@ DESIGNATION
 ─────────────────────────────────────────────
 Δv  /ˈdɛltə viː/  —  astronautics
 
-Delta-v is the measure of the impulse required to change
+DeltaV is the measure of the impulse required to change
 the trajectory of an object in space. It is the single
 number that determines whether a spacecraft reaches orbit
 or falls back to earth.
 
-We are the delta-v for ideas that are stuck.
+We are the DeltaV for ideas that are stuck.
 
 Ideas with real technical depth, real potential — but no
 trajectory. We provide the impulse: from concept to proof
 of concept, in one year, at no staffing cost to you.
 ```
 
-The final two lines (starting from "We are the delta-v...") should render slightly brighter and slightly larger — signalling the pivot from scientific definition to mission claim. Everything above reads like a technical specification. Use a blinking cursor character (|) at the very end to give it a terminal/command-line feel.
+The final two lines (starting from "We are the DeltaV...") should render slightly brighter and slightly larger — signalling the pivot from scientific definition to mission claim. Everything above reads like a technical specification. Use a blinking cursor character (|) at the very end to give it a terminal/command-line feel.
 
 ---
 
