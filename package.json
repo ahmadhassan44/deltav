@@ -1,7 +1,7 @@
 {
   "name": "deltav-landing",
   "scripts": {
-    "build": "mkdir -p dist && html-minifier-terser src/index.html -o dist/index.html --collapse-whitespace --remove-comments --minify-css true --minify-js true",
+    "build": "mkdir -p dist && html-minifier-terser src/index.html -o dist/index.html --collapse-whitespace --remove-comments --minify-css true --minify-js true && cp src/_headers dist/_headers",
     "deploy": "npm run build && wrangler pages deploy dist --project-name deltav"
   },
   "devDependencies": {
