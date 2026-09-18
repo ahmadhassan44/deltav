@@ -2,9 +2,11 @@
 
 ## Project Brief
 
-This is the landing page for **DeltaV** — a small, elite student engineering team operating as a **POC studio for industry**. The model: we reach out to CEOs and CTOs at deep-tech engineering firms who have technically complex, PMF-uncertain ideas sitting on the shelf — ideas too research-heavy to staff, too uncertain to budget. We take one idea, build the POC as our Final Year Project (a full academic year of focused engineering), and hand it back so they can validate the market.
+This is the landing page for **DeltaV** — a **delta team / dev shop** of four to five software engineers. We take any software or compute problem — from a business or an individual — and turn it into working software, using applied AI where it earns its place. The page is a **lead-generation tool**: it backs our outreach and captures inbound interest.
 
-Target audience: **C-level executives and technical founders** at niche, domain-specific engineering companies — think robotics, industrial automation, defense-tech, IoT/embedded systems, computer vision. Not SaaS, not CRUD apps.
+> **Positioning update (2026-09):** DeltaV is no longer framed as a Final Year Project / POC studio. Do not reintroduce FYP, academic-year, student, or "no staffing cost" language. Scope is software/compute/AI only — no hardware delivery for now. The domain list in Section 3 stays as-is. Sections below that still describe the old POC/FYP model are superseded by what's live in `src/index.html`.
+
+Target audience: **businesses and individuals** with a real problem that runs on compute — CTOs, founders, operators.
 
 ---
 
