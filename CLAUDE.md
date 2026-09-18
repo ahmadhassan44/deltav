@@ -2,7 +2,7 @@
 
 ## Project Brief
 
-This is the landing page for **DeltaV** — a **delta team / dev shop** of four to five software engineers. We take any software or compute problem — from a business or an individual — and turn it into working software, using applied AI where it earns its place. The page is a **lead-generation tool**: it backs our outreach and captures inbound interest.
+This is the landing page for **DeltaV** — a **delta team / dev shop** of five software engineers. We take any software or compute problem — from a business or an individual — and turn it into working software, using applied AI where it earns its place. The page is a **lead-generation tool**: it backs our outreach and captures inbound interest.
 
 > **Positioning update (2026-09):** DeltaV is no longer framed as a Final Year Project / POC studio. Do not reintroduce FYP, academic-year, student, or "no staffing cost" language. Scope is software/compute/AI only — no hardware delivery for now. The domain list in Section 3 stays as-is. Sections below that still describe the old POC/FYP model are superseded by what's live in `src/index.html`.
 
