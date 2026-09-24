@@ -329,3 +329,20 @@ export GSC_KEY_FILE="$HOME/.gsc/deltav.json"   # DeltaV-only service account. ~/
 ```
 
 Data lags ~3 days. `sitemap-submit` and `sitemap-delete` change what Google sees — ask first.
+
+---
+
+## Insights (blog)
+
+Posts live in `content/insights/<slug>.html` and publish to `/insights/<slug>/`. `scripts/insights.mjs` renders them and regenerates the `/insights/` index, `sitemap.xml` and the guide list in `llms.txt` (`{{guides}}` marker) — never hand-edit those. Topic queue: `content/BACKLOG.md`.
+
+A post is a JSON front-matter block in a leading `<!-- -->` comment, then the body as HTML. Each `<h2>` starts a numbered section; layout, schema, FAQ grid and CTAs are added by the build. Copy an existing post as the template. Required keys: `title`, `seoTitle` (≤60 chars), `description` (≤155), `eyebrow`, `date`, `answer`, `card`, `cta`. Optional: `faq`, `updated`, `draft`.
+
+Workflow — one post a day, generated locally, published on approval:
+
+1. Write the next backlog topic with `"draft": true`. Answer-first, terse, tables and lists over paragraphs, 3 FAQs.
+2. `npm run dev` → preview at http://127.0.0.1:8790/insights/ (drafts show, labelled "Draft").
+3. On approval: remove `draft`, set `date` to publish day, update `BACKLOG.md`, commit, push (push to `main` deploys).
+4. After the Cloudflare build: `./gsc-cli/gsc.py sitemap-submit https://deltav.build/sitemap.xml`.
+
+Never state a number, price, client or result that isn't verified. Date-stamp third-party facts ("pricing page, September 2026").
