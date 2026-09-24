@@ -14,6 +14,10 @@
 - [Workflow automation](https://deltav.build/services/workflow-automation/): system integration, task and approval flows, data pipelines.
 - [Applied AI](https://deltav.build/services/applied-ai/): document retrieval, computer vision, classification, forecasting.
 
+## FAQ
+
+- [All questions](https://deltav.build/faq/): timeline (most builds 2–6 weeks), fixed quotes, code ownership, NDAs, bug-fix warranty, data handling.
+
 ## Guides
 
 - [Build vs buy software: how to decide](https://deltav.build/insights/build-vs-buy-software/)
