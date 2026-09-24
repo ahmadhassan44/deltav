@@ -315,3 +315,17 @@ gzip -c dist/index.html | wc -c
 | `[FORMSPREE_ID]`  | Formspree form ID from formspree.io |
 | `[CALENDLY_LINK]` | Calendly scheduling link (optional) |
 | `[CONTACT_EMAIL]` | Fallback email in footer            |
+
+---
+
+## Search Console
+
+`./gsc-cli/gsc.py` (gitignored, separate repo) reads and writes Search Console for this site. Read `gsc-cli/README.md` before interpreting results — delta sign conventions and row limits cause silent misreadings.
+
+```sh
+export GSC_SITE='sc-domain:deltav.build'
+export GSC_KEY_FILE="$HOME/.gsc/deltav.json"   # DeltaV-only service account. ~/.gsc/key.json belongs to another project — never use it here.
+./gsc-cli/gsc.py sites
+```
+
+Data lags ~3 days. `sitemap-submit` and `sitemap-delete` change what Google sees — ask first.
