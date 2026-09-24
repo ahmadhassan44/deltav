@@ -192,6 +192,13 @@ p {
   margin-top: 1rem;
 }
 
+.section > .table-wrap + p,
+.section > .list + p,
+.section > p + .table-wrap,
+.section > p + .list {
+  margin-top: 1.25rem;
+}
+
 .section strong {
   color: var(--text);
   font-weight: 500;
