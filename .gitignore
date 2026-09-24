@@ -3,3 +3,4 @@ dist/
 
 # Search Console CLI (separate repo)
 gsc-cli/
+.wrangler/
