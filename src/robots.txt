@@ -1,0 +1,5 @@
+# All crawlers, including AI search and answer engines, are welcome.
+User-agent: *
+Allow: /
+
+Sitemap: https://deltav.build/sitemap.xml

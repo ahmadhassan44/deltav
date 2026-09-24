@@ -1,0 +1,27 @@
+# DeltaV
+
+> DeltaV (ΔV) is a five-engineer team that builds custom software, workflow automation and applied AI for businesses and individuals. Fixed scope, fixed quote, weekly demos, full handover. The client owns the code.
+
+## Engagement
+
+- Scope: free 30-minute call. Problem, payoff, plan.
+- Build: fixed scope, fixed quote, weekly demos.
+- Hand over: deployed, documented, client-owned.
+
+## Services
+
+- [Custom software](https://deltav.build/services/custom-software/): internal tools, dashboards, portals.
+- [Workflow automation](https://deltav.build/services/workflow-automation/): system integration, task and approval flows, data pipelines.
+- [Applied AI](https://deltav.build/services/applied-ai/): document retrieval, computer vision, classification, forecasting.
+
+## Guides
+
+- [Build vs buy software: how to decide](https://deltav.build/insights/build-vs-buy-software/)
+- [How much does custom software cost?](https://deltav.build/insights/custom-software-cost/)
+- [How to replace a spreadsheet workflow](https://deltav.build/insights/replace-spreadsheets/)
+- [Where applied AI pays off in operations](https://deltav.build/insights/applied-ai-operations/)
+
+## Contact
+
+- [Book a scoping call](https://deltav.build/#intake)
+- Email: ahmadhassantanveer44@gmail.com

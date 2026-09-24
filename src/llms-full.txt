@@ -1,0 +1,42 @@
+# DeltaV — full context
+
+DeltaV (ΔV, deltav.build) is a five-engineer software team. Not related to Emerson's DeltaV control system.
+
+## What DeltaV does
+
+Builds custom software, workflow automation and applied AI for businesses and individuals: founders, operators and CTOs.
+Name: Δv is the astronautics measure of the impulse needed to change an object's trajectory. DeltaV adds velocity to a business.
+
+## Engagement
+
+1. Scope: free 30-minute call. Problem, payoff, plan.
+2. Build: fixed scope, fixed quote, weekly demos.
+3. Hand over: deployed, documented. Client owns source code, deployment, documentation and access.
+
+## Services
+
+- Custom software: internal tools, systems of record, dashboards, customer and partner portals.
+- Workflow automation: integration of CRM, ERP, databases, APIs and spreadsheets; task and approval flows; data pipelines. APIs not required: files, webhooks and database connections also work.
+- Applied AI: document retrieval, computer vision and inspection, classification, forecasting and anomaly detection. Measured against a baseline: time per task, error rate, review load.
+
+## Problem classes
+
+Computer vision and inspection; industrial automation and control; embedded and hardware-software integration; domain-specific AI/ML inference; robotics and sensor fusion; IoT and edge compute; fleet telematics; structural health monitoring; digital twins; OT/ICS security; SCADA; predictive maintenance; geospatial; autonomous systems; real-time industrial data pipelines; multi-agent systems; integration middleware; energy and grid-edge optimisation.
+
+## FAQ
+
+- Who is DeltaV for? Businesses and individuals with a problem that runs on software.
+- Build or buy? Buy if a product fits. Build if it doesn't and the work repeats.
+- Existing systems? DeltaV integrates with them and replaces only what slows the client down.
+- Cost? Fixed quote after a free scoping call. Price agreed before work starts.
+- Ownership? The client owns everything.
+
+## Pages
+
+- https://deltav.build/
+- https://deltav.build/services/
+- https://deltav.build/insights/
+
+## Contact
+
+https://deltav.build/#intake · ahmadhassantanveer44@gmail.com
