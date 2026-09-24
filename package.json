@@ -1,7 +1,7 @@
 {
   "name": "deltav-landing",
   "scripts": {
-    "build": "mkdir -p dist && html-minifier-terser src/index.html -o dist/index.html --collapse-whitespace --remove-comments --minify-css true --minify-js true && cp src/_headers dist/_headers",
+    "build": "node scripts/build.mjs",
     "deploy": "npm run build && wrangler deploy"
   },
   "devDependencies": {
