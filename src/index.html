@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>DeltaV | We build what others can't.</title>
+    <title>DeltaV | Software for work your team shouldn't be doing.</title>
     <meta
       name="description"
-      content="DeltaV is a delta team of five software engineers. Bring a hard problem — we turn it into working software and applied AI."
+      content="DeltaV is a delta team of five engineers. We find where time and money leak — manual processes, disconnected systems, unused data — and replace it with software that runs itself."
     />
     <link
       rel="icon"
@@ -206,16 +206,27 @@
 
       .hero-headline {
         font-family: var(--font-display);
-        font-size: clamp(2.8rem, 6.5vw, 7.5rem);
+        font-size: clamp(2.4rem, 5.5vw, 6rem);
         font-weight: 700;
         line-height: 0.93;
         letter-spacing: -0.01em;
         text-transform: uppercase;
         color: var(--text);
-        margin-bottom: clamp(2rem, 4vw, 3.5rem);
+        margin-bottom: clamp(1.25rem, 2.5vw, 2rem);
         opacity: 0;
         transform: translateY(16px);
         animation: fadeup 0.65s ease 0.25s forwards;
+      }
+      .hero-sub {
+        font-family: var(--font-mono);
+        font-size: clamp(0.8rem, 1.1vw, 0.94rem);
+        line-height: 1.75;
+        color: var(--text-dim);
+        max-width: 52ch;
+        margin-bottom: clamp(2rem, 4vw, 3rem);
+        opacity: 0;
+        transform: translateY(10px);
+        animation: fadeup 0.6s ease 0.33s forwards;
       }
       .hero-cta {
         display: inline-block;
@@ -419,13 +430,6 @@
         display: block;
       }
 
-      /* step 1 — yes/no */
-      .intake-btns {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-        margin-top: var(--space-md);
-      }
       .btn-primary {
         font-family: var(--font-mono);
         font-size: 0.8rem;
@@ -443,24 +447,6 @@
       .btn-primary:hover {
         background: var(--accent-bright);
         border-color: var(--accent-bright);
-      }
-      .btn-ghost {
-        font-family: var(--font-mono);
-        font-size: 0.75rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        background: transparent;
-        color: var(--text-dimmer);
-        border: 1px solid var(--border);
-        padding: 0.85em 1.5em;
-        cursor: pointer;
-        transition:
-          color 0.2s,
-          border-color 0.2s;
-      }
-      .btn-ghost:hover {
-        color: var(--text-dim);
-        border-color: var(--text-dimmer);
       }
 
       /* step 2 — channel */
@@ -615,18 +601,25 @@
               earth.
             </p>
             <p class="def-mission">
-              We are the DeltaV for problems that are stuck.<br /><br />
-              Problems with real stakes and no clear path forward. We provide
-              the impulse: a team of five engineers that takes the problem
-              from description to working software.<span
+              We are the DeltaV for operations that are stuck.<br /><br />
+              Processes eating hours, money and manual effort. We provide the
+              impulse: five engineers who replace that work with software that
+              runs itself.<span
                 class="cursor"
               ></span>
             </p>
           </div>
         </div>
         <div class="hero-right">
-          <h1 class="hero-headline">We build what others can't.</h1>
-          <a class="hero-cta" href="#intake">We're listening</a>
+          <h1 class="hero-headline">
+            Your team is doing work software should be doing.
+          </h1>
+          <p class="hero-sub">
+            Five engineers. We find where time and money leak — manual
+            processes, disconnected systems, data nobody uses — and replace it
+            with software that runs itself.
+          </p>
+          <a class="hero-cta" href="#intake">Book a scoping call</a>
         </div>
       </div>
     </section>
@@ -638,26 +631,26 @@
           A delta team. Five engineers. No account managers.
         </p>
         <p class="model-body">
-          You have a problem that runs on compute — a process eating hours,
-          data you can't use, a system that should exist but doesn't. We scope
-          it, build it with software and applied AI, and ship something that
-          works. Business or individual, the standard is the same.
+          A process eating hours. Data sitting unused. Two systems that should
+          talk but don't. We scope it, build it with software and applied AI,
+          and hand over something that runs. Business or individual, the
+          standard is the same.
         </p>
         <div class="model-cols">
           <div>
-            <p class="model-list-title">What we need from you</p>
+            <p class="model-list-title">How an engagement works</p>
             <ul class="model-list">
               <li>
                 <span class="num">01</span
-                ><span>A problem worth solving</span>
+                ><span>Scope — a 30-minute call. We map where the time goes. No cost.</span>
               </li>
               <li>
                 <span class="num">02</span
-                ><span>Access to someone who understands the problem</span>
+                ><span>Build — fixed scope, fixed quote, weekly demos</span>
               </li>
               <li>
                 <span class="num">03</span
-                ><span>Direct feedback as we build</span>
+                ><span>Hand over — documented, deployed, yours</span>
               </li>
             </ul>
           </div>
@@ -685,7 +678,7 @@
     <!-- ══ DOMAINS ═══════════════════════════════════════ -->
     <section id="domains">
       <div class="domains-inner">
-        <p class="section-label">Mission Parameters — Problem Classes</p>
+        <p class="section-label">What We Build — Problem Classes</p>
         <div class="domain-grid">
           <div class="domain-cell">
             <svg
@@ -1051,7 +1044,7 @@
           </div>
         </div>
         <p class="domain-cut">
-          If a template solves it, you don't need us.
+          Don't see your problem? Ask anyway.
         </p>
       </div>
     </section>
@@ -1059,25 +1052,15 @@
     <!-- ══ INTAKE ════════════════════════════════════════ -->
     <section id="intake">
       <div class="intake-inner">
-        <h2 class="intake-heading">Do you have a problem that fits?</h2>
+        <h2 class="intake-heading">What's costing you time?</h2>
 
         <div class="intake-success" id="intake-success">
-          Got it. We'll be in touch.
+          Received. We'll reply within one business day.
         </div>
 
         <div id="intake-form">
-          <!-- Step 1 -->
-          <div class="step active" id="step1">
-            <div class="intake-btns">
-              <button class="btn-primary" id="btn-yes">
-                Yes, tell me more
-              </button>
-              <button class="btn-ghost" id="btn-no">Not right now</button>
-            </div>
-          </div>
-
           <!-- Step 2 -->
-          <div class="step" id="step2">
+          <div class="step active" id="step2">
             <p class="field-label" style="margin-bottom: 1rem">
               How should we reach you?
             </p>
@@ -1106,7 +1089,7 @@
               <input
                 type="hidden"
                 name="_subject"
-                value="DeltaV — New interest signal"
+                value="DeltaV — New lead"
               />
               <input type="hidden" name="channel" id="field-channel" value="" />
               <label
@@ -1135,7 +1118,7 @@
                 autocomplete="off"
                 maxlength="200"
               />
-              <button class="btn-primary" type="submit">Send it</button>
+              <button class="btn-primary" type="submit">Send</button>
               <p class="form-error" id="form-error">
                 Something went wrong. Try again or email us directly.
               </p>
@@ -1168,23 +1151,6 @@
           phone: "Your number (with country code)",
           calendar: "",
         };
-
-        document
-          .getElementById("btn-yes")
-          .addEventListener("click", function () {
-            show("step2");
-          });
-
-        document
-          .getElementById("btn-no")
-          .addEventListener("click", function () {
-            var f = document.getElementById("intake-form");
-            f.style.transition = "opacity 0.4s";
-            f.style.opacity = "0";
-            setTimeout(function () {
-              f.style.display = "none";
-            }, 400);
-          });
 
         document.querySelectorAll(".channel-btn").forEach(function (btn) {
           btn.addEventListener("click", function () {
@@ -1234,7 +1200,7 @@
                 }
               })
               .catch(function () {
-                btn.textContent = "Send it";
+                btn.textContent = "Send";
                 btn.disabled = false;
                 err.classList.add("visible");
               });
