@@ -20,10 +20,7 @@
 
 ## Guides
 
-- [Build vs buy software: how to decide](https://deltav.build/insights/build-vs-buy-software/)
-- [How much does custom software cost?](https://deltav.build/insights/custom-software-cost/)
-- [How to replace a spreadsheet workflow](https://deltav.build/insights/replace-spreadsheets/)
-- [Where applied AI pays off in operations](https://deltav.build/insights/applied-ai-operations/)
+{{guides}}
 
 ## Contact
 

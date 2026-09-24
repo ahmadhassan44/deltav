@@ -38,6 +38,10 @@ Computer vision and inspection; industrial automation and control; embedded and 
 - Existing systems? DeltaV integrates with CRM, ERP, databases, APIs and spreadsheets, and replaces only what slows the client down.
 - Build or buy? Buy if a product fits. Build if it doesn't and the work repeats.
 
+## Guides
+
+{{guides}}
+
 ## Pages
 
 - https://deltav.build/
