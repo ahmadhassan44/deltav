@@ -88,6 +88,7 @@
         --text-dim: #9c9e99;
         --text-dimmer: #666a62;
         --border: #1e231a;
+        --border-strong: #353d2e;
         --font-display: "Barlow Condensed", system-ui, sans-serif;
         --font-mono: "IBM Plex Mono", "Courier New", monospace;
         --space-xs: 0.5rem;
@@ -564,7 +565,7 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 0.75rem;
         max-width: 480px;
-        margin-top: var(--space-md);
+        margin: var(--space-md) 0 2.5rem;
       }
       @media (max-width: 400px) {
         .channel-grid {
@@ -573,11 +574,11 @@
       }
       .channel-btn {
         font-family: var(--font-mono);
-        font-size: 0.78rem;
-        letter-spacing: 0.08em;
-        background: transparent;
-        color: var(--text-dim);
-        border: 1px solid var(--border);
+        font-size: 0.85rem;
+        letter-spacing: 0.06em;
+        background: var(--bg-surface);
+        color: var(--text);
+        border: 1px solid var(--border-strong);
         padding: 0.9em 1em;
         cursor: pointer;
         text-align: left;
@@ -591,18 +592,17 @@
       }
       .channel-btn:hover,
       .channel-btn.selected {
-        background: var(--bg-surface);
-        border-color: var(--accent);
-        color: var(--text);
+        border-color: var(--accent-bright);
+        color: var(--accent-bright);
       }
 
       /* step 3 — detail */
       .field-label {
         font-family: var(--font-mono);
-        font-size: 0.65rem;
-        letter-spacing: 0.2em;
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
-        color: var(--text-dimmer);
+        color: var(--text-dim);
         margin-bottom: 0.5rem;
         display: block;
       }
@@ -610,18 +610,18 @@
         width: 100%;
         max-width: 480px;
         background: var(--bg-surface);
-        border: 1px solid var(--border);
+        border: 1px solid var(--border-strong);
         color: var(--text);
         font-family: var(--font-mono);
-        font-size: 0.85rem;
-        padding: 0.8em 1em;
+        font-size: 0.95rem;
+        padding: 0.85em 1em;
         outline: none;
         transition: border-color 0.2s;
         display: block;
         margin-bottom: 1.25rem;
       }
       .field-input:focus {
-        border-color: var(--accent);
+        border-color: var(--accent-bright);
       }
       .field-input::placeholder {
         color: var(--text-dimmer);
@@ -1253,7 +1253,7 @@
               />
               <label class="field-label" for="field-idea"
                 >One line about the problem
-                <span style="opacity: 0.4">(optional)</span></label
+                <span style="color: var(--text-dimmer)">(optional)</span></label
               >
               <input
                 class="field-input"
@@ -1301,6 +1301,11 @@
           phone: "Your number (with country code)",
           calendar: "",
         };
+        var channelHints = {
+          email: ["email", "you@company.com"],
+          linkedin: ["url", "linkedin.com/in/you"],
+          phone: ["tel", "+1 555 123 4567"],
+        };
 
         document.querySelectorAll(".channel-btn").forEach(function (btn) {
           btn.addEventListener("click", function () {
@@ -1319,8 +1324,12 @@
             document.getElementById("field-channel").value = channel;
             document.getElementById("field-label-contact").textContent =
               channelLabels[channel];
-            document.getElementById("field-contact").value = "";
-            show("step3");
+            var input = document.getElementById("field-contact");
+            input.type = channelHints[channel][0];
+            input.placeholder = channelHints[channel][1];
+            input.value = "";
+            document.getElementById("step3").classList.add("active");
+            input.focus();
           });
         });
 
@@ -1356,12 +1365,6 @@
               });
           });
 
-        function show(id) {
-          document.querySelectorAll(".step").forEach(function (s) {
-            s.classList.remove("active");
-          });
-          document.getElementById(id).classList.add("active");
-        }
       })();
     </script>
   </body>
