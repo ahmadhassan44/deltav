@@ -2,6 +2,7 @@
   "name": "deltav-landing",
   "scripts": {
     "build": "node scripts/build.mjs",
+    "dev": "INCLUDE_DRAFTS=1 node scripts/build.mjs && wrangler dev --port 8790",
     "deploy": "npm run build && wrangler deploy"
   },
   "devDependencies": {
