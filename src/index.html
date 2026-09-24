@@ -85,8 +85,8 @@
         --accent: #4e7a38;
         --accent-bright: #78c44a;
         --text: #dcdcda;
-        --text-dim: #7a7a78;
-        --text-dimmer: #464644;
+        --text-dim: #9c9e99;
+        --text-dimmer: #666a62;
         --border: #1e231a;
         --font-display: "Barlow Condensed", system-ui, sans-serif;
         --font-mono: "IBM Plex Mono", "Courier New", monospace;
@@ -112,7 +112,7 @@
         background: var(--bg);
         color: var(--text);
         font-family: var(--font-mono);
-        font-size: clamp(13px, 1.1vw, 15px);
+        font-size: clamp(14px, 1.1vw, 16px);
         font-weight: 500;
         line-height: 1.7;
         overflow-x: hidden;
@@ -346,6 +346,30 @@
         max-width: 64ch;
         line-height: 1.75;
       }
+      .svc-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+      .svc-btn {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text);
+        text-decoration: none;
+        border: 1px solid var(--border);
+        background: var(--bg-surface);
+        padding: 0.85em 1.3em;
+        transition:
+          border-color 0.2s,
+          color 0.2s;
+      }
+      .svc-btn:hover,
+      .svc-btn:focus-visible {
+        border-color: var(--accent-bright);
+        color: var(--accent-bright);
+      }
       .model-cols {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -359,6 +383,7 @@
       .model-list-title {
         font-family: var(--font-mono);
         font-size: 0.65rem;
+        font-weight: 500;
         letter-spacing: 0.2em;
         text-transform: uppercase;
         color: var(--accent-bright);
@@ -399,6 +424,7 @@
       .section-label {
         font-family: var(--font-mono);
         font-size: 0.65rem;
+        font-weight: 500;
         letter-spacing: 0.25em;
         text-transform: uppercase;
         color: var(--text-dimmer);
@@ -447,6 +473,40 @@
         font-size: clamp(0.78rem, 1vw, 0.88rem);
         color: var(--text-dimmer);
         font-style: italic;
+      }
+
+      /* ── FAQ ─────────────────────────────────────────── */
+      #faq {
+        padding: clamp(4rem, 10vh, 8rem) 0;
+        border-top: 1px solid var(--border);
+      }
+      .faq-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+        border-top: 1px solid var(--border);
+        border-left: 1px solid var(--border);
+      }
+      .faq-item {
+        border-right: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        padding: clamp(1.1rem, 2vw, 1.6rem);
+      }
+      .faq-item h3 {
+        font-family: var(--font-display);
+        font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        line-height: 1.15;
+        color: var(--text);
+        margin-bottom: 0.6rem;
+      }
+      .faq-item p {
+        font-size: clamp(0.8rem, 1vw, 0.88rem);
+        color: var(--text-dim);
+      }
+      .faq-item a {
+        color: var(--accent-bright);
       }
 
       /* ── INTAKE ──────────────────────────────────────── */
@@ -651,9 +711,7 @@
             </p>
             <p class="def-mission">
               We are the DeltaV for businesses that need to move faster.<br /><br />
-              Software and applied AI that increases speed, output, and value
-              per hour. We provide the impulse: five engineers who take it from
-              description to production.<span
+              We provide the impulse: from problem to production.<span
                 class="cursor"
               ></span>
             </p>
@@ -664,9 +722,8 @@
             We add velocity to your business.
           </h1>
           <p class="hero-sub">
-            Five engineers. Software and applied AI that makes your team faster,
-            your operations sharper, and every hour worth more. Scoped, built,
-            handed over running.
+            Custom software, automation and applied AI. Scoped, built, handed
+            over running.
           </p>
           <a class="hero-cta" href="#intake">Book a scoping call</a>
         </div>
@@ -676,22 +733,20 @@
     <!-- ══ MODEL ═════════════════════════════════════════ -->
     <section id="model">
       <div class="model-inner">
-        <p class="model-framing">
+        <h2 class="model-framing">
           A delta team. Five engineers. No account managers.
-        </p>
+        </h2>
         <p class="model-body">
-          Work that should take minutes taking days. Data that should drive
-          decisions sitting idle. Systems that should talk but don't. We scope it, build it with software and applied AI,
-          and hand over something that runs. Business or individual, the
-          standard is the same.
+          Minutes of work taking days. Data sitting idle. Systems that don't
+          talk. We fix that.
         </p>
         <div class="model-cols">
           <div>
-            <p class="model-list-title">How an engagement works</p>
+            <h3 class="model-list-title">How an engagement works</h3>
             <ul class="model-list">
               <li>
                 <span class="num">01</span
-                ><span>Scope — a 30-minute call. We assess the problem and the payoff. No cost.</span>
+                ><span>Scope — free 30-minute call. Problem, payoff, plan.</span>
               </li>
               <li>
                 <span class="num">02</span
@@ -699,12 +754,12 @@
               </li>
               <li>
                 <span class="num">03</span
-                ><span>Hand over — documented, deployed, yours</span>
+                ><span>Hand over — deployed and documented</span>
               </li>
             </ul>
           </div>
           <div>
-            <p class="model-list-title">What you get</p>
+            <h3 class="model-list-title">What you get</h3>
             <ul class="model-list">
               <li>
                 <span class="num">01</span
@@ -712,22 +767,27 @@
               </li>
               <li>
                 <span class="num">02</span
-                ><span>A dedicated team, start to finish</span>
+                ><span>One team, start to finish</span>
               </li>
               <li>
                 <span class="num">03</span
-                ><span>Full ownership of everything we build</span>
+                ><span>Full ownership — code, docs, access</span>
               </li>
             </ul>
           </div>
         </div>
+        <nav class="svc-row" aria-label="Services">
+          <a class="svc-btn" href="/services/custom-software/">Custom software →</a>
+          <a class="svc-btn" href="/services/workflow-automation/">Workflow automation →</a>
+          <a class="svc-btn" href="/services/applied-ai/">Applied AI →</a>
+        </nav>
       </div>
     </section>
 
     <!-- ══ DOMAINS ═══════════════════════════════════════ -->
     <section id="domains">
       <div class="domains-inner">
-        <p class="section-label">What We Build — Problem Classes</p>
+        <h2 class="section-label">What We Build — Problem Classes</h2>
         <div class="domain-grid">
           <div class="domain-cell">
             <svg
@@ -1098,6 +1158,39 @@
       </div>
     </section>
 
+    <!-- ══ FAQ ═══════════════════════════════════════════ -->
+    <section id="faq">
+      <div class="domains-inner">
+        <h2 class="section-label">Questions — Direct Answers</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>Who is DeltaV for?</h3>
+            <p>Businesses and individuals with a problem that runs on software. Founders, operators, CTOs.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What do you build?</h3>
+            <p>Custom software, internal tools, <a href="/services/workflow-automation/">workflow automation</a>, integrations, data pipelines and <a href="/services/applied-ai/">applied AI</a>.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Should we build or buy?</h3>
+            <p>Buy if a product fits. Build if it doesn't and the work repeats. We settle it on the scoping call. <a href="/insights/build-vs-buy-software/">Build vs buy →</a></p>
+          </div>
+          <div class="faq-item">
+            <h3>Do you work with our existing systems?</h3>
+            <p>Yes. We plug into your CRM, ERP, databases, APIs and spreadsheets, and replace only what slows you down.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Who owns the code?</h3>
+            <p>You do. Source, deployment, documentation and access are handed over in full.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What does it cost?</h3>
+            <p>Fixed quote after a free scoping call. Price is agreed before work starts.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ══ INTAKE ════════════════════════════════════════ -->
     <section id="intake">
       <div class="intake-inner">
@@ -1182,6 +1275,10 @@
     <footer>
       <div class="footer-inner">
         <span class="footer-name">ΔV · DeltaV</span>
+        <nav class="footer-meta" aria-label="Site">
+          <a class="footer-email" href="/services/">Services</a> &nbsp;·&nbsp;
+          <a class="footer-email" href="/insights/">Insights</a>
+        </nav>
         <span class="footer-meta">
           <a class="footer-email" href="mailto:support@deltav.build"
             >support@deltav.build</a
