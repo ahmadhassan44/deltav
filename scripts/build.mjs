@@ -23,8 +23,11 @@ async function walk(directory) {
   return files;
 }
 
-await rm(outputRoot, { recursive: true, force: true });
+// Overwrite in place, then prune stale files. Never delete dist/ or empty it
+// first: `wrangler dev` rescans the moment files vanish and keeps serving that
+// half-empty snapshot.
 await mkdir(outputRoot, { recursive: true });
+const written = new Set();
 
 for (const sourcePath of await walk(sourceRoot)) {
   const relativePath = path.relative(sourceRoot, sourcePath);
@@ -42,6 +45,13 @@ for (const sourcePath of await walk(sourceRoot)) {
     await writeFile(destinationPath, output);
   } else {
     await cp(sourcePath, destinationPath);
+  }
+  written.add(destinationPath);
+}
+
+for (const outputPath of await walk(outputRoot)) {
+  if (!written.has(outputPath)) {
+    await rm(outputPath);
   }
 }
 
