@@ -5,3 +5,8 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Strict-Transport-Security: max-age=31536000; includeSubDomains
   Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Problem-page demo screens are content-hashed by the build (N.<hash>.webp): cache forever.
+/demos/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable

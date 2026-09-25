@@ -689,6 +689,22 @@
     </style>
   </head>
   <body>
+    <!-- Legacy cold-email links: /?p=<slug>&c=<Company>&v=stack → /<slug>/?c=<Company>
+         (or /<slug>/stack/). _redirects can't match query strings, and this runs before
+         anything paints. The build fills the slug list from content/problems/. -->
+    <script>
+      (function (l) {
+        var q = new URLSearchParams(l.search);
+        var p = (q.get("p") || "").toLowerCase();
+        var c = q.get("c");
+        if (/^({{problems}})$/.test(p))
+          l.replace(
+            "/" + p + "/" + (q.get("v") === "stack" ? "stack/" : "") +
+              (c ? "?c=" + encodeURIComponent(c) : "") + l.hash,
+          );
+      })(location);
+    </script>
+
     <!-- Badge -->
     <a class="badge" href="#hero" aria-label="DeltaV">
       <span class="badge-delta">ΔV</span>
@@ -1234,9 +1250,15 @@
               <input
                 type="hidden"
                 name="_subject"
+                id="field-subject"
                 value="DeltaV — New lead"
               />
               <input type="hidden" name="channel" id="field-channel" value="" />
+              <!-- lead source: problem pages bake in their slug; company and demo are set by their script -->
+              <input type="hidden" name="source_problem" value="direct" />
+              <input type="hidden" name="source_variant" value="" />
+              <input type="hidden" name="source_company" id="field-company" value="" />
+              <input type="hidden" name="tried_demo" id="field-tried" value="" />
               <label
                 class="field-label"
                 id="field-label-contact"
@@ -1315,8 +1337,9 @@
             });
             btn.classList.add("selected");
             if (channel === "calendar") {
+              // problem pages set DV_BOOK: the same link with their UTM tags
               window.open(
-                "https://calendly.com/ahmadhassantanveer44",
+                window.DV_BOOK || "https://calendly.com/ahmadhassantanveer44",
                 "_blank",
               );
               return;

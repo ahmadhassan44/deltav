@@ -4,10 +4,12 @@ import { fileURLToPath } from "node:url";
 import { gzipSync } from "node:zlib";
 import { minify } from "html-minifier-terser";
 import { buildInsights } from "./insights.mjs";
+import { buildProblems } from "./problems.mjs";
 
 const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 const sourceRoot = path.join(projectRoot, "..", "src");
 const contentRoot = path.join(projectRoot, "..", "content", "insights");
+const problemsRoot = path.join(projectRoot, "..", "content", "problems");
 const outputRoot = path.join(projectRoot, "..", "dist");
 
 // First TCP round trip (CLAUDE.md, Performance). Every page, gzip -9.
@@ -51,6 +53,18 @@ const staticPaths = sourceFiles
 
 const insights = await buildInsights({ contentRoot, staticPaths, includeDrafts });
 
+// Problem slugs and aliases must not shadow anything the site already serves.
+const taken = new Set(
+  [...sourceFiles.map((f) => path.relative(sourceRoot, f)), ...insights.pages.keys()].map(
+    (rel) => rel.split(/[\\/]/)[0],
+  ),
+);
+const problems = await buildProblems({
+  contentRoot: problemsRoot,
+  homeHtml: await readFile(path.join(sourceRoot, "index.html"), "utf8"),
+  taken,
+});
+
 // Overwrite in place, then prune stale files. Never delete dist/ or empty it
 // first: `wrangler dev` rescans the moment files vanish and keeps serving that
 // half-empty snapshot.
@@ -72,7 +86,9 @@ for (const sourcePath of sourceFiles) {
   const relativePath = path.relative(sourceRoot, sourcePath);
 
   if (path.extname(sourcePath).toLowerCase() === ".html") {
-    await emit(relativePath, await minifyHtml(await readFile(sourcePath, "utf8")));
+    let html = await readFile(sourcePath, "utf8");
+    if (relativePath === "index.html") html = html.replace("{{problems}}", problems.slugs);
+    await emit(relativePath, await minifyHtml(html));
   } else if (relativePath === "llms.txt" || relativePath === "llms-full.txt") {
     const text = await readFile(sourcePath, "utf8");
     await emit(relativePath, text.replace("{{guides}}", insights.guideList));
@@ -89,6 +105,14 @@ for (const [relativePath, html] of insights.pages) {
 }
 await emit("sitemap.xml", insights.sitemap);
 
+for (const [relativePath, html] of problems.pages) {
+  await emit(relativePath, await minifyHtml(html));
+}
+for (const [relativePath, image] of problems.assets) {
+  await emit(relativePath, image);
+}
+await emit("_redirects", problems.redirects);
+
 for (const outputPath of await walk(outputRoot)) {
   if (!written.has(outputPath)) {
     await rm(outputPath);
@@ -102,7 +126,7 @@ for (const [rel, raw, gz] of sizes.sort((a, b) => a[0].localeCompare(b[0]))) {
   console.log(`${rel.padEnd(width)}  ${String(raw).padStart(6)}  ${String(gz).padStart(6)}  ${pct}${gz > GZIP_BUDGET ? "  OVER" : ""}`);
 }
 
-console.log(`Built ${path.relative(process.cwd(), outputRoot)}/`);
+console.log(`Built ${path.relative(process.cwd(), outputRoot)}/ — ${problems.summary}`);
 if (insights.drafts.length) {
   const verb = includeDrafts ? "Previewing" : "Skipped";
   console.log(`${verb} ${insights.drafts.length} draft(s): ${insights.drafts.join(", ")}`);
