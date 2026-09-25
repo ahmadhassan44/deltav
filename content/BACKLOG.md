@@ -6,24 +6,24 @@ Picked for buyer intent and fit with what DeltaV builds. The industrial topics (
 
 ## Next
 
-1. How to write a software brief before you hire developers
-2. Computer vision quality inspection for small manufacturers: what it takes
-3. AI document processing: invoices, POs and forms without manual entry
-4. Internal knowledge search over company documents (RAG) for ops teams
-5. Retool and low-code vs custom internal tools
-6. Fixed-price vs time-and-materials software contracts
-7. Predictive maintenance for small plants: where to start
-8. Connecting your CRM and ERP: integration patterns that hold up
-9. Replacing Excel inventory tracking
-10. How to measure the ROI of automation
-11. Getting SCADA and PLC data into dashboards without opening the plant network
-12. Fleet dashboards from GPS and telematics data
-13. AI agents in operations: what works and what doesn't
+1. Computer vision quality inspection for small manufacturers: what it takes
+2. AI document processing: invoices, POs and forms without manual entry
+3. Internal knowledge search over company documents (RAG) for ops teams
+4. Retool and low-code vs custom internal tools
+5. Fixed-price vs time-and-materials software contracts
+6. Predictive maintenance for small plants: where to start
+7. Connecting your CRM and ERP: integration patterns that hold up
+8. Replacing Excel inventory tracking
+9. How to measure the ROI of automation
+10. Getting SCADA and PLC data into dashboards without opening the plant network
+11. Fleet dashboards from GPS and telematics data
+12. AI agents in operations: what works and what doesn't
 
 ## Drafted
 
 ## Published
 
+- 2026-09-25 software-brief
 - 2026-09-25 zapier-vs-custom-integration
 - 2026-09-24 build-vs-buy-software
 - 2026-09-24 custom-software-cost
