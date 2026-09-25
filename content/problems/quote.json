@@ -1,0 +1,51 @@
+{
+  "slug": "quote",
+  "order": 10,
+  "enabled": true,
+  "aliases": [
+    "modular",
+    "modular-quote",
+    "container-quote",
+    "quick-quote"
+  ],
+  "audience": "Sales and estimating at modular and container building manufacturers",
+  "headline": "Modular quotes still wait on the estimator?",
+  "symptoms": [
+    "Every quote goes through one person's spreadsheet",
+    "Options that can't be built together get quoted anyway",
+    "Prices drift away from the cost workbook"
+  ],
+  "build": "A quoting tool that builds a rule-checked, itemized quote in minutes from your own cost workbook. Nothing reaches the customer until the estimator approves it.",
+  "demo": {
+    "name": "Modular Quick Quote",
+    "url": "https://proto-container-quick-quote.vercel.app/",
+    "device": "browser",
+    "screens": [
+      {
+        "file": "1.webp",
+        "path": "/source",
+        "caption": "Your cost workbook, connected"
+      },
+      {
+        "file": "2.webp",
+        "path": "/inbox",
+        "caption": "Inbound inquiries, one click to quote"
+      },
+      {
+        "file": "3.webp",
+        "path": "/configure",
+        "caption": "Configure: rule-checked options, live price"
+      },
+      {
+        "file": "4.webp",
+        "path": "/review",
+        "caption": "Estimator review before anything goes out"
+      },
+      {
+        "file": "5.webp",
+        "path": "/quote",
+        "caption": "Customer quote letter, no margins shown"
+      }
+    ]
+  }
+}

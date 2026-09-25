@@ -1,0 +1,49 @@
+{
+  "slug": "payroll",
+  "order": 50,
+  "enabled": true,
+  "aliases": [
+    "payroll-review",
+    "timesheets"
+  ],
+  "audience": "Owners and office managers at trades and field-service contractors",
+  "headline": "Payroll review the night before cutoff?",
+  "symptoms": [
+    "Overlapping punches get paid as hours worked",
+    "Punches with no job leave labor costed to nothing",
+    "Night, overtime and premium pay are split by hand"
+  ],
+  "build": "A pre-payroll review that finds the punches that cost money, suggests each fix with its arithmetic, and sends clean lines to QuickBooks with every hour costed to a job.",
+  "demo": {
+    "name": "Payroll Review Desk",
+    "url": "https://proto-payroll-review.vercel.app/",
+    "device": "browser",
+    "screens": [
+      {
+        "file": "1.webp",
+        "path": "/",
+        "caption": "The week's punches: 9 items need you"
+      },
+      {
+        "file": "2.webp",
+        "path": "/exceptions",
+        "caption": "Exceptions ranked by money at risk"
+      },
+      {
+        "file": "3.webp",
+        "path": "/exceptions",
+        "caption": "One click applies the suggested fix"
+      },
+      {
+        "file": "4.webp",
+        "path": "/routing",
+        "caption": "Night, overtime and premium splits"
+      },
+      {
+        "file": "5.webp",
+        "path": "/labor",
+        "caption": "Every hour costed to a job"
+      }
+    ]
+  }
+}

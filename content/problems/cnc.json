@@ -1,0 +1,50 @@
+{
+  "slug": "cnc",
+  "order": 80,
+  "enabled": true,
+  "aliases": [
+    "machine-shop",
+    "cnc-quoting",
+    "rfq"
+  ],
+  "audience": "Owners and estimators at CNC machine shops and job shops",
+  "headline": "RFQs still take days to quote?",
+  "symptoms": [
+    "Every RFQ waits for one person to read the drawing",
+    "Hours come from memory, and nobody checks quote vs actual",
+    "Won jobs get retyped into the traveler and inspection sheet"
+  ],
+  "build": "An RFQ desk that reads each drawing, flags what drives cost, and suggests hours from similar jobs you already ran, so quotes go out in hours, not days. A won quote becomes the traveler and inspection plan, and actual hours sharpen the next estimate. The estimator approves every price.",
+  "demo": {
+    "name": "CNC RFQ to Job",
+    "url": "https://proto-cnc-rfq-to-job.vercel.app/",
+    "device": "browser",
+    "screens": [
+      {
+        "file": "1.webp",
+        "path": "/rfqs",
+        "caption": "New RFQ lands in the inbox, due in 2 days"
+      },
+      {
+        "file": "2.webp",
+        "path": "/rfqs/nw-rfq-4471/parts/nw-7720-104/read",
+        "caption": "Drawing read in 38 seconds, cost risks flagged"
+      },
+      {
+        "file": "3.webp",
+        "path": "/rfqs/nw-rfq-4471/parts/nw-7720-104/estimate",
+        "caption": "Hours suggested from similar jobs you ran"
+      },
+      {
+        "file": "4.webp",
+        "path": "/rfqs/nw-rfq-4471/quote",
+        "caption": "Quote sent in 4 hours instead of 3 days"
+      },
+      {
+        "file": "5.webp",
+        "path": "/insights",
+        "caption": "Quote vs actual sharpens the next estimate"
+      }
+    ]
+  }
+}

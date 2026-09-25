@@ -1,0 +1,49 @@
+{
+  "slug": "mitigation",
+  "order": 70,
+  "enabled": true,
+  "aliases": [
+    "restoration",
+    "water-damage"
+  ],
+  "audience": "Owners and operations managers at water-damage restoration companies",
+  "headline": "Estimates getting cut by the adjuster?",
+  "symptoms": [
+    "Techs miss the wet room next door",
+    "Line items go out without the reading or photo behind them",
+    "Work authorization gets signed days after the first visit"
+  ],
+  "build": "A field app that takes a technician from dispatch to a priced, signed estimate on the first visit, with every line backed by a reading or photo, and hazard rules that block unsafe demolition.",
+  "demo": {
+    "name": "Mitigation Field Inspection",
+    "url": "https://proto-mitigation-field-inspection.vercel.app/",
+    "device": "phone",
+    "screens": [
+      {
+        "file": "1.webp",
+        "path": "/",
+        "caption": "Today's jobs, straight from dispatch"
+      },
+      {
+        "file": "2.webp",
+        "path": "/",
+        "caption": "Step 1: confirm the loss"
+      },
+      {
+        "file": "3.webp",
+        "path": "/inspect/rooms/",
+        "caption": "Step 2: what is wet, and the room next door"
+      },
+      {
+        "file": "4.webp",
+        "path": "/inspect/drying/",
+        "caption": "Step 3: drying plan sized to the rooms"
+      },
+      {
+        "file": "5.webp",
+        "path": "/inspect/estimate/",
+        "caption": "Step 4: priced estimate, signed on site"
+      }
+    ]
+  }
+}

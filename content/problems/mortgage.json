@@ -1,0 +1,49 @@
+{
+  "slug": "mortgage",
+  "order": 60,
+  "enabled": true,
+  "aliases": [
+    "conditions",
+    "mortgage-conditions"
+  ],
+  "audience": "Processors and operations leads at mortgage lenders",
+  "headline": "Conditions piling up on every loan file?",
+  "symptoms": [
+    "Every condition is worked in the order it arrived",
+    "Borrowers get vague requests and send the wrong documents",
+    "Status replies to agents are written by hand, again"
+  ],
+  "build": "A condition desk that sorts every condition into the few that need your judgment and the rest, and drafts each borrower request and agent reply for you to confirm before it goes out.",
+  "demo": {
+    "name": "Mortgage Condition Desk",
+    "url": "https://proto-mortgage-condition-desk.vercel.app/",
+    "device": "browser",
+    "screens": [
+      {
+        "file": "1.webp",
+        "path": "/",
+        "caption": "Pipeline with red, amber and green flags"
+      },
+      {
+        "file": "2.webp",
+        "path": "/file/HL-2026-03162/",
+        "caption": "18 conditions, as received"
+      },
+      {
+        "file": "3.webp",
+        "path": "/file/HL-2026-03162/",
+        "caption": "Triaged: 5 need your judgment"
+      },
+      {
+        "file": "4.webp",
+        "path": "/file/HL-2026-03162/reply/",
+        "caption": "Agent replies drafted with real dates"
+      },
+      {
+        "file": "5.webp",
+        "path": "/economics/",
+        "caption": "175 minutes of admin per file down to 32"
+      }
+    ]
+  }
+}

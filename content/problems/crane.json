@@ -1,0 +1,49 @@
+{
+  "slug": "crane",
+  "order": 30,
+  "enabled": true,
+  "aliases": [
+    "crane-rental",
+    "quote-to-cash"
+  ],
+  "audience": "Owners and dispatchers at crane and equipment rental companies",
+  "headline": "Crane jobs still run on paper tags?",
+  "symptoms": [
+    "Each phone inquiry becomes a quote built from scratch",
+    "Operator hours come back on paper, days late",
+    "Friday billing means chasing signatures and P.O. numbers"
+  ],
+  "build": "Quote-to-cash for crane rental: inquiry to quote letter, a dispatch board, an operator phone app that splits hours for you, and a Friday review of what's ready to bill.",
+  "demo": {
+    "name": "Crane Quote to Cash",
+    "url": "https://proto-crane-quote-to-cash.vercel.app/",
+    "device": "browser",
+    "screens": [
+      {
+        "file": "1.webp",
+        "path": "/board/",
+        "caption": "Dispatch board: the week as a wallboard"
+      },
+      {
+        "file": "2.webp",
+        "path": "/quote/new/",
+        "caption": "Quote buildup, margin kept internal"
+      },
+      {
+        "file": "3.webp",
+        "path": "/tag/jt-3150/",
+        "caption": "Dispatch tag with a QR code for the cab"
+      },
+      {
+        "file": "4.webp",
+        "path": "/field/jt-3150/hours/",
+        "caption": "Operator hours split automatically"
+      },
+      {
+        "file": "5.webp",
+        "path": "/review/",
+        "caption": "Friday review: what's ready to bill"
+      }
+    ]
+  }
+}

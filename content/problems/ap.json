@@ -1,0 +1,49 @@
+{
+  "slug": "ap",
+  "order": 40,
+  "enabled": true,
+  "aliases": [
+    "invoices",
+    "ap-invoice-intake"
+  ],
+  "audience": "AP and finance teams at construction companies",
+  "headline": "Still keying invoices into the ERP?",
+  "symptoms": [
+    "Every invoice is matched to its PO by hand",
+    "Retainage and blank lien waivers slip through",
+    "Posting takes minutes per invoice, hundreds of times a month"
+  ],
+  "build": "Invoice intake that reads the invoice, pulls the PO or subcontract, checks one against the other and types it into your ERP. The AP clerk and the project manager each approve before it moves on.",
+  "demo": {
+    "name": "AP Invoice Intake",
+    "url": "https://proto-ap-invoice-intake.vercel.app/",
+    "device": "browser",
+    "screens": [
+      {
+        "file": "1.webp",
+        "path": "/",
+        "caption": "Shared AP inbox, three kinds of invoice"
+      },
+      {
+        "file": "2.webp",
+        "path": "/",
+        "caption": "Invoice read and matched against the PO"
+      },
+      {
+        "file": "3.webp",
+        "path": "/",
+        "caption": "AP clerk gate: nothing posts without the clerk"
+      },
+      {
+        "file": "4.webp",
+        "path": "/",
+        "caption": "Typed into the ERP, field by field"
+      },
+      {
+        "file": "5.webp",
+        "path": "/",
+        "caption": "Posted, approved, filed"
+      }
+    ]
+  }
+}

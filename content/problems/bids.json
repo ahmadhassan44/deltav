@@ -1,0 +1,49 @@
+{
+  "slug": "bids",
+  "order": 20,
+  "enabled": true,
+  "aliases": [
+    "bid-leveling",
+    "bid-package-review"
+  ],
+  "audience": "Estimators and preconstruction teams at general contractors",
+  "headline": "Still leveling sub bids by hand?",
+  "symptoms": [
+    "Every proposal arrives in a different format",
+    "Scope nobody priced turns up after award",
+    "Questions to bidders get lost in email threads"
+  ],
+  "build": "Bid leveling that reads every proposal into one sheet, traces each number to its page, flags scope no bidder carried and drafts the questions to send.",
+  "demo": {
+    "name": "Bid Package Review",
+    "url": "https://proto-bid-package-review.vercel.app/projects/",
+    "device": "browser",
+    "screens": [
+      {
+        "file": "1.webp",
+        "path": "/projects/larkspur-commons/electrical/",
+        "caption": "Every sub proposal read into one package"
+      },
+      {
+        "file": "2.webp",
+        "path": "/projects/larkspur-commons/electrical/leveling/",
+        "caption": "Leveling sheet, every cell traced to its page"
+      },
+      {
+        "file": "3.webp",
+        "path": "/projects/larkspur-commons/electrical/analysis/",
+        "caption": "Bid position against budget"
+      },
+      {
+        "file": "4.webp",
+        "path": "/projects/larkspur-commons/electrical/coverage/",
+        "caption": "Scope nobody priced, flagged"
+      },
+      {
+        "file": "5.webp",
+        "path": "/projects/larkspur-commons/electrical/questions/",
+        "caption": "Questions to bidders, drafted"
+      }
+    ]
+  }
+}
