@@ -1,6 +1,7 @@
 import { cp, mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { gzipSync } from "node:zlib";
 import { minify } from "html-minifier-terser";
 import { buildInsights } from "./insights.mjs";
 
@@ -8,6 +9,9 @@ const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 const sourceRoot = path.join(projectRoot, "..", "src");
 const contentRoot = path.join(projectRoot, "..", "content", "insights");
 const outputRoot = path.join(projectRoot, "..", "dist");
+
+// First TCP round trip (CLAUDE.md, Performance). Every page, gzip -9.
+const GZIP_BUDGET = 14336;
 
 // `npm run dev` sets this so drafts can be previewed locally. Deploys never do.
 const includeDrafts = process.env.INCLUDE_DRAFTS === "1";
@@ -52,12 +56,16 @@ const insights = await buildInsights({ contentRoot, staticPaths, includeDrafts }
 // half-empty snapshot.
 await mkdir(outputRoot, { recursive: true });
 const written = new Set();
+const sizes = [];
 
 async function emit(relativePath, contents) {
   const destinationPath = path.join(outputRoot, relativePath);
   await mkdir(path.dirname(destinationPath), { recursive: true });
   await writeFile(destinationPath, contents);
   written.add(destinationPath);
+  if (relativePath.endsWith(".html")) {
+    sizes.push([relativePath, Buffer.byteLength(contents), gzipSync(contents, { level: 9 }).length]);
+  }
 }
 
 for (const sourcePath of sourceFiles) {
@@ -87,8 +95,20 @@ for (const outputPath of await walk(outputRoot)) {
   }
 }
 
+const width = Math.max(...sizes.map(([rel]) => rel.length));
+console.log(`${"page".padEnd(width)}   raw B  gzip B  budget`);
+for (const [rel, raw, gz] of sizes.sort((a, b) => a[0].localeCompare(b[0]))) {
+  const pct = `${Math.round((gz / GZIP_BUDGET) * 100)}%`.padStart(4);
+  console.log(`${rel.padEnd(width)}  ${String(raw).padStart(6)}  ${String(gz).padStart(6)}  ${pct}${gz > GZIP_BUDGET ? "  OVER" : ""}`);
+}
+
 console.log(`Built ${path.relative(process.cwd(), outputRoot)}/`);
 if (insights.drafts.length) {
   const verb = includeDrafts ? "Previewing" : "Skipped";
   console.log(`${verb} ${insights.drafts.length} draft(s): ${insights.drafts.join(", ")}`);
+}
+
+const over = sizes.filter(([, , gz]) => gz > GZIP_BUDGET).map(([rel]) => rel);
+if (over.length) {
+  throw new Error(`Over the ${GZIP_BUDGET} B gzip budget: ${over.join(", ")}`);
 }
