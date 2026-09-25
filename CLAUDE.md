@@ -285,6 +285,7 @@ npm run build
 
 # Check gzipped size (must be under 14336 bytes)
 gzip -c dist/index.html | wc -c
+# `npm run build` also prints raw/gzip -9 sizes for every page and fails if any is over 14336 B
 
 # Deploy to Cloudflare Pages
 # Connect GitHub repo to Cloudflare Pages
@@ -346,3 +347,16 @@ Workflow — one post a day, generated locally, published on approval:
 4. After the Cloudflare build: `./gsc-cli/gsc.py sitemap-submit https://deltav.build/sitemap.xml`.
 
 Never state a number, price, client or result that isn't verified. Date-stamp third-party facts ("pricing page, September 2026").
+
+---
+
+## Problem pages (cold email)
+
+Outreach flow: cold email → their problem → working demo → call. Links look like `https://deltav.build/<slug>/?c=Acme%20Co`.
+
+- Data: `content/problems/<slug>.json` + screenshots `content/problems/<slug>/N.webp` (5 per demo, 1280×800 or 430×880 for `"device": "phone"`, < 60 KB, captured only from the de-branded `proto-*.vercel.app` prototypes). Fictional companies only; vendor product names may stay. Set `"enabled": false` to park one (its links 302 to `/`).
+- `scripts/problems.mjs` (called from `build.mjs`) builds `/<slug>/` and `/<slug>/stack/` (the other problems as cards above) from `src/index.html`: problem block + demo frame before `#hero`, sticky book bar, "Try it yourself" overlay that iframes the prototype, CSS/JS from `scripts/problems/`. It also emits `demos/<slug>/N.<hash>.webp` (immutable in `_headers`) and all of `_redirects` (aliases, `/<slug>/solo`, `/p/<slug>`; both slash forms).
+- Homepage hooks it relies on (the build fails if one goes missing): the `?p=` legacy shim at the top of `<body>` (the one inline script before content; `{{problems}}` is filled with live slugs), `<section id="hero">`, `#intake`, the hidden `field-subject` / `source_problem` / `source_variant` / `field-company` / `field-tried` inputs, and `window.DV_BOOK` in the Calendly handler (carries the UTM tags).
+- `?c=` puts the company in the headline, form (`source_company`, subject) and Calendly `utm_term`; text only, 40 chars max.
+- SEO: variants are `noindex`, canonical `/`, no FAQ schema, and stay out of `sitemap.xml` and `llms.txt`.
+- Slugs and aliases must not match a real route (`services`, `faq`, `insights`, …) or each other; the build fails if they do. Add an industry: write the JSON + screens, `npm run build`, check the size table, `/<slug>/?c=Acme`, `/<slug>/stack/`, `/?p=<slug>`, and an alias.
