@@ -22,10 +22,9 @@ Picked for buyer intent and fit with what DeltaV builds. The industrial topics (
 
 ## Drafted
 
-- zapier-vs-custom-integration: Zapier vs custom integration: when no-code breaks
-
 ## Published
 
+- 2026-09-25 zapier-vs-custom-integration
 - 2026-09-24 build-vs-buy-software
 - 2026-09-24 custom-software-cost
 - 2026-09-24 replace-spreadsheets

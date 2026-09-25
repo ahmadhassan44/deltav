@@ -1,0 +1,65 @@
+<!--
+{
+  "title": "Zapier vs custom integration: when no-code breaks",
+  "seoTitle": "Zapier vs Custom Integration: When to Switch | DeltaV",
+  "description": "Zapier is right until volume, speed or logic outgrows it. Five signs you need a custom integration, and how to switch without breaking operations.",
+  "eyebrow": "Guide / Automation",
+  "date": "2026-09-25",
+  "answer": "Stay on Zapier while it's cheap, fast enough and simple. Switch to a custom integration when task costs climb with volume, a 1–15 minute delay hurts, logic sprawls across dozens of Zaps, or a silent failure costs real money.",
+  "card": ["Automation", "Five signs you've outgrown Zapier, and how to switch."],
+  "cta": ["Workflow automation →", "/services/workflow-automation/"],
+  "faq": [
+    ["Is Make or n8n cheaper than Zapier?", "Usually, at volume. Make bills per operation and n8n can be self-hosted. Both share the same limits on complex logic and error handling."],
+    ["Do we have to replace everything at once?", "No. Move the busiest or most fragile flow first. Keep the rest on Zapier until it earns a rebuild."],
+    ["Does a custom integration need maintenance?", "Like any system, yes. Build in logging, retries and alerts so problems surface before they cost you. Every DeltaV build ships with a bug-fix warranty."]
+  ]
+}
+-->
+
+<h2>Where Zapier wins</h2>
+<ul class="list">
+  <li><span>Few steps, low volume.</span></li>
+  <li><span>Standard apps with ready-made connectors.</span></li>
+  <li><span>A delay of a few minutes costs nothing.</span></li>
+  <li><span>One person owns and understands every Zap.</span></li>
+</ul>
+<p>If that's you, stay. No-code is the fastest way to prove a workflow is worth automating.</p>
+
+<h2>Five signs you've outgrown it</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Sign</th><th>What it looks like</th></tr></thead>
+    <tbody>
+      <tr><td>Cost</td><td>The bill climbs with every order or lead. Each successful action step is a billed task.</td></tr>
+      <tr><td>Speed</td><td>Polling triggers check every 1–15 minutes, depending on plan. Customers notice the lag.</td></tr>
+      <tr><td>Logic</td><td>Dozens of Zaps, paths and filters. Nobody can say what runs when.</td></tr>
+      <tr><td>Failures</td><td>A step errors, nobody sees it, and records go missing for a week.</td></tr>
+      <tr><td>Data</td><td>The work needs joins, deduplication or history that a step-by-step flow can't hold.</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>Two or more of these, and the workaround has become the system.</p>
+
+<h2>What custom integration changes</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th></th><th>No-code</th><th>Custom</th></tr></thead>
+    <tbody>
+      <tr><td>Pricing</td><td>Per task. Rises with volume.</td><td>Fixed build cost, then hosting.</td></tr>
+      <tr><td>Speed</td><td>Polling every 1–15 minutes, unless the app offers an instant trigger.</td><td>Event-driven wherever the source allows.</td></tr>
+      <tr><td>Logic</td><td>Spread across many Zaps.</td><td>One codebase. Versioned and tested.</td></tr>
+      <tr><td>Failures</td><td>Error emails per Zap.</td><td>Retries, alerts and a queue a person reviews.</td></tr>
+      <tr><td>Ownership</td><td>Lives in a vendor account.</td><td>Your code, your infrastructure.</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>Zapier figures from its pricing page, September 2026.</p>
+
+<h2>How to switch without breaking operations</h2>
+<ol class="list">
+  <li><span><strong>Inventory.</strong> Every Zap: trigger, steps, owner, monthly tasks.</span></li>
+  <li><span><strong>Rank.</strong> By cost, failure rate and business impact.</span></li>
+  <li><span><strong>Rebuild the top flow.</strong> Run it alongside the Zap and compare outputs.</span></li>
+  <li><span><strong>Cut over.</strong> Once outputs match, pause the Zap. Delete it a month later.</span></li>
+  <li><span><strong>Repeat, or stop.</strong> Many flows can stay on Zapier for good.</span></li>
+</ol>
