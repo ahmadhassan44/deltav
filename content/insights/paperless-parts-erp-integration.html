@@ -1,0 +1,66 @@
+<!--
+{
+  "title": "Paperless Parts and your ERP: closing the quoting gaps",
+  "seoTitle": "Paperless Parts ERP Integration: Closing the Gaps | DeltaV",
+  "description": "What Paperless Parts connects to, where machine shops still retype quotes and jobs, and how to close the gaps without replacing your quoting tool or ERP.",
+  "eyebrow": "Guide / Manufacturing",
+  "date": "2026-09-26",
+  "answer": "Keep Paperless Parts and your ERP. Check the native integration first; it covers many ERPs. The gaps are usually around it: an unsupported or customised ERP, RFQ intake from email, and quote-versus-actual feedback. A custom layer fills those without replacing either system.",
+  "card": ["Manufacturing", "Keep your quoting tool and ERP. Automate the gaps between them."],
+  "cta": ["See the CNC demo →", "/cnc/"],
+  "faq": [
+    ["Which ERPs does Paperless Parts integrate with?", "Its integrations page lists E2 Shop, JobBOSS, JobBOSS², M1, Epicor, Fulcrum, Global Shop Solutions, Infor SyteLine and VISUAL, ProShop, Plex and others (September 2026)."],
+    ["Do we need Paperless Parts at all?", "Not always. If your ERP's own estimating module fits your work, a custom layer can add drawing review and past-job lookup to it instead."],
+    ["Can a custom layer use the Paperless Parts API?", "Paperless Parts says it is built on a documented API. Access appears to go through their team, so confirm it for your account first."]
+  ]
+}
+-->
+
+<h2>Start with what's native</h2>
+<p>Paperless Parts describes itself as a quoting and collaboration platform for manufacturers, used by more than 800 custom part shops. Its <a href="https://www.paperlessparts.com/integrations/" rel="noopener">integrations page</a> lists:</p>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Type</th><th>Listed</th></tr></thead>
+    <tbody>
+      <tr><td>ERP</td><td>E2 Shop, JobBOSS, JobBOSS², M1, Epicor, Fulcrum, Genius, Global Shop Solutions, Infor SyteLine and VISUAL, Made2Manage, MIE Trak Pro, Plex, ProShop, StartProto</td></tr>
+      <tr><td>Other</td><td>HubSpot, Salesforce, QuickBooks, Power BI, Trello</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>If your ERP is on that list and the sync does what you need, stop here.</p>
+
+<h2>Where shops still retype</h2>
+<p>From reviews on <a href="https://www.capterra.com/p/179259/paperlessPARTS/reviews/" rel="noopener">Capterra</a>, September 2026. The product rates well overall; these are the integration complaints:</p>
+<ul class="list">
+  <li><span>"We do not currently have this software integrated with our ERP system so there are some redundant data entries."</span></li>
+  <li><span>"The only con is it will not currently integrate with our manufacturing system."</span></li>
+</ul>
+<p>Other common gaps around any quoting tool:</p>
+<ul class="list">
+  <li><span>RFQs arrive by email with drawings attached and get uploaded by hand.</span></li>
+  <li><span>Quoted hours are never compared to actual hours from the floor.</span></li>
+  <li><span>Won quotes get retyped into travelers and inspection sheets.</span></li>
+</ul>
+
+<h2>What a custom layer adds</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Gap</th><th>What the layer does</th></tr></thead>
+    <tbody>
+      <tr><td>Unsupported or customised ERP</td><td>Pushes won quotes into the ERP as jobs, by API, import or database.</td></tr>
+      <tr><td>Accounting</td><td>Writes orders and invoices to your accounting system with the quote attached, where no native sync covers it.</td></tr>
+      <tr><td>RFQ intake</td><td>Reads the inbox, files drawings and opens the quote with due dates set.</td></tr>
+      <tr><td>Quote vs actual</td><td>Joins quoted hours with actual hours per job, so the next estimate starts closer.</td></tr>
+      <tr><td>Shop paperwork</td><td>Generates the traveler and inspection plan from the won quote.</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The estimator still approves every price. The quoting tool and the ERP stay the systems of record.</p>
+
+<h2>How to start</h2>
+<ol class="list">
+  <li><span><strong>List every retype.</strong> Where does a person copy data from one screen to another?</span></li>
+  <li><span><strong>Check native first.</strong> Confirm what the integration covers for your ERP and version.</span></li>
+  <li><span><strong>Build the costliest gap.</strong> Usually job creation or quote-vs-actual.</span></li>
+</ol>
+<p>The <a href="/cnc/">CNC RFQ-to-job demo</a> shows drawing read, similar-job hours and the quote becoming the job.</p>

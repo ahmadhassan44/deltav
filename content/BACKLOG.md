@@ -6,6 +6,12 @@ Picked for buyer intent and fit with what DeltaV builds. The industrial topics (
 
 ## Next
 
+From the 2026-09-26 competitor teardown: tool-pair "keep your software" posts are unclaimed by service firms.
+
+- Fleet Cost & Care job tickets to invoices and payroll for crane companies
+- Adding AI to your TMS/WMS without migrating
+- AI estimating tools vs a custom workflow on your own takeoff and pricing data
+
 1. Internal knowledge search over company documents (RAG) for ops teams
 2. Retool and low-code vs custom internal tools
 3. Fixed-price vs time-and-materials software contracts
@@ -21,6 +27,8 @@ Picked for buyer intent and fit with what DeltaV builds. The industrial topics (
 
 ## Published
 
+- 2026-09-26 procore-quickbooks-integration
+- 2026-09-26 paperless-parts-erp-integration
 - 2026-09-26 cv-quality-inspection
 - 2026-09-26 ai-invoice-processing
 - 2026-09-26 rfq-quoting-automation

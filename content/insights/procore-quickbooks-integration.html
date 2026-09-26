@@ -1,0 +1,68 @@
+<!--
+{
+  "title": "Procore and QuickBooks: closing the gaps the sync leaves",
+  "seoTitle": "Procore QuickBooks Integration: Closing the Gaps | DeltaV",
+  "description": "What the Procore and QuickBooks connection covers, where contractors still retype data in Excel, and how to close the gap without replacing either system.",
+  "eyebrow": "Guide / Construction",
+  "date": "2026-09-26",
+  "answer": "Keep Procore and QuickBooks. The connectors sync the basics, but invoice intake, PO matching, lien waivers and cross-system reporting often still run through email and Excel. A thin custom layer reads the documents, checks them against both systems and posts the approved entry, so nobody retypes.",
+  "card": ["Construction", "Keep Procore and QuickBooks. Automate the gaps between them."],
+  "cta": ["See the AP demo →", "/ap/"],
+  "faq": [
+    ["Does Procore integrate with QuickBooks?", "Yes. Procore's ERP integrations page lists QuickBooks Desktop and Online among its connectors, alongside Sage, NetSuite, Acumatica and others (Procore support, September 2026)."],
+    ["Should we move to a single platform instead?", "Only if the migration pays for itself. Most contractors keep several systems. A custom layer connects the ones you have without retraining every team."],
+    ["What does a custom layer need access to?", "Procore's API, your QuickBooks company file or online account, and the inbox where invoices arrive. Nothing posts without an approval on record."]
+  ]
+}
+-->
+
+<h2>Most contractors run more than one system</h2>
+<p>In ServiceTitan's <a href="https://www.servicetitan.com/blog/commercial-contractors-industry-report" rel="noopener">2026 Commercial Specialty Contractor Industry Report</a>, only 20% of surveyed contractors had reached a single platform. 34% use two to three systems; 25% use four to six. The report says core systems "rarely talk to each other."</p>
+<p>Procore plus QuickBooks is a common pair. The question isn't which to drop. It's what moves between them by hand.</p>
+
+<h2>What the connection covers</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Area</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Connector</td><td>QuickBooks Desktop and Online are listed among Procore's ERP integrations.</td></tr>
+      <tr><td>Payments to QuickBooks Online</td><td>Exporting payment records is available only with Procore Pay.</td></tr>
+      <tr><td>Owner billing</td><td>Procore Invoice Management handles billing periods, review and backup documents.</td></tr>
+      <tr><td>API</td><td>Public developer API and a marketplace of 500+ integrations.</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>From Procore's support and product pages, September 2026.</p>
+
+<h2>Where the gaps show up</h2>
+<ul class="list">
+  <li><span><strong>Sub and vendor invoices.</strong> PDFs arrive by email and get keyed in by hand.</span></li>
+  <li><span><strong>Matching.</strong> Checking an invoice against the commitment, retainage and change orders is manual.</span></li>
+  <li><span><strong>Compliance.</strong> Missing lien waivers or insurance certificates are caught late, or not at all.</span></li>
+  <li><span><strong>Reporting.</strong> WIP and job cost reports get rebuilt in Excel from both systems.</span></li>
+  <li><span><strong>Timing.</strong> Job costs in the field and the books don't agree on any given day.</span></li>
+</ul>
+
+<h2>How to close them without replacing anything</h2>
+<ol class="list">
+  <li><span><strong>Intake.</strong> Read every invoice from the shared AP inbox.</span></li>
+  <li><span><strong>Match.</strong> Pull the commitment from Procore and check lines, retainage and waivers.</span></li>
+  <li><span><strong>Approve.</strong> The AP clerk, then the project manager. Mismatches are flagged, not hidden.</span></li>
+  <li><span><strong>Post.</strong> Write the approved bill to QuickBooks and attach the source.</span></li>
+  <li><span><strong>Report.</strong> One job cost view from both systems, refreshed daily.</span></li>
+</ol>
+<p>Both systems stay the system of record. The layer only moves and checks data. The <a href="/ap/">AP invoice intake demo</a> shows the flow end to end.</p>
+
+<h2>Buy a connector or build the layer</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th></th><th>Off-the-shelf connector</th><th>Custom layer</th></tr></thead>
+    <tbody>
+      <tr><td>Best for</td><td>Standard sync of vendors, cost codes, commitments.</td><td>Your approval chain, retainage rules, waiver checks.</td></tr>
+      <tr><td>Documents</td><td>Mostly structured records.</td><td>Reads PDFs and emails.</td></tr>
+      <tr><td>Change</td><td>Vendor roadmap.</td><td>Changes when your process changes.</td></tr>
+      <tr><td>Ownership</td><td>Subscription.</td><td>Your code.</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>Start with the connector if it covers you. Build only the part it doesn't.</p>
