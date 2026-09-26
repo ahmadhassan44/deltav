@@ -9,8 +9,6 @@ import path from "node:path";
 
 const SITE = "https://deltav.build";
 const EMAIL = "support@deltav.build";
-const FONTS =
-  "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap";
 const ORG = { "@id": `${SITE}/#org` };
 const CALL = ["Book a scoping call", "/#intake"];
 const MONTHS = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split(" ");
@@ -78,11 +76,8 @@ function page({ url, title, description, graph, main, ogType = "website" }) {
 <meta name="theme-color" content="#0d0f0c" />
 <link rel="canonical" href="${SITE}${url}" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preload" href="/fonts/barlow-condensed-700.v1.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="/site.css" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preload" as="style" href="${FONTS}" onload="this.onload=null;this.rel='stylesheet'" />
-<noscript><link rel="stylesheet" href="${FONTS}" /></noscript>
 <meta property="og:type" content="${ogType}" />
 <meta property="og:site_name" content="DeltaV" />
 <meta property="og:title" content="${esc(title)}" />
@@ -97,7 +92,7 @@ function page({ url, title, description, graph, main, ogType = "website" }) {
 <body>
 <div class="site-shell">
 <header class="site-header">
-<a class="brand" href="/" aria-label="DeltaV home"><span class="brand-mark">ΔV</span><span class="brand-name">DeltaV</span></a>
+<a class="brand" href="/" aria-label="DeltaV home"><span class="brand-mark">Δ<span>V</span></span><span class="brand-name">DeltaV</span></a>
 <nav class="site-nav" aria-label="Primary">
 <a href="/services/">Services</a>
 <a href="/work/">Prototypes</a>

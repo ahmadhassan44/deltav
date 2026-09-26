@@ -10,3 +10,8 @@
 /demos/*
   ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
+
+# Self-hosted fonts are versioned in the file name (.vN.woff2): cache forever.
+/fonts/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable

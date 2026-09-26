@@ -62,7 +62,15 @@
         ]
       }
     </script>
+    <link rel="preload" href="/fonts/barlow-condensed-700.v1.woff2" as="font" type="font/woff2" crossorigin />
     <style>
+      /* Headlines only: one weight, basic Latin, 7 KB, self-hosted */
+      @font-face {
+        font-family: "Barlow Condensed";
+        font-weight: 700;
+        font-display: swap;
+        src: url(/fonts/barlow-condensed-700.v1.woff2) format("woff2");
+      }
       :root {
         --bg: #0a0b0a;
         --bg-surface: #131512;
@@ -74,7 +82,7 @@
         --border: #24271f;
         --border-strong: #3b4036;
         --font-sans: system-ui, -apple-system, "Segoe UI", "Helvetica Neue", sans-serif;
-        --font-display: var(--font-sans);
+        --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
         --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
         --max-w: 1200px;
         --gutter: clamp(1.25rem, 5vw, 4rem);
@@ -133,7 +141,7 @@
         font-weight: 500;
         letter-spacing: 0.1em;
         text-transform: uppercase;
-        color: var(--text-dimmer);
+        color: var(--accent-bright);
         margin-bottom: 1.5rem;
       }
 
@@ -160,6 +168,9 @@
         letter-spacing: -0.02em;
         line-height: 1;
       }
+      .brand-mark span {
+        color: var(--accent-bright);
+      }
       .brand-name {
         color: var(--text-dim);
         font-size: 0.8125rem;
@@ -184,15 +195,24 @@
       }
       .site-nav .nav-cta {
         padding: 0.55rem 1rem;
-        border: 1px solid var(--border-strong);
-        color: var(--text);
+        border: 1px solid var(--accent-bright);
+        color: var(--accent-bright);
         transition:
           background 0.2s,
           color 0.2s;
       }
       .site-nav .nav-cta:hover {
-        background: var(--text);
+        background: var(--accent-bright);
         color: var(--bg);
+      }
+      @media (max-width: 480px) {
+        .site-nav {
+          gap: 0.5rem 1.1rem;
+          font-size: 0.875rem;
+        }
+        .site-nav .nav-cta {
+          padding: 0.45rem 0.75rem;
+        }
       }
 
       /* ── HERO ────────────────────────────────────────── */
@@ -200,13 +220,19 @@
         padding: clamp(4.5rem, 14vh, 10rem) 0 clamp(4.5rem, 12vh, 8rem);
         border-top: 1px solid var(--border);
       }
-      .hero-headline {
-        max-width: 13ch;
-        font-size: clamp(2.75rem, 7.2vw, 6.25rem);
-        font-weight: 500;
-        letter-spacing: -0.04em;
-        line-height: 1;
+      .hero-headline,
+      .model-framing,
+      .intake-heading {
+        font-family: var(--font-display);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: -0.005em;
+        line-height: 0.95;
         text-wrap: balance;
+      }
+      .hero-headline {
+        max-width: 12ch;
+        font-size: clamp(3rem, 7.4vw, 6.75rem);
       }
       .hero-sub {
         max-width: 42ch;
@@ -299,6 +325,8 @@
       .def-mission {
         max-width: 34ch;
         margin-top: 1.75rem;
+        padding-left: 1.25rem;
+        border-left: 2px solid var(--accent-bright);
         font-size: clamp(1.375rem, 2.4vw, 1.875rem);
         font-weight: 500;
         letter-spacing: -0.02em;
@@ -312,11 +340,8 @@
 
       /* ── MODEL ───────────────────────────────────────── */
       .model-framing {
-        max-width: 22ch;
-        font-size: clamp(1.75rem, 3.8vw, 3rem);
-        font-weight: 500;
-        letter-spacing: -0.03em;
-        line-height: 1.1;
+        max-width: 20ch;
+        font-size: clamp(2rem, 4.4vw, 3.5rem);
       }
       .model-body {
         max-width: 56ch;
@@ -357,7 +382,7 @@
       }
       .svc-btn {
         padding: 1.25rem 0;
-        border-top: 1px solid var(--border-strong);
+        border-top: 2px solid var(--accent);
         color: var(--text);
         font-size: 1.25rem;
         font-weight: 500;
@@ -424,10 +449,7 @@
       .intake-heading {
         max-width: 16ch;
         margin-bottom: clamp(2rem, 4vw, 3rem);
-        font-size: clamp(2.25rem, 5.2vw, 4.25rem);
-        font-weight: 500;
-        letter-spacing: -0.035em;
-        line-height: 1.05;
+        font-size: clamp(2.5rem, 6vw, 5rem);
       }
       .step {
         display: none;
@@ -556,7 +578,7 @@
     </script>
 
     <header class="site-header container">
-      <a class="brand" href="/" aria-label="DeltaV home"><span class="brand-mark">ΔV</span><span class="brand-name">DeltaV</span></a>
+      <a class="brand" href="/" aria-label="DeltaV home"><span class="brand-mark">Δ<span>V</span></span><span class="brand-name">DeltaV</span></a>
       <nav class="site-nav" aria-label="Primary">
         <a href="/services/">Services</a>
         <a href="/work/">Prototypes</a>
@@ -568,13 +590,15 @@
     <!-- ══ HERO ══════════════════════════════════════════ -->
     <section id="hero">
       <div class="hero-inner">
-        <h1 class="hero-headline">We add velocity to your business.</h1>
-        <p class="hero-sub">
-          Keep the systems you already use. We build the missing workflows
-          between them—with custom software, automation and applied AI.
-        </p>
-        <div class="hero-actions">
-          <a class="hero-cta" href="#intake">Book a scoping call</a>
+        <div class="hero-copy">
+          <h1 class="hero-headline">We add velocity to your business.</h1>
+          <p class="hero-sub">
+            Keep the systems you already use. We build the missing workflows
+            between them—with custom software, automation and applied AI.
+          </p>
+          <div class="hero-actions">
+            <a class="hero-cta" href="#intake">Book a scoping call</a>
+          </div>
         </div>
       </div>
     </section>
@@ -888,6 +912,7 @@
                 err.classList.add("visible");
               });
           });
+
 
       })();
     </script>
