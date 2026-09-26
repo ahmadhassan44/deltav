@@ -1,0 +1,63 @@
+<!--
+{
+  "title": "AI invoice processing: from inbox to ERP without manual entry",
+  "seoTitle": "AI Invoice Processing: Inbox to ERP Without Retyping | DeltaV",
+  "description": "How AI reads invoices, matches them to POs and posts them to your ERP, where people still approve, and what to check before you buy or build.",
+  "eyebrow": "Guide / Automation",
+  "date": "2026-09-26",
+  "answer": "AI invoice processing reads each invoice, matches it to the PO or subcontract, flags what doesn't match and enters it into the ERP. People approve; nobody retypes. It pays off when volume is high, formats vary and matching rules are specific to your business.",
+  "card": ["Automation", "Invoices read, matched and posted, with people approving."],
+  "cta": ["See the AP demo →", "/ap/"],
+  "faq": [
+    ["Is this the same as OCR?", "No. OCR turns the page into text. Invoice processing also understands the fields, matches them to your records and applies your rules."],
+    ["What if our ERP has no API?", "It can still work. Import files, a database connection or browser automation can post the entry. The approval steps stay the same."],
+    ["Should we buy an AP tool or build one?", "Buy if your invoices are standard and your ERP is supported. Build when matching depends on your own rules, like retainage, lien waivers or subcontract terms."]
+  ]
+}
+-->
+
+<h2>What gets automated</h2>
+<ol class="list">
+  <li><span><strong>Intake.</strong> Invoices arrive from a shared inbox, a portal or a scan.</span></li>
+  <li><span><strong>Read.</strong> Vendor, number, dates, lines, totals and tax pulled from any layout.</span></li>
+  <li><span><strong>Match.</strong> Against the PO, receipt or subcontract. Differences are flagged, not hidden.</span></li>
+  <li><span><strong>Check.</strong> Your rules: duplicates, retainage, missing lien waivers, wrong cost code.</span></li>
+  <li><span><strong>Approve.</strong> The AP clerk, then the project manager or budget owner.</span></li>
+  <li><span><strong>Post.</strong> Entered into the ERP field by field, with the source filed alongside.</span></li>
+</ol>
+
+<h2>Where people stay in the loop</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Step</th><th>Who decides</th></tr></thead>
+    <tbody>
+      <tr><td>Low-confidence read</td><td>AP clerk confirms the field.</td></tr>
+      <tr><td>Price or quantity mismatch</td><td>AP clerk, with the PO side by side.</td></tr>
+      <tr><td>Budget approval</td><td>Project manager or cost owner.</td></tr>
+      <tr><td>Posting</td><td>Nothing posts without an approval on record.</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The goal is fewer keystrokes, not fewer controls.</p>
+
+<h2>Buy or build</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th></th><th>Off-the-shelf AP tool</th><th>Custom build</th></tr></thead>
+    <tbody>
+      <tr><td>Best for</td><td>Standard invoices, supported ERP.</td><td>Industry rules, older or custom ERP.</td></tr>
+      <tr><td>Matching</td><td>Two- and three-way match.</td><td>Your rules: retainage, waivers, subcontract terms.</td></tr>
+      <tr><td>Pricing</td><td>Per invoice or per seat.</td><td>Build cost, then hosting.</td></tr>
+      <tr><td>Ownership</td><td>Vendor platform.</td><td>Your code and data.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>What to check before you start</h2>
+<ul class="list">
+  <li><span>Monthly invoice volume and how many vendor formats.</span></li>
+  <li><span>Where POs, receipts and contracts live, and whether they're complete.</span></li>
+  <li><span>How the ERP accepts entries: API, import or screen only.</span></li>
+  <li><span>The exceptions that cost you today, written down.</span></li>
+</ul>
+<p>Our <a href="/ap/">AP invoice intake demo</a> shows the full flow on construction invoices, from shared inbox to posted entry.</p>

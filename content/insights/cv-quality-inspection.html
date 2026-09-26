@@ -1,0 +1,65 @@
+<!--
+{
+  "title": "Computer vision quality inspection for small manufacturers",
+  "seoTitle": "Computer Vision Quality Inspection: What It Takes | DeltaV",
+  "description": "What a camera-based defect check needs: a defined defect, controlled images, labelled examples and a place on the line. Where it works and where it doesn't.",
+  "eyebrow": "Guide / AI",
+  "date": "2026-09-26",
+  "answer": "Vision inspection works when the defect is visible, the image is repeatable and you can collect labelled examples of good and bad parts. Fix lighting and part position first; the model is the easy part. Start with one defect on one station, run it alongside your inspector, then let it reject.",
+  "card": ["AI", "What a camera-based defect check actually needs."],
+  "cta": ["Applied AI →", "/services/applied-ai/"],
+  "faq": [
+    ["Do we need thousands of defect images?", "Not always. Anomaly-detection models learn from good parts and flag anything unusual, which helps when defects are rare. You still need real defect examples to test against."],
+    ["Can we use the cameras we already have?", "Sometimes. Security or phone cameras rarely give consistent images. Most lines need a fixed industrial camera, controlled lighting and a trigger tied to the part."],
+    ["Will it replace our inspectors?", "It takes the repetitive checks. Inspectors review borderline parts, handle new defect types and own the reject decision until the error rate is proven."]
+  ]
+}
+-->
+
+<h2>When vision inspection fits</h2>
+<ul class="list">
+  <li><span>The defect is visible to a person looking at a photo.</span></li>
+  <li><span>Parts arrive in a repeatable position and orientation.</span></li>
+  <li><span>The same check runs on every part, all shift.</span></li>
+  <li><span>A missed defect costs more than the station.</span></li>
+</ul>
+<p>If an inspector needs to touch, measure or turn the part to decide, a camera alone won't do it.</p>
+
+<h2>What it takes</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Piece</th><th>What it means</th></tr></thead>
+    <tbody>
+      <tr><td>Defect spec</td><td>Written pass/fail rules with example photos. If two inspectors disagree, the model will too.</td></tr>
+      <tr><td>Image capture</td><td>Fixed camera, lens and lighting. A trigger from a sensor or PLC so every image shows the part the same way.</td></tr>
+      <tr><td>Labelled data</td><td>Good and bad parts from real production, labelled by the people who inspect today.</td></tr>
+      <tr><td>Model</td><td>Classification, detection or anomaly detection, picked for the defect and the data you have.</td></tr>
+      <tr><td>Line integration</td><td>A reject signal, a divert or an alert, and a log of every decision with its image.</td></tr>
+      <tr><td>Review loop</td><td>Borderline parts go to a person. Their calls become new training data.</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>Most failed projects fail on capture and spec, not on the model.</p>
+
+<h2>Where it breaks</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Problem</th><th>Fix</th></tr></thead>
+    <tbody>
+      <tr><td>Glare on shiny parts</td><td>Diffuse or polarised lighting, fixed exposure.</td></tr>
+      <tr><td>Parts shift or rotate</td><td>Fixture the part, or detect and align before inspecting.</td></tr>
+      <tr><td>Defects too rare to collect</td><td>Anomaly detection trained on good parts.</td></tr>
+      <tr><td>New product variant</td><td>A labelling pass per variant before it goes live.</td></tr>
+      <tr><td>Lighting drifts over months</td><td>A reference image check at shift start.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>How to start</h2>
+<ol class="list">
+  <li><span><strong>Pick one defect on one station.</strong> The one that costs the most in scrap or returns.</span></li>
+  <li><span><strong>Fix the image.</strong> Mount the camera and lights, capture a week of production.</span></li>
+  <li><span><strong>Label and train.</strong> Your inspectors label; hold back a set to test on.</span></li>
+  <li><span><strong>Run in shadow.</strong> The model flags, the inspector decides. Compare both.</span></li>
+  <li><span><strong>Let it reject.</strong> Once misses and false rejects are within your tolerance.</span></li>
+</ol>

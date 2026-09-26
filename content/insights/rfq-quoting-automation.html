@@ -1,0 +1,57 @@
+<!--
+{
+  "title": "Quoting automation for manufacturers: RFQ to quote in hours",
+  "seoTitle": "Quoting Automation for Manufacturers: RFQ to Quote | DeltaV",
+  "description": "Why quotes wait on one estimator, what quoting software can automate from drawing to price, and why the estimator still approves every number.",
+  "eyebrow": "Guide / Manufacturing",
+  "date": "2026-09-26",
+  "answer": "Quotes are slow when every RFQ waits on one estimator's memory or spreadsheet. Quoting automation reads the request, applies your cost rules and past jobs, and drafts the price. The estimator reviews and approves. Won quotes flow into the job, and actuals improve the next estimate.",
+  "card": ["Manufacturing", "RFQ to approved quote without the bottleneck."],
+  "cta": ["See the prototypes →", "/work/"],
+  "faq": [
+    ["Will it price jobs without the estimator?", "No. It drafts; the estimator approves every price. It removes the reading, lookup and retyping, not the judgment."],
+    ["We quote from a spreadsheet. Do we lose it?", "No. The cost workbook stays the source of truth. The tool reads from it so prices don't drift."],
+    ["Does a configurator do the same thing?", "For configurable products, a rule-checked configurator is the core of it. Job shops quoting from drawings need drawing review and similar-job lookup instead."]
+  ]
+}
+-->
+
+<h2>Why quotes are slow</h2>
+<ul class="list">
+  <li><span>Every request waits for one person to read the drawing or spec.</span></li>
+  <li><span>Hours and prices come from memory or a private spreadsheet.</span></li>
+  <li><span>Options that can't be built together get quoted anyway.</span></li>
+  <li><span>Nobody compares quoted hours to actual hours.</span></li>
+  <li><span>Won jobs get retyped into travelers, orders and inspection sheets.</span></li>
+</ul>
+
+<h2>Two kinds of quoting</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th></th><th>Configured products</th><th>Made-to-print jobs</th></tr></thead>
+    <tbody>
+      <tr><td>Example</td><td>Modular buildings, equipment with options.</td><td>CNC machining, fabrication.</td></tr>
+      <tr><td>Input</td><td>Customer picks options.</td><td>Drawing and RFQ.</td></tr>
+      <tr><td>Automation</td><td>Rule-checked options priced from the cost workbook.</td><td>Drawing read, cost drivers flagged, hours from similar past jobs.</td></tr>
+      <tr><td>Estimator's role</td><td>Approves the quote.</td><td>Adjusts hours, approves the price.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>What the system does</h2>
+<ol class="list">
+  <li><span><strong>Intake.</strong> RFQs and inquiries land in one queue with due dates.</span></li>
+  <li><span><strong>Read.</strong> Drawings and specs parsed for material, tolerances, finishes and quantities.</span></li>
+  <li><span><strong>Estimate.</strong> Your cost rules and your past jobs, not a generic rate table.</span></li>
+  <li><span><strong>Review.</strong> The estimator sees every assumption and approves or edits.</span></li>
+  <li><span><strong>Send.</strong> A clean quote letter, margins hidden.</span></li>
+  <li><span><strong>Learn.</strong> Won quotes become the job; actual hours feed the next estimate.</span></li>
+</ol>
+
+<h2>How to start</h2>
+<ul class="list">
+  <li><span>Pull the last year of quotes, wins and actual hours.</span></li>
+  <li><span>Write down the rules the estimator applies without thinking.</span></li>
+  <li><span>Automate reading and lookup first; leave pricing judgment to the estimator.</span></li>
+</ul>
+<p>See it working: the <a href="/cnc/">CNC RFQ-to-job demo</a> and the <a href="/quote/">modular quick-quote demo</a>.</p>
