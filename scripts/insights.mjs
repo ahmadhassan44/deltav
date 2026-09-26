@@ -10,7 +10,7 @@ import path from "node:path";
 const SITE = "https://deltav.build";
 const EMAIL = "support@deltav.build";
 const ORG = { "@id": `${SITE}/#org` };
-const CALL = ["Book a scoping call", "/#intake"];
+const CALL = ["Book a scoping call", "https://cal.com/deltav.support/30min"];
 const MONTHS = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split(" ");
 
 const esc = (s) =>
@@ -52,7 +52,7 @@ function faqSchema(faq) {
 
 function actions(secondary) {
   return `<div class="actions">
-  <a class="btn" href="${CALL[1]}">${CALL[0]}</a>
+  <a class="btn" href="${CALL[1]}" data-book>${CALL[0]}</a>
   <a class="btn-quiet" href="${secondary[1]}">${secondary[0]}</a>
 </div>`;
 }
@@ -97,7 +97,7 @@ function page({ url, title, description, graph, main, ogType = "website" }) {
 <a href="/services/">Services</a>
 <a href="/work/">Prototypes</a>
 <a href="/insights/" aria-current="page">Insights</a>
-<a class="nav-cta" href="/#intake">Book a call</a>
+<a class="nav-cta" href="https://cal.com/deltav.support/30min" data-book>Book a call</a>
 </nav>
 </header>
 <main class="page-main">
@@ -156,9 +156,9 @@ function renderPost(post) {
   });
   if (post.faq?.length) {
     const cells = post.faq
-      .map(([q, a]) => `<div class="cell">\n<h3>${q}</h3>\n<p>${a}</p>\n</div>`)
+      .map(([q, a]) => `<details class="qa">\n<summary><h3>${q}</h3></summary>\n<p>${a}</p>\n</details>`)
       .join("\n");
-    sections.push(section("faq", "Questions", `<h2 id="faq">Direct answers</h2>\n<div class="grid">\n${cells}\n</div>`));
+    sections.push(section("faq", "Questions", `<h2 id="faq">Direct answers</h2>\n<div class="qa-list">\n${cells}\n</div>`));
   }
   // The calls to action close out the last section rather than floating after it.
   const last = sections.length - 1;

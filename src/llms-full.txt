@@ -27,12 +27,10 @@ Computer vision and inspection; industrial automation and control; embedded and 
 
 - Who is deltaV for? Businesses and individuals with a problem that runs on software.
 - How long does a project take? Most builds ship in 2–6 weeks, first call to launch. Timeline is fixed in the quote.
-- Cost? Fixed quote for the build after a free 30-minute scoping call, then a monthly retainer for hosting and maintenance. Both agreed before work starts. No hourly billing.
 - Scope changes? Scoped and quoted before any work starts.
 - After launch? deltaV hosts, monitors and maintains it on a monthly retainer.
 - Who do clients work with? The engineers who build it. No account managers.
 - Location? Remote team working across time zones.
-- Ownership? deltaV retains the code and runs it on its own infrastructure. The client gets full use of the software.
 - NDAs? deltaV signs NDAs, before the scoping call if asked. Past client work is under NDA and not published.
 - Data? Client data stays the client's. Never reused or used to train models.
 - Existing systems? deltaV integrates with CRM, ERP, databases, APIs and spreadsheets, and replaces only what slows the client down.
@@ -51,4 +49,4 @@ Computer vision and inspection; industrial automation and control; embedded and 
 
 ## Contact
 
-https://deltav.build/#intake · support@deltav.build
+https://cal.com/deltav.support/30min · support@deltav.build

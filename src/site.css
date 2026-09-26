@@ -302,6 +302,89 @@ a.cell h3::after {
   color: var(--accent-bright);
 }
 
+/* ── FAQ DROPDOWNS ──────────────────────────────── */
+.qa-list {
+  counter-reset: qa;
+  max-width: 52rem;
+  border-bottom: 1px solid var(--border);
+}
+.qa {
+  counter-increment: qa;
+  interpolate-size: allow-keywords;
+  border-top: 1px solid var(--border);
+  transition: background-color 0.2s;
+}
+.qa:hover,
+.qa[open] {
+  background: var(--bg-surface);
+}
+.qa summary {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr auto;
+  align-items: center;
+  gap: 0 1rem;
+  padding: 1.25rem 1rem;
+  cursor: pointer;
+  list-style: none;
+}
+.qa summary::-webkit-details-marker {
+  display: none;
+}
+.qa summary::before {
+  content: counter(qa, decimal-leading-zero);
+  color: var(--accent-bright);
+  font: 0.8125rem var(--font-mono);
+}
+.qa summary::after {
+  content: "";
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 1px solid var(--border-strong);
+  background:
+    linear-gradient(var(--accent-bright), var(--accent-bright)) center / 0.625rem 1.5px no-repeat,
+    linear-gradient(var(--accent-bright), var(--accent-bright)) center / 1.5px 0.625rem no-repeat;
+  transition:
+    background-size 0.2s,
+    border-color 0.2s;
+}
+.qa[open] summary::after {
+  border-color: var(--accent);
+  background-size:
+    0.625rem 1.5px,
+    1.5px 0;
+}
+.qa summary h3 {
+  font-size: 1.1875rem;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+.qa p {
+  max-width: 62ch;
+  padding: 0 1rem 1.5rem calc(3.5rem + 1rem);
+  color: var(--text-dim);
+  font-size: 1rem;
+}
+.qa::details-content {
+  block-size: 0;
+  overflow: hidden;
+  transition:
+    block-size 0.3s,
+    content-visibility 0.3s allow-discrete;
+}
+.qa[open]::details-content {
+  block-size: auto;
+}
+@media (max-width: 520px) {
+  .qa summary {
+    grid-template-columns: 1.75rem 1fr auto;
+    padding: 1.125rem 0.5rem;
+  }
+  .qa p {
+    padding: 0 0.5rem 1.25rem 3.25rem;
+  }
+}
+
 /* ── TABLE ──────────────────────────────────────── */
 .table-wrap {
   max-width: 100%;

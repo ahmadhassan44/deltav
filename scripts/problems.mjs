@@ -137,7 +137,7 @@ function renderProblem(p, urls, book, index) {
 <div class="problem-body">
 <div><p class="model-list-title">Sound familiar?</p><ul class="model-list">${symptoms}</ul></div>
 <div><p class="model-list-title">What we'd build</p><p class="model-body">${esc(p.build)}</p></div>
-<div class="problem-actions"><a class="hero-cta" data-book href="${esc(book)}" target="_blank" rel="noopener">Book a 30-min scoping call</a><a class="problem-next" href="#hero">Yes. Who are you? ↓</a></div>
+<div class="problem-actions"><a class="hero-cta" data-book href="${esc(book)}">Book a 30-min scoping call</a><a class="problem-next" href="#hero">Yes. Who are you? ↓</a></div>
 </div>
 ${renderDemo(p, urls)}
 </div>
@@ -147,13 +147,13 @@ ${renderDemo(p, urls)}
 
 // Visible FAQ and the related guide; the same questions feed the FAQPage schema.
 function renderFaq(p) {
-  const qa = p.seo.faq.map(([q, a]) => `<div><h3>${esc(q)}</h3><p>${esc(a)}</p></div>`).join("");
+  const qa = p.seo.faq.map(([q, a]) => `<details class="qa"><summary><h3>${esc(q)}</h3></summary><p>${esc(a)}</p></details>`).join("");
   const guide = p.seo.guide
     ? `<p class="problem-guide">Guide: <a href="${esc(p.seo.guide[1])}">${esc(p.seo.guide[0])} →</a></p>`
     : "";
   return `<section class="problem-faq" aria-labelledby="faq-${p.slug}"><div class="problem-faq-inner">
 <h2 class="model-list-title" id="faq-${p.slug}">Questions</h2>
-<div class="problem-faq-grid">${qa}</div>
+<div class="qa-list">${qa}</div>
 ${guide}
 </div></section>
 `;
@@ -181,10 +181,10 @@ function renderStack(others, total) {
 function renderChrome(p, book) {
   return `<div class="book-bar" id="book-bar"><div class="book-bar-inner">
 <p class="book-bar-text"><strong>30-min scoping call</strong><span> · we assess the problem and the payoff · no cost</span></p>
-<a class="btn-primary" data-book href="${esc(book)}" target="_blank" rel="noopener">Book 30 min</a>
+<a class="btn-primary" data-book href="${esc(book)}">Book 30 min</a>
 </div></div>
 <div class="try" id="try" role="dialog" aria-modal="true" aria-labelledby="try-name" hidden>
-<div class="try-bar"><span class="try-title">Live demo · <b id="try-name">${esc(p.demo.name)}</b></span><span>Sample data. Nothing you do is saved.</span><span class="try-spacer"></span><a class="btn-primary" data-book href="${esc(book)}" target="_blank" rel="noopener">Book 30 min</a><a class="try-link" href="${esc(p.demo.url)}" target="_blank" rel="noopener">New tab ↗</a><button class="try-close" id="try-close" type="button">Close ✕</button></div>
+<div class="try-bar"><span class="try-title">Live demo · <b id="try-name">${esc(p.demo.name)}</b></span><span>Sample data. Nothing you do is saved.</span><span class="try-spacer"></span><a class="btn-primary" data-book href="${esc(book)}">Book 30 min</a><a class="try-link" href="${esc(p.demo.url)}" target="_blank" rel="noopener">New tab ↗</a><button class="try-close" id="try-close" type="button">Close ✕</button></div>
 <div class="try-stage"><iframe id="try-frame" title="${esc(p.demo.name)} live demo"></iframe><div class="try-loading" id="try-loading">Loading the demo…</div></div>
 </div>
 `;
@@ -240,8 +240,8 @@ export async function buildProblems({ contentRoot, homeHtml, workHtml, taken }) 
     readFile(path.join(here, "problem.css"), "utf8"),
     readFile(path.join(here, "problem.js"), "utf8"),
   ]);
-  const calendly = homeHtml.match(/https:\/\/calendly\.com\/[\w-]+/)?.[0];
-  if (!calendly) throw new Error("problems: no Calendly link in src/index.html");
+  const calendly = homeHtml.match(/https:\/\/cal\.com\/[\w.\/-]+/)?.[0];
+  if (!calendly) throw new Error("problems: no cal.com link in src/index.html");
 
   // Shared by every variant: no ?p= shim, problem CSS in the inline <style>.
   let base = swapRe(homeHtml, /\s*<!-- Legacy cold-email links[\s\S]*?<\/script>/, "");

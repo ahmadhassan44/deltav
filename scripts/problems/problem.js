@@ -1,5 +1,5 @@
 // Problem-page logic, inlined at the end of <body> by scripts/problems.mjs.
-// DV: p = problem slug, v = "solo" | "stack", cal = Calendly URL, demo = prototype URL.
+// DV: p = problem slug, v = "solo" | "stack", cal = cal.com booking URL, demo = prototype URL.
 (function (DV) {
   var d = document;
   var $ = function (id) {
@@ -10,7 +10,7 @@
   };
 
   var q = new URLSearchParams(location.search);
-  // ?c=Company → headline, Calendly UTM, form. textContent only, 40 chars max.
+  // ?c=Company → headline, booking-link UTM, form. textContent only, 40 chars max.
   var c = (q.get("c") || "")
     .replace(/[\u0000-\u001f\u007f]/g, "")
     .replace(/\s+/g, " ")

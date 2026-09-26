@@ -532,23 +532,6 @@ body.try-open {
   margin: 0 auto;
   padding: clamp(1.25rem, 2.5vw, 1.75rem) clamp(1.25rem, 5vw, 4rem) 0;
 }
-.problem-faq-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
-  gap: clamp(1.25rem, 3vw, 2.5rem);
-  border-top: 1px solid var(--border);
-  padding-top: clamp(1.25rem, 2.5vw, 1.75rem);
-}
-.problem-faq h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text);
-  margin-bottom: 0.5rem;
-}
-.problem-faq p {
-  color: var(--text-dim);
-  line-height: 1.6;
-}
 .problem-guide {
   margin-top: clamp(1.5rem, 3vw, 2rem);
 }

@@ -54,9 +54,7 @@
               { "@type": "Question", "name": "Who is deltaV for?", "acceptedAnswer": { "@type": "Answer", "text": "Businesses and individuals with a problem that runs on software. Founders, operators, CTOs." } },
               { "@type": "Question", "name": "What do you build?", "acceptedAnswer": { "@type": "Answer", "text": "Custom software, internal tools, workflow automation, integrations, data pipelines and applied AI." } },
               { "@type": "Question", "name": "How long does it take?", "acceptedAnswer": { "@type": "Answer", "text": "Most builds ship in 2–6 weeks, first call to launch. The timeline is fixed in the quote." } },
-              { "@type": "Question", "name": "Do you work with our existing systems?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We plug into your CRM, ERP, databases, APIs and spreadsheets, and replace only what slows you down." } },
-              { "@type": "Question", "name": "Who owns the code?", "acceptedAnswer": { "@type": "Answer", "text": "deltaV keeps the code and runs it on our infrastructure. You get full use of the software, and your data stays yours." } },
-              { "@type": "Question", "name": "What does it cost?", "acceptedAnswer": { "@type": "Answer", "text": "A fixed quote for the build after a free scoping call, then a monthly retainer to host and maintain it. Both agreed before work starts." } }
+              { "@type": "Question", "name": "Do you work with our existing systems?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We plug into your CRM, ERP, databases, APIs and spreadsheets, and replace only what slows you down." } }
             ]
           }
         ]
@@ -491,34 +489,111 @@
         margin: 1rem 0 clamp(2rem, 4vw, 3.5rem);
         font-size: clamp(2rem, 4.4vw, 3.5rem);
       }
-      #domains .domain-grid {
-        grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr));
-        column-gap: clamp(2rem, 4vw, 4rem);
+.build-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 15.5rem), 1fr));
+        gap: 1px;
+        border: 1px solid var(--border);
+        background: var(--border);
+        list-style: none;
       }
-      #domains .domain-cell {
-        padding: 1.75rem 0 2.5rem;
+      .build-tile {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 1.125rem;
+        height: 100%;
+        min-height: clamp(5rem, 10vw, 8rem);
+        padding: clamp(1rem, 2vw, 1.5rem) 2.5rem clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2vw, 1.5rem);
+        background: var(--bg);
+        color: var(--text);
+        text-decoration: none;
+        transition: background-color 0.2s;
       }
-      #domains .domain-cell-name {
-        margin-bottom: 0.5rem;
-        font-size: 1.25rem;
-        font-weight: 500;
-        letter-spacing: -0.01em;
+      .build-tile::before {
+        content: "";
+        position: absolute;
+        inset: -1px 0 auto;
+        height: 2px;
+        background: var(--accent-bright);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s;
       }
-      .domain-icon {
-        display: block;
-        width: 1.5rem;
-        height: 1.5rem;
-        margin-bottom: 1rem;
+      .build-tile::after {
+        content: "→";
+        position: absolute;
+        right: 1.125rem;
+        color: var(--accent-bright);
+        opacity: 0;
+        transform: translateX(-0.375rem);
+        transition:
+          opacity 0.2s,
+          transform 0.2s;
+      }
+      .build-tile:hover,
+      .build-tile:focus-visible {
+        background: var(--bg-surface);
+      }
+      .build-tile:hover::before,
+      .build-tile:focus-visible::before {
+        transform: scaleX(1);
+      }
+      .build-tile:hover::after,
+      .build-tile:focus-visible::after {
+        opacity: 1;
+        transform: none;
+      }
+      .build-icon {
+        display: grid;
+        flex: none;
+        place-items: center;
+        width: 3.25rem;
+        height: 3.25rem;
+        border: 1px solid var(--border-strong);
+        background: rgba(134, 201, 92, 0.06);
+        transition: border-color 0.2s;
+      }
+      .build-tile:hover .build-icon {
+        border-color: var(--accent);
+      }
+      .build-icon svg {
+        width: 1.625rem;
+        height: 1.625rem;
         fill: none;
         stroke: var(--accent-bright);
-        stroke-width: 1.5;
+        stroke-width: 1.4;
         stroke-linecap: round;
         stroke-linejoin: round;
       }
-      .domain-cell-text {
-        max-width: 34ch;
-        color: var(--text-dim);
-        line-height: 1.6;
+      .build-tile h3 {
+        font-size: 1.125rem;
+        font-weight: 500;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+      }
+      .build-num {
+        position: absolute;
+        top: 0.75rem;
+        right: 1rem;
+        color: var(--text-dimmer);
+        font: 0.8125rem var(--font-mono);
+      }
+      #faq .domains-inner {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+        gap: 2rem clamp(2rem, 6vw, 5rem);
+      }
+      #faq .domains-inner > .qa-list {
+        grid-column: span 2;
+      }
+      @media (max-width: 760px) {
+        #faq .domains-inner > .qa-list {
+          grid-column: auto;
+        }
+      }
+      .faq-side .domains-head {
+        margin-bottom: 1.75rem;
       }
       .domain-cut {
         display: flex;
@@ -530,26 +605,86 @@
       }
 
       /* ── FAQ ─────────────────────────────────────────── */
-      .faq-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
-        column-gap: 2.5rem;
-        margin-bottom: 2.5rem;
+      .qa-list {
+        counter-reset: qa;
+        max-width: 52rem;
+        border-bottom: 1px solid var(--border);
       }
-      .faq-item {
-        padding: 1.5rem 0 2rem;
+      .qa {
+        counter-increment: qa;
+        interpolate-size: allow-keywords;
         border-top: 1px solid var(--border);
+        transition: background-color 0.2s;
       }
-      .faq-item h3 {
-        margin-bottom: 0.5rem;
+      .qa:hover,
+      .qa[open] {
+        background: var(--bg-surface);
+      }
+      .qa summary {
+        display: grid;
+        grid-template-columns: 2.5rem 1fr auto;
+        align-items: center;
+        gap: 0 1rem;
+        padding: 1.25rem 1rem;
+        cursor: pointer;
+        list-style: none;
+      }
+      .qa summary::-webkit-details-marker {
+        display: none;
+      }
+      .qa summary::before {
+        content: counter(qa, decimal-leading-zero);
+        color: var(--accent-bright);
+        font: 0.8125rem var(--font-mono);
+      }
+      .qa summary::after {
+        content: "";
+        width: 1.75rem;
+        height: 1.75rem;
+        border: 1px solid var(--border-strong);
+        background:
+          linear-gradient(var(--accent-bright), var(--accent-bright)) center / 0.625rem 1.5px no-repeat,
+          linear-gradient(var(--accent-bright), var(--accent-bright)) center / 1.5px 0.625rem no-repeat;
+        transition:
+          background-size 0.2s,
+          border-color 0.2s;
+      }
+      .qa[open] summary::after {
+        border-color: var(--accent);
+        background-size:
+          0.625rem 1.5px,
+          1.5px 0;
+      }
+      .qa summary h3 {
         font-size: 1.1875rem;
         font-weight: 500;
+        line-height: 1.35;
         letter-spacing: -0.01em;
-        line-height: 1.3;
       }
-      .faq-item p {
+      .qa p {
+        max-width: 62ch;
+        padding: 0 1rem 1.5rem calc(3.5rem + 1rem);
         color: var(--text-dim);
         font-size: 1rem;
+      }
+      .qa::details-content {
+        block-size: 0;
+        overflow: hidden;
+        transition:
+          block-size 0.3s,
+          content-visibility 0.3s allow-discrete;
+      }
+      .qa[open]::details-content {
+        block-size: auto;
+      }
+      @media (max-width: 520px) {
+        .qa summary {
+          grid-template-columns: 1.75rem 1fr auto;
+          padding: 1.125rem 0.5rem;
+        }
+        .qa p {
+          padding: 0 0.5rem 1.25rem 3.25rem;
+        }
       }
 
       /* ── INTAKE ──────────────────────────────────────── */
@@ -690,7 +825,7 @@
         <a href="/services/">Services</a>
         <a href="/work/">Prototypes</a>
         <a href="/insights/">Insights</a>
-        <a class="nav-cta" href="#intake">Book a call</a>
+        <a class="nav-cta" href="https://cal.com/deltav.support/30min" data-book>Book a call</a>
       </nav>
     </header>
 
@@ -702,10 +837,10 @@
           <h1 class="hero-headline">We add velocity to your business.</h1>
           <p class="hero-sub">
             Keep the systems you already use. We build the missing workflows
-            between them—with custom software, automation and applied AI.
+            between them with custom software, automation and applied AI.
           </p>
           <div class="hero-actions">
-            <a class="hero-cta" href="#intake">Book a scoping call</a>
+            <a class="hero-cta" href="https://cal.com/deltav.support/30min" data-book>Book a scoping call</a>
           </div>
         </div>
         <svg class="hero-art" viewBox="0 0 380 490" role="img" aria-label="Blueprint of a two-stage rocket: deltaV is the booster, your business is the payload.">
@@ -787,7 +922,7 @@
           A delta team. Five engineers. No account managers.
         </h2>
         <p class="model-body">
-          Minutes of work taking days. Data sitting idle. Systems that don't
+          Minutes of work, taking days. Data sitting idle. Systems that don't
           talk. We fix that.
         </p>
         <div class="model-cols">
@@ -821,41 +956,19 @@
       <div class="domains-inner">
         <p class="section-label">What we build</p>
         <h2 class="model-framing domains-head">Less manual work. More output.</h2>
-        <ul class="domain-grid" role="list">
-          <li class="domain-cell">
-            <svg class="domain-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M3 9h18M9 9v11"/></svg>
-            <h3 class="domain-cell-name">Internal tools &amp; dashboards</h3>
-            <p class="domain-cell-text">Spreadsheets, paper and email threads replaced by one system your team runs on.</p>
-          </li>
-          <li class="domain-cell">
-            <svg class="domain-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h11M11 3l4 4-4 4M20 17H9M13 13l-4 4 4 4"/></svg>
-            <h3 class="domain-cell-name">Integrations &amp; automation</h3>
-            <p class="domain-cell-text">ERP, CRM and accounting in sync. No double entry, no manual handoffs.</p>
-          </li>
-          <li class="domain-cell">
-            <svg class="domain-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg>
-            <h3 class="domain-cell-name">Document processing</h3>
-            <p class="domain-cell-text">Invoices, bids and loan files read, checked and keyed automatically.</p>
-          </li>
-          <li class="domain-cell">
-            <svg class="domain-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M8 7h8M8 12h2M14 12h2M8 16h2M14 16h2"/></svg>
-            <h3 class="domain-cell-name">Quoting &amp; estimating</h3>
-            <p class="domain-cell-text">RFQs and estimates priced in minutes, not days.</p>
-          </li>
-          <li class="domain-cell">
-            <svg class="domain-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
-            <h3 class="domain-cell-name">Vision inspection</h3>
-            <p class="domain-cell-text">Defects flagged from camera images before they ship.</p>
-          </li>
-          <li class="domain-cell">
-            <svg class="domain-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
-            <h3 class="domain-cell-name">Data pipelines &amp; reporting</h3>
-            <p class="domain-cell-text">Idle data turned into live numbers you can act on.</p>
-          </li>
+        <ul class="build-grid" role="list">
+          <li><a class="build-tile" href="/services/custom-software/"><span class="build-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M3 9h18M3 14.5h18M9 9v11M15 9v11"/></svg></span><h3>Replace spreadsheets</h3><span class="build-num">01</span></a></li>
+          <li><a class="build-tile" href="/services/workflow-automation/"><span class="build-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h11M11 3l4 4-4 4M20 17H9M13 13l-4 4 4 4"/></svg></span><h3>Connect your systems</h3><span class="build-num">02</span></a></li>
+          <li><a class="build-tile" href="/ap/"><span class="build-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg></span><h3>Invoices entered for you</h3><span class="build-num">03</span></a></li>
+          <li><a class="build-tile" href="/cnc/"><span class="build-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M8 7h8M8 12h2M14 12h2M8 16h2M14 16h2"/></svg></span><h3>Quotes in minutes</h3><span class="build-num">04</span></a></li>
+          <li><a class="build-tile" href="/crane/"><span class="build-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span><h3>Paper forms to phone apps</h3><span class="build-num">05</span></a></li>
+          <li><a class="build-tile" href="/payroll/"><span class="build-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h3>Payroll checked on time</h3><span class="build-num">06</span></a></li>
+          <li><a class="build-tile" href="/services/applied-ai/"><span class="build-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span><h3>Defects caught by camera</h3><span class="build-num">07</span></a></li>
+          <li><a class="build-tile" href="/services/workflow-automation/"><span class="build-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><h3>Live reports</h3><span class="build-num">08</span></a></li>
         </ul>
         <p class="domain-cut">
           <span>Something else?</span>
-          <a class="btn-ghost" href="#intake">Book a scoping call →</a>
+          <a class="btn-ghost" href="https://cal.com/deltav.support/30min" data-book>Book a scoping call →</a>
         </p>
       </div>
     </section>
@@ -863,34 +976,29 @@
     <!-- ══ FAQ ═══════════════════════════════════════════ -->
     <section id="faq">
       <div class="domains-inner">
-        <h2 class="section-label">Questions</h2>
-        <div class="faq-grid">
-          <div class="faq-item">
-            <h3>Who is deltaV for?</h3>
-            <p>Businesses and individuals with a problem that runs on software. Founders, operators, CTOs.</p>
-          </div>
-          <div class="faq-item">
-            <h3>What do you build?</h3>
-            <p>Custom software, internal tools, <a href="/services/workflow-automation/">workflow automation</a>, integrations, data pipelines and <a href="/services/applied-ai/">applied AI</a>.</p>
-          </div>
-          <div class="faq-item">
-            <h3>How long does it take?</h3>
-            <p>Most builds ship in 2–6 weeks, first call to launch. The timeline is fixed in the quote.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Do you work with our existing systems?</h3>
-            <p>Yes. We plug into your CRM, ERP, databases, APIs and spreadsheets, and replace only what slows you down.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Who owns the code?</h3>
-            <p>deltaV keeps the code and runs it on our infrastructure. You get full use of the software, and your data stays yours.</p>
-          </div>
-          <div class="faq-item">
-            <h3>What does it cost?</h3>
-            <p>A fixed quote for the build after a free scoping call, then a monthly retainer to host and maintain it. Both agreed before work starts.</p>
-          </div>
+        <div class="faq-side">
+          <p class="section-label">Questions</p>
+          <h2 class="model-framing domains-head">Straight answers.</h2>
+          <a class="btn-ghost" href="/faq/">All questions →</a>
         </div>
-        <a class="btn-ghost" href="/faq/">All questions →</a>
+        <div class="qa-list">
+          <details class="qa">
+            <summary><h3>Who is deltaV for?</h3></summary>
+            <p>Businesses and individuals with a problem that runs on software. Founders, operators, CTOs.</p>
+          </details>
+          <details class="qa">
+            <summary><h3>What do you build?</h3></summary>
+            <p>Custom software, internal tools, <a href="/services/workflow-automation/">workflow automation</a>, integrations, data pipelines and <a href="/services/applied-ai/">applied AI</a>.</p>
+          </details>
+          <details class="qa">
+            <summary><h3>How long does it take?</h3></summary>
+            <p>Most builds ship in 2–6 weeks, first call to launch. The timeline is fixed in the quote.</p>
+          </details>
+          <details class="qa">
+            <summary><h3>Do you work with our existing systems?</h3></summary>
+            <p>Yes. We plug into your CRM, ERP, databases, APIs and spreadsheets, and replace only what slows you down.</p>
+          </details>
+        </div>
       </div>
     </section>
 
@@ -1028,12 +1136,10 @@
             if (channel === "calendar") {
               // problem pages set DV_BOOK: the same link with their UTM tags.
               // Elsewhere /lead-attribution.js tags it with the visit's first touch.
-              var cal = "https://calendly.com/ahmadhassantanveer44";
-              window.open(
+              var cal = "https://cal.com/deltav.support/30min";
+              location.href =
                 window.DV_BOOK ||
-                  (window.DV_BOOK_FROM_SITE ? window.DV_BOOK_FROM_SITE(cal) : cal),
-                "_blank",
-              );
+                (window.DV_BOOK_FROM_SITE ? window.DV_BOOK_FROM_SITE(cal) : cal);
               return;
             }
             document.getElementById("field-channel").value = channel;

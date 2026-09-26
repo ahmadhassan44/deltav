@@ -87,4 +87,12 @@
     if (firstTouch.utm_term) url.searchParams.set("utm_term", firstTouch.utm_term);
     return url.toString();
   };
+
+  // Call buttons go straight to cal.com, tagged with this visit's first touch.
+  // Problem pages set DV_BOOK (cold-email tags) before this runs; keep theirs.
+  if (!window.DV_BOOK) {
+    document.querySelectorAll("a[data-book]").forEach(function (a) {
+      a.href = window.DV_BOOK_FROM_SITE(a.href);
+    });
+  }
 })();
