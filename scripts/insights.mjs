@@ -263,7 +263,8 @@ export async function buildInsights({ contentRoot, staticPaths, includeDrafts })
     .join("\n");
   return {
     pages,
-    sitemap: renderSitemap(staticPaths, live),
+    // A function: problem landing pages are added once problems.mjs has run.
+    sitemap: (extraPaths = []) => renderSitemap([...staticPaths, ...extraPaths], live),
     guideList,
     drafts: all.filter((p) => p.draft).map((p) => p.slug),
   };

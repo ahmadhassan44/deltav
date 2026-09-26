@@ -107,7 +107,7 @@ for (const sourcePath of sourceFiles) {
 for (const [relativePath, html] of insights.pages) {
   await emit(relativePath, await minifyHtml(html));
 }
-await emit("sitemap.xml", insights.sitemap);
+await emit("sitemap.xml", insights.sitemap(problems.paths));
 
 for (const [relativePath, html] of problems.pages) {
   await emit(relativePath, await minifyHtml(html));

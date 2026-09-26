@@ -5,8 +5,10 @@
 // overlay placed before the hero. /<slug>/stack/ adds the other problems as
 // cards above it. Data: content/problems/<slug>.json + <slug>/N.webp.
 //
-// Outreach pages, not search pages: noindex, canonical /, never in the sitemap
-// or llms.txt. Every anchor this file edits in the homepage must match exactly
+// /<slug>/ is an indexable industry landing page: its own title, description,
+// canonical, h1 and FAQ (the "seo" block in the JSON), listed in the sitemap.
+// /<slug>/stack/ and ?c= links are outreach variants: noindex, canonical
+// /<slug>/. None of them go in llms.txt. Every anchor this file edits in the homepage must match exactly
 // once, so a homepage rework fails the build instead of shipping a broken page.
 import { createHash } from "node:crypto";
 import { readdir, readFile } from "node:fs/promises";
@@ -51,6 +53,12 @@ async function loadProblems(contentRoot, taken) {
       if (typeof p[key] !== "string" || !p[key].trim()) throw new Error(`${where}: missing ${key}`);
     }
     if (!Array.isArray(p.symptoms) || !p.symptoms.length) throw new Error(`${where}: symptoms must be a non-empty list`);
+    const seo = p.seo || {};
+    if (p.enabled) {
+      if (!seo.title || seo.title.length > 60) throw new Error(`${where}: enabled problem needs seo.title (≤60 chars)`);
+      if (!seo.description || seo.description.length > 160) throw new Error(`${where}: enabled problem needs seo.description (≤160 chars)`);
+      if (!Array.isArray(seo.faq) || !seo.faq.length) throw new Error(`${where}: enabled problem needs seo.faq`);
+    }
     p.aliases ??= [];
     p.order ??= 999;
     if (p.enabled) {
@@ -124,7 +132,7 @@ function renderProblem(p, urls, book, index) {
 <div class="problem-inner">
 <div class="problem-head">
 <p class="problem-kicker"><span>Do you have this problem?</span>${index ? `<span class="idx">${index}</span>` : ""}</p>
-<h2 class="problem-headline"><span class="co" id="co" hidden></span>${esc(p.headline)}</h2>
+<h1 class="problem-headline"><span class="co" id="co" hidden></span>${esc(p.headline)}</h1>
 </div>
 <div class="problem-body">
 <div><p class="model-list-title">Sound familiar?</p><ul class="model-list">${symptoms}</ul></div>
@@ -134,6 +142,20 @@ function renderProblem(p, urls, book, index) {
 ${renderDemo(p, urls)}
 </div>
 </section>
+`;
+}
+
+// Visible FAQ and the related guide; the same questions feed the FAQPage schema.
+function renderFaq(p) {
+  const qa = p.seo.faq.map(([q, a]) => `<div><h3>${esc(q)}</h3><p>${esc(a)}</p></div>`).join("");
+  const guide = p.seo.guide
+    ? `<p class="problem-guide">Guide: <a href="${esc(p.seo.guide[1])}">${esc(p.seo.guide[0])} →</a></p>`
+    : "";
+  return `<section class="problem-faq" aria-labelledby="faq-${p.slug}"><div class="problem-faq-inner">
+<h2 class="model-list-title" id="faq-${p.slug}">Questions</h2>
+<div class="problem-faq-grid">${qa}</div>
+${guide}
+</div></section>
 `;
 }
 
@@ -168,30 +190,46 @@ function renderChrome(p, book) {
 `;
 }
 
-// Homepage head for a problem page: its own title and social text, noindex,
-// canonical stays on /. The homepage FAQ schema is dropped so it isn't
-// duplicated across every variant.
-function problemHead(home, p, url) {
-  const title = `deltaV | ${p.headline}`;
+// Homepage head for a problem page. /<slug>/ gets its own title, description,
+// canonical and FAQ schema; /<slug>/stack/ is noindex with the canonical on
+// /<slug>/. The homepage h1 drops to h2 so the problem headline is the h1.
+function problemHead(home, p, stack) {
+  const canonical = `${SITE}/${p.slug}/`;
+  const title = stack ? `deltaV | ${p.headline}` : p.seo.title;
+  const description = stack ? p.build : p.seo.description;
   let html = home;
   html = swapRe(html, /<title>[^<]*<\/title>/, `<title>${esc(title)}</title>`);
   html = swapRe(
     html,
     /<meta\s+name="description"\s+content="[^"]*"\s*\/>/,
-    `<meta name="description" content="${esc(p.build)}" />\n<meta name="robots" content="noindex" />`,
+    `<meta name="description" content="${esc(description)}" />${stack ? '\n<meta name="robots" content="noindex" />' : ""}`,
   );
+  html = swapRe(html, /<link\s+rel="canonical"\s+href="[^"]*"\s*\/>/, `<link rel="canonical" href="${canonical}" />`);
   html = swapRe(html, /<meta\s+property="og:title"\s+content="[^"]*"\s*\/>/, `<meta property="og:title" content="${esc(title)}" />`);
   html = swapRe(
     html,
     /<meta\s+property="og:description"\s+content="[^"]*"\s*\/>/,
-    `<meta property="og:description" content="${esc(p.build)}" />`,
+    `<meta property="og:description" content="${esc(description)}" />`,
   );
-  html = swapRe(html, /<meta\s+property="og:url"\s+content="[^"]*"\s*\/>/, `<meta property="og:url" content="${SITE}${url}" />`);
+  html = swapRe(html, /<meta\s+property="og:url"\s+content="[^"]*"\s*\/>/, `<meta property="og:url" content="${canonical}" />`);
   html = swapRe(html, /(<script type="application\/ld\+json">)([\s\S]*?)(<\/script>)/, (_, open, json, close) => {
     const ld = JSON.parse(json);
     ld["@graph"] = ld["@graph"].filter((node) => node["@type"] !== "FAQPage");
+    if (!stack) {
+      ld["@graph"].push({
+        "@type": "FAQPage",
+        "@id": `${canonical}#faq`,
+        url: canonical,
+        mainEntity: p.seo.faq.map(([q, a]) => ({
+          "@type": "Question",
+          name: q,
+          acceptedAnswer: { "@type": "Answer", text: a },
+        })),
+      });
+    }
     return open + JSON.stringify(ld) + close;
   });
+  html = swapRe(html, /<h1 class="hero-headline">([\s\S]*?)<\/h1>/, (_, inner) => `<h2 class="hero-headline">${inner}</h2>`);
   return html;
 }
 
@@ -226,14 +264,14 @@ export async function buildProblems({ contentRoot, homeHtml, workHtml, taken }) 
 
     for (const variant of ["solo", "stack"]) {
       const stack = variant === "stack";
-      const url = stack ? `/${p.slug}/stack/` : `/${p.slug}/`;
       const book = bookUrl(calendly, p, variant);
       const config = JSON.stringify({ p: p.slug, v: variant, cal: calendly, demo: p.demo.url }).replace(/</g, "\\u003c");
       const lead =
         (stack ? renderStack(live.filter((o) => o !== p), live.length) : "") +
-        renderProblem(p, urls, book, stack ? `${pad(live.length)} / ${pad(live.length)}` : "");
+        renderProblem(p, urls, book, stack ? `${pad(live.length)} / ${pad(live.length)}` : "") +
+        renderFaq(p);
 
-      let html = problemHead(base, p, url);
+      let html = problemHead(base, p, stack);
       html = swap(html, "<section id=\"hero\">", `${lead}<section id="hero">`);
       html = swap(html, 'value="deltaV — New lead"', `value="${esc(`deltaV — New lead (${p.slug})`)}"`);
       html = swap(html, 'name="source_problem" value="direct"', `name="source_problem" value="${p.slug}"`);
@@ -287,6 +325,8 @@ export async function buildProblems({ contentRoot, homeHtml, workHtml, taken }) 
     redirects,
     // Regex alternation for the ?p= shim on the homepage; (?!) matches nothing.
     slugs: live.map((p) => p.slug).join("|") || "(?!)",
+    // Indexable landing pages, for the sitemap.
+    paths: live.map((p) => `/${p.slug}/`),
     summary: `${live.length} problem(s) live (${live.map((p) => p.slug).join(", ")}), ${problems.length - live.length} disabled, ${assets.size} screens`,
   };
 }

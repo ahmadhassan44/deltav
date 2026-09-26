@@ -45,5 +45,27 @@
         "caption": "Every hour costed to a job"
       }
     ]
+  },
+  "seo": {
+    "title": "Pre-Payroll Review for Contractors | deltaV",
+    "description": "Pre-payroll review for trades contractors: finds costly punches, suggests each fix with its arithmetic and sends clean, job-costed lines to QuickBooks.",
+    "faq": [
+      [
+        "Does it change our payroll provider?",
+        "No. It reviews time before payroll runs and sends clean lines to the systems you already use."
+      ],
+      [
+        "Are fixes applied automatically?",
+        "No. Each fix is suggested with its arithmetic, and a person approves it."
+      ],
+      [
+        "Does every hour get a job?",
+        "Punches with no job are flagged so labor is costed before payroll closes."
+      ]
+    ],
+    "guide": [
+      "Where applied AI pays off in operations",
+      "/insights/applied-ai-operations/"
+    ]
   }
 }

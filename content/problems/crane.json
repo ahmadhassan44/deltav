@@ -45,5 +45,27 @@
         "caption": "Friday review: what's ready to bill"
       }
     ]
+  },
+  "seo": {
+    "title": "Crane Rental Dispatch and Billing Software | deltaV",
+    "description": "Quote-to-cash for crane rental: inquiry to quote letter, a dispatch board, an operator phone app for hours, and a weekly review of what's ready to bill.",
+    "faq": [
+      [
+        "Do we have to replace our crane management software?",
+        "No. It can fill the gaps around the system you run today, such as quoting, operator hours or billing review."
+      ],
+      [
+        "Do operators need training?",
+        "The phone app is built for logging hours and signatures on site, in a few taps."
+      ],
+      [
+        "Can it connect to our accounting?",
+        "Yes. Approved tickets can flow to your accounting system for invoicing."
+      ]
+    ],
+    "guide": [
+      "Replacing spreadsheets with custom software",
+      "/insights/replace-spreadsheets/"
+    ]
   }
 }
