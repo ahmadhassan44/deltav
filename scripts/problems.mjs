@@ -172,7 +172,7 @@ function renderChrome(p, book) {
 // canonical stays on /. The homepage FAQ schema is dropped so it isn't
 // duplicated across every variant.
 function problemHead(home, p, url) {
-  const title = `DeltaV | ${p.headline}`;
+  const title = `deltaV | ${p.headline}`;
   let html = home;
   html = swapRe(html, /<title>[^<]*<\/title>/, `<title>${esc(title)}</title>`);
   html = swapRe(
@@ -235,7 +235,7 @@ export async function buildProblems({ contentRoot, homeHtml, workHtml, taken }) 
 
       let html = problemHead(base, p, url);
       html = swap(html, "<section id=\"hero\">", `${lead}<section id="hero">`);
-      html = swap(html, 'value="DeltaV — New lead"', `value="${esc(`DeltaV — New lead (${p.slug})`)}"`);
+      html = swap(html, 'value="deltaV — New lead"', `value="${esc(`deltaV — New lead (${p.slug})`)}"`);
       html = swap(html, 'name="source_problem" value="direct"', `name="source_problem" value="${p.slug}"`);
       html = swap(html, 'name="source_variant" value=""', `name="source_variant" value="${variant}"`);
       html = swap(html, "</body>", `${renderChrome(p, book)}<script>\n${js.replace("{{config}}", () => config)}</script>\n</body>`);

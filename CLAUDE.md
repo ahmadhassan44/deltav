@@ -16,7 +16,7 @@ Target audience: **businesses and individuals** with a real problem that runs on
 
 ## Name & Domain
 
-**Team name:** DeltaV (written as **ΔV** in display contexts, **DeltaV** in body text)
+**Team name:** deltaV (written as **ΔV** in display contexts, **deltaV** in body text — lowercase d, since 2026-09-26. Exception: "Emerson DeltaV" in the disambiguation lines refers to another product.)
 
 **Domain:** `deltav.build`
 

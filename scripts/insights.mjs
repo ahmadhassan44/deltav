@@ -79,7 +79,7 @@ function page({ url, title, description, graph, main, ogType = "website" }) {
 <link rel="preload" href="/fonts/barlow-condensed-700.v1.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="/site.css" />
 <meta property="og:type" content="${ogType}" />
-<meta property="og:site_name" content="DeltaV" />
+<meta property="og:site_name" content="deltaV" />
 <meta property="og:title" content="${esc(title)}" />
 <meta property="og:description" content="${esc(description)}" />
 <meta property="og:url" content="${SITE}${url}" />
@@ -92,7 +92,7 @@ function page({ url, title, description, graph, main, ogType = "website" }) {
 <body>
 <div class="site-shell">
 <header class="site-header">
-<a class="brand" href="/" aria-label="DeltaV home"><span class="brand-mark">Δ<span>V</span></span><span class="brand-name">DeltaV</span></a>
+<a class="brand" href="/" aria-label="deltaV home"><span class="brand-mark">Δ<span>V</span></span><span class="brand-name">deltaV</span></a>
 <nav class="site-nav" aria-label="Primary">
 <a href="/services/">Services</a>
 <a href="/work/">Prototypes</a>
@@ -105,7 +105,7 @@ ${main}
 </main>
 <footer class="site-footer">
 <div class="site-footer-inner">
-<span>ΔV · DeltaV · 2026</span>
+<span>ΔV · deltaV · 2026</span>
 <nav aria-label="Footer">
 <a href="/services/">Services</a>
 <a href="/work/">Prototypes</a>
@@ -185,8 +185,8 @@ function renderPost(post) {
   const stamp =
     (post.draft ? "Draft · " : "") +
     (post.updated
-      ? `DeltaV engineering · Updated ${humanDate(post.updated)}`
-      : `DeltaV engineering · ${humanDate(post.date)}`);
+      ? `deltaV engineering · Updated ${humanDate(post.updated)}`
+      : `deltaV engineering · ${humanDate(post.date)}`);
   const main = `<p class="eyebrow">${post.eyebrow}</p>
 <h1>${post.title}</h1>
 <p class="meta">${stamp}</p>
@@ -215,7 +215,7 @@ ${section("guides", "Guides", `<h2 id="guides">Read before you build</h2>\n<div 
     {
       "@type": "CollectionPage",
       "@id": `${SITE}${url}#page`,
-      name: "DeltaV field guides",
+      name: "deltaV field guides",
       url: SITE + url,
       publisher: ORG,
       hasPart: posts.map((p) => ({ "@id": `${SITE}/insights/${p.slug}/#article` })),
@@ -224,7 +224,7 @@ ${section("guides", "Guides", `<h2 id="guides">Read before you build</h2>\n<div 
   ];
   return page({
     url,
-    title: "Field Guides: Custom Software, Automation & AI | DeltaV",
+    title: "Field Guides: Custom Software, Automation & AI | deltaV",
     description:
       "Short guides for owners, operators and CTOs: build vs buy, custom software cost, automation and applied AI.",
     graph,

@@ -34,7 +34,7 @@
     $("co").hidden = false;
     $("field-company").value = c;
     $("field-subject").value =
-      "DeltaV — New lead (" + DV.p + " / " + c + ")";
+      "deltaV — New lead (" + DV.p + " / " + c + ")";
   }
 
   // Demo frame: cycle screens; images 2..n load after the page has loaded

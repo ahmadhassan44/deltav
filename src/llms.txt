@@ -1,6 +1,6 @@
-# DeltaV
+# deltaV
 
-> DeltaV (ΔV) is a five-engineer team that builds custom software, workflow automation and applied AI for businesses and individuals. Fixed scope, fixed quote, weekly demos, full handover. The client owns the code.
+> deltaV (ΔV) is a five-engineer team that builds custom software, workflow automation and applied AI for businesses and individuals. Fixed scope, fixed quote, weekly demos, full handover. The client owns the code.
 
 ## Engagement
 

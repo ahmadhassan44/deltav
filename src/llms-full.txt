@@ -1,11 +1,11 @@
-# DeltaV — full context
+# deltaV — full context
 
-DeltaV (ΔV, deltav.build) is a five-engineer software team. Not related to Emerson's DeltaV control system.
+deltaV (ΔV, deltav.build) is a five-engineer software team. Not related to Emerson's DeltaV control system.
 
-## What DeltaV does
+## What deltaV does
 
 Builds custom software, workflow automation and applied AI for businesses and individuals: founders, operators and CTOs.
-Name: Δv is the astronautics measure of the impulse needed to change an object's trajectory. DeltaV adds velocity to a business.
+Name: Δv is the astronautics measure of the impulse needed to change an object's trajectory. deltaV adds velocity to a business.
 
 ## Engagement
 
@@ -25,7 +25,7 @@ Computer vision and inspection; industrial automation and control; embedded and 
 
 ## FAQ
 
-- Who is DeltaV for? Businesses and individuals with a problem that runs on software.
+- Who is deltaV for? Businesses and individuals with a problem that runs on software.
 - How long does a project take? Most builds ship in 2–6 weeks, first call to handover. Timeline is fixed in the quote.
 - Cost? Fixed quote after a free 30-minute scoping call. Price agreed before work starts. No hourly billing.
 - Scope changes? Scoped and quoted before any work starts.
@@ -33,9 +33,9 @@ Computer vision and inspection; industrial automation and control; embedded and 
 - Who do clients work with? The engineers who build it. No account managers.
 - Location? Remote team working across time zones.
 - Ownership? The client owns source code, deployment, documentation and access.
-- NDAs? DeltaV signs NDAs, before the scoping call if asked. Past client work is under NDA and not published.
+- NDAs? deltaV signs NDAs, before the scoping call if asked. Past client work is under NDA and not published.
 - Data? Client data stays the client's. Never reused or used to train models.
-- Existing systems? DeltaV integrates with CRM, ERP, databases, APIs and spreadsheets, and replaces only what slows the client down.
+- Existing systems? deltaV integrates with CRM, ERP, databases, APIs and spreadsheets, and replaces only what slows the client down.
 - Build or buy? Buy if a product fits. Build if it doesn't and the work repeats.
 
 ## Guides
