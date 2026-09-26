@@ -1,12 +1,12 @@
 # deltaV
 
-> deltaV (ΔV) is a five-engineer team that builds custom software, workflow automation and applied AI for businesses and individuals. Fixed scope, fixed quote, weekly demos, full handover. The client owns the code.
+> deltaV (ΔV) is a five-engineer team that builds custom software, workflow automation and applied AI for businesses and individuals. Fixed scope, fixed quote, weekly demos. deltaV hosts and maintains what it builds on a monthly retainer; the client gets full use of the software and keeps its data.
 
 ## Engagement
 
 - Scope: free 30-minute call. Problem, payoff, plan.
 - Build: fixed scope, fixed quote, weekly demos.
-- Hand over: deployed, documented, client-owned.
+- Run: deltaV hosts, monitors and maintains it on its own infrastructure, on a monthly retainer.
 
 ## Services
 
@@ -16,7 +16,7 @@
 
 ## FAQ
 
-- [All questions](https://deltav.build/faq/): timeline (most builds 2–6 weeks), fixed quotes, code ownership, NDAs, bug-fix warranty, data handling.
+- [All questions](https://deltav.build/faq/): timeline (most builds 2–6 weeks), fixed quotes, hosting and maintenance, NDAs, data handling.
 
 ## Guides
 
