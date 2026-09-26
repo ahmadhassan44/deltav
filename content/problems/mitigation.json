@@ -45,5 +45,27 @@
         "caption": "Step 4: priced estimate, signed on site"
       }
     ]
+  },
+  "seo": {
+    "title": "Water Mitigation Estimating App | deltaV",
+    "description": "A field app for water-damage restoration: dispatch to a priced, signed estimate on the first visit, every line backed by a reading or photo.",
+    "faq": [
+      [
+        "Does it replace our estimating software?",
+        "No. It captures readings, photos and signatures in the field so the estimate you send is complete and backed up."
+      ],
+      [
+        "Does it work on a phone?",
+        "Yes. It is built for technicians on site."
+      ],
+      [
+        "How does it help with adjusters?",
+        "Every line item carries the reading or photo behind it, so the estimate explains itself."
+      ]
+    ],
+    "guide": [
+      "Where applied AI pays off in operations",
+      "/insights/applied-ai-operations/"
+    ]
   }
 }

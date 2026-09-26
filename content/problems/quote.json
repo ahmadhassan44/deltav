@@ -47,5 +47,27 @@
         "caption": "Customer quote letter, no margins shown"
       }
     ]
+  },
+  "seo": {
+    "title": "Modular Building Quoting Software | deltaV",
+    "description": "Quoting for modular and container building makers: rule-checked, itemized quotes in minutes from your own cost workbook, approved by the estimator.",
+    "faq": [
+      [
+        "Do we lose our cost spreadsheet?",
+        "No. The cost workbook stays the source of truth; the tool reads prices from it."
+      ],
+      [
+        "What stops impossible option combinations?",
+        "Your build rules are checked as options are picked, before a price is shown."
+      ],
+      [
+        "Does the customer see our margins?",
+        "No. The customer quote letter shows prices, not margins."
+      ]
+    ],
+    "guide": [
+      "Quoting automation for manufacturers",
+      "/insights/rfq-quoting-automation/"
+    ]
   }
 }

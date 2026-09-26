@@ -45,5 +45,27 @@
         "caption": "175 minutes of admin per file down to 32"
       }
     ]
+  },
+  "seo": {
+    "title": "Mortgage Condition Management Software | deltaV",
+    "description": "A condition desk for mortgage processors: sorts conditions by what needs judgment and drafts borrower requests and agent replies for you to confirm.",
+    "faq": [
+      [
+        "Does it replace our LOS?",
+        "No. It works alongside your loan origination system and the documents already in the file."
+      ],
+      [
+        "Does anything go to borrowers automatically?",
+        "No. Every request and reply is drafted for a processor to confirm before it goes out."
+      ],
+      [
+        "What about sensitive borrower data?",
+        "Data handling is agreed during scoping and the system runs where your compliance requires."
+      ]
+    ],
+    "guide": [
+      "Where applied AI pays off in operations",
+      "/insights/applied-ai-operations/"
+    ]
   }
 }

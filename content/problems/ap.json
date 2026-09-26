@@ -45,5 +45,27 @@
         "caption": "Posted, approved, filed"
       }
     ]
+  },
+  "seo": {
+    "title": "Construction AP Invoice Automation | deltaV",
+    "description": "Construction AP invoice automation: reads each invoice, matches it to the PO or subcontract, checks retainage and waivers, and posts it after approval.",
+    "faq": [
+      [
+        "Does it replace our ERP?",
+        "No. It reads, matches and enters invoices into the ERP you already use. The ERP stays the system of record."
+      ],
+      [
+        "Who approves before anything posts?",
+        "The AP clerk, then the project manager. Nothing posts without an approval on record."
+      ],
+      [
+        "What if our ERP has no API?",
+        "Import files, a database connection or browser automation can post the entry. The approval steps stay the same."
+      ]
+    ],
+    "guide": [
+      "Procore and QuickBooks: closing the gaps the sync leaves",
+      "/insights/procore-quickbooks-integration/"
+    ]
   }
 }

@@ -46,5 +46,27 @@
         "caption": "Quote vs actual sharpens the next estimate"
       }
     ]
+  },
+  "seo": {
+    "title": "CNC RFQ Quoting Software for Machine Shops | deltaV",
+    "description": "RFQ quoting for CNC and job shops: reads each drawing, flags cost drivers, suggests hours from similar past jobs and turns won quotes into travelers.",
+    "faq": [
+      [
+        "Does it price jobs without the estimator?",
+        "No. It drafts the estimate; the estimator approves every price."
+      ],
+      [
+        "Can it work alongside Paperless Parts or our ERP?",
+        "Yes. It fills the gaps around the tools you keep, such as RFQ intake, quote-vs-actual and job creation."
+      ],
+      [
+        "Where do the suggested hours come from?",
+        "From similar jobs you already ran, using your own quote and actual-hours history."
+      ]
+    ],
+    "guide": [
+      "Paperless Parts and your ERP: closing the quoting gaps",
+      "/insights/paperless-parts-erp-integration/"
+    ]
   }
 }

@@ -45,5 +45,27 @@
         "caption": "Questions to bidders, drafted"
       }
     ]
+  },
+  "seo": {
+    "title": "Subcontractor Bid Leveling Software for GCs | deltaV",
+    "description": "Bid leveling for general contractors: reads every sub proposal into one sheet, traces each number to its page and flags scope no bidder carried.",
+    "faq": [
+      [
+        "Do subs have to use a portal?",
+        "No. It reads proposals as they arrive today, in PDF, spreadsheet or email."
+      ],
+      [
+        "Does it pick the winning bid?",
+        "No. It lines up scope and price so the estimator can compare. The award decision stays with your team."
+      ],
+      [
+        "Does it work with our estimating software?",
+        "It is built around your existing tools. The leveled sheet can be exported or written where your team already works."
+      ]
+    ],
+    "guide": [
+      "Build vs buy: when custom software is worth it",
+      "/insights/build-vs-buy-software/"
+    ]
   }
 }
