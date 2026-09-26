@@ -486,8 +486,46 @@
         font-size: 1rem;
         line-height: 1.45;
       }
+      .domains-head {
+        max-width: 18ch;
+        margin: 1rem 0 clamp(2rem, 4vw, 3.5rem);
+        font-size: clamp(2rem, 4.4vw, 3.5rem);
+      }
+      #domains .domain-grid {
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr));
+        column-gap: clamp(2rem, 4vw, 4rem);
+      }
+      #domains .domain-cell {
+        padding: 1.75rem 0 2.5rem;
+      }
+      #domains .domain-cell-name {
+        margin-bottom: 0.5rem;
+        font-size: 1.25rem;
+        font-weight: 500;
+        letter-spacing: -0.01em;
+      }
+      .domain-icon {
+        display: block;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-bottom: 1rem;
+        fill: none;
+        stroke: var(--accent-bright);
+        stroke-width: 1.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .domain-cell-text {
+        max-width: 34ch;
+        color: var(--text-dim);
+        line-height: 1.6;
+      }
       .domain-cut {
-        margin-top: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1rem 1.5rem;
+        margin-top: 1.5rem;
         color: var(--text-dim);
       }
 
@@ -781,29 +819,43 @@
     <!-- ══ DOMAINS ═══════════════════════════════════════ -->
     <section id="domains">
       <div class="domains-inner">
-        <h2 class="section-label">What we build</h2>
+        <p class="section-label">What we build</p>
+        <h2 class="model-framing domains-head">Less manual work. More output.</h2>
         <ul class="domain-grid" role="list">
-          <li class="domain-cell domain-cell-name">Computer vision &amp; autonomous inspection systems</li>
-          <li class="domain-cell domain-cell-name">Industrial automation &amp; control systems</li>
-          <li class="domain-cell domain-cell-name">Embedded systems &amp; hardware-software integration</li>
-          <li class="domain-cell domain-cell-name">AI/ML systems for domain-specific inference</li>
-          <li class="domain-cell domain-cell-name">Robotics &amp; sensor fusion</li>
-          <li class="domain-cell domain-cell-name">IoT &amp; edge compute architectures</li>
-          <li class="domain-cell domain-cell-name">Fleet management &amp; vehicle telematics</li>
-          <li class="domain-cell domain-cell-name">Structural health monitoring &amp; predictive failure detection</li>
-          <li class="domain-cell domain-cell-name">Digital twin &amp; real-time simulation systems</li>
-          <li class="domain-cell domain-cell-name">OT/ICS cybersecurity &amp; anomaly detection</li>
-          <li class="domain-cell domain-cell-name">SCADA &amp; process control systems</li>
-          <li class="domain-cell domain-cell-name">Predictive maintenance &amp; condition monitoring</li>
-          <li class="domain-cell domain-cell-name">Geospatial intelligence &amp; mapping systems</li>
-          <li class="domain-cell domain-cell-name">Autonomous systems &amp; motion planning</li>
-          <li class="domain-cell domain-cell-name">Real-time data pipelines &amp; industrial analytics</li>
-          <li class="domain-cell domain-cell-name">Multi-agent systems &amp; swarm coordination</li>
-          <li class="domain-cell domain-cell-name">System integration middleware &amp; protocol translation</li>
-          <li class="domain-cell domain-cell-name">Energy systems &amp; grid-edge optimization</li>
+          <li class="domain-cell">
+            <svg class="domain-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M3 9h18M9 9v11"/></svg>
+            <h3 class="domain-cell-name">Internal tools &amp; dashboards</h3>
+            <p class="domain-cell-text">Spreadsheets, paper and email threads replaced by one system your team runs on.</p>
+          </li>
+          <li class="domain-cell">
+            <svg class="domain-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h11M11 3l4 4-4 4M20 17H9M13 13l-4 4 4 4"/></svg>
+            <h3 class="domain-cell-name">Integrations &amp; automation</h3>
+            <p class="domain-cell-text">ERP, CRM and accounting in sync. No double entry, no manual handoffs.</p>
+          </li>
+          <li class="domain-cell">
+            <svg class="domain-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg>
+            <h3 class="domain-cell-name">Document processing</h3>
+            <p class="domain-cell-text">Invoices, bids and loan files read, checked and keyed automatically.</p>
+          </li>
+          <li class="domain-cell">
+            <svg class="domain-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M8 7h8M8 12h2M14 12h2M8 16h2M14 16h2"/></svg>
+            <h3 class="domain-cell-name">Quoting &amp; estimating</h3>
+            <p class="domain-cell-text">RFQs and estimates priced in minutes, not days.</p>
+          </li>
+          <li class="domain-cell">
+            <svg class="domain-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+            <h3 class="domain-cell-name">Vision inspection</h3>
+            <p class="domain-cell-text">Defects flagged from camera images before they ship.</p>
+          </li>
+          <li class="domain-cell">
+            <svg class="domain-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+            <h3 class="domain-cell-name">Data pipelines &amp; reporting</h3>
+            <p class="domain-cell-text">Idle data turned into live numbers you can act on.</p>
+          </li>
         </ul>
         <p class="domain-cut">
-          Not listed? If it's worth building properly, brief us.
+          <span>Something else?</span>
+          <a class="btn-ghost" href="#intake">Book a scoping call →</a>
         </p>
       </div>
     </section>
