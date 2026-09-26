@@ -89,11 +89,10 @@ a {
 }
 
 .brand-name {
-  color: var(--text-dim);
-  font-size: 0.8125rem;
+  color: var(--text);
+  font-size: 1.0625rem;
   font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: -0.01em;
 }
 
 .site-nav {
