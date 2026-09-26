@@ -240,18 +240,26 @@
 }
 .frame-pips {
   display: flex;
-  gap: 0.3rem;
   margin-left: auto;
 }
+/* 24px tap target around a small square pip */
 .frame-pips button {
-  width: 0.7rem;
-  height: 0.7rem;
+  display: grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
   padding: 0;
-  border: 1px solid var(--text-dimmer);
+  border: 0;
   background: none;
   cursor: pointer;
 }
-.frame-pips button[aria-current="true"] {
+.frame-pips button::before {
+  content: "";
+  width: 0.7rem;
+  height: 0.7rem;
+  border: 1px solid var(--text-dimmer);
+}
+.frame-pips button[aria-current="true"]::before {
   background: var(--accent-bright);
   border-color: var(--accent-bright);
 }
