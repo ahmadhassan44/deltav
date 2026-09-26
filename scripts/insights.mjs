@@ -100,6 +100,7 @@ function page({ url, title, description, graph, main, ogType = "website" }) {
 <a class="brand" href="/" aria-label="DeltaV home"><span class="brand-mark">ΔV</span><span class="brand-name">DeltaV</span></a>
 <nav class="site-nav" aria-label="Primary">
 <a href="/services/">Services</a>
+<a href="/work/">Prototypes</a>
 <a href="/insights/" aria-current="page">Insights</a>
 <a class="nav-cta" href="/#intake">Book a call</a>
 </nav>
@@ -112,6 +113,7 @@ ${main}
 <span>ΔV · DeltaV · 2026</span>
 <nav aria-label="Footer">
 <a href="/services/">Services</a>
+<a href="/work/">Prototypes</a>
 <a href="/insights/">Insights</a>
 <a href="/faq/">FAQ</a>
 <a href="mailto:${EMAIL}">${EMAIL}</a>
@@ -119,6 +121,7 @@ ${main}
 </div>
 </footer>
 </div>
+  <script src="/lead-attribution.js" defer></script>
 </body>
 </html>
 `;

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Custom Workflow Prototypes &amp; Demos | DeltaV</title>
+    <meta name="description" content="Explore interactive workflow prototypes for quoting, invoice intake, estimating, dispatch and field work. Sample data only; nothing is saved." />
+    <meta name="theme-color" content="#0d0f0c" />
+    <link rel="canonical" href="https://deltav.build/work/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/site.css" />
+    <link rel="stylesheet" href="/work.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" /></noscript>
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="DeltaV" />
+    <meta property="og:title" content="Custom Workflow Prototypes &amp; Demos | DeltaV" />
+    <meta property="og:description" content="Explore interactive workflow prototypes for quoting, invoice intake, estimating, dispatch and field work. Sample data only; nothing is saved." />
+    <meta property="og:url" content="https://deltav.build/work/" />
+    <meta property="og:image" content="https://deltav.build/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "CollectionPage",
+            "@id": "https://deltav.build/work/#page",
+            "name": "Interactive workflow prototypes",
+            "url": "https://deltav.build/work/",
+            "about": { "@id": "https://deltav.build/#org" }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://deltav.build/" },
+              { "@type": "ListItem", "position": 2, "name": "Prototypes", "item": "https://deltav.build/work/" }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="/" aria-label="DeltaV home"><span class="brand-mark">ΔV</span><span class="brand-name">DeltaV</span></a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="/services/">Services</a>
+          <a href="/work/" aria-current="page">Prototypes</a>
+          <a href="/insights/">Insights</a>
+          <a class="nav-cta" href="/#intake">Book a call</a>
+        </nav>
+      </header>
+
+      <main class="page-main work-main">
+        <section class="work-hero" aria-labelledby="work-title">
+          <div>
+            <p class="eyebrow">Interactive prototypes · <span>{{prototype_count}}</span> workflows</p>
+            <h1 id="work-title">See the work between your systems.</h1>
+            <p class="work-intro-copy">These prototypes show how a team could move information from the tools it already uses through review and into the next system. They are demonstrations, not client case studies. Every screen uses sample data; nothing is saved.</p>
+          </div>
+          <p class="work-note"><span>Built around your stack</span>We connect the steps your current software leaves to people.</p>
+        </section>
+
+        <div class="workflow-rail" aria-label="A typical connected workflow">
+          <span>Existing tools</span><i aria-hidden="true">→</i><span>Missing workflow</span><i aria-hidden="true">→</i><span>Human review</span><i aria-hidden="true">→</i><span>Existing system</span>
+        </div>
+
+        <section class="prototype-list" aria-label="Interactive workflow prototypes">
+          {{prototypes}}
+        </section>
+
+        <section class="work-next" aria-labelledby="work-next-title">
+          <p class="eyebrow">Have a workflow like this?</p>
+          <h2 id="work-next-title">Keep the software. Fix the handoff.</h2>
+          <p>Tell us where work gets stuck between your tools. We’ll map the workflow, agree on a fixed scope and show progress every week.</p>
+          <div class="actions">
+            <a class="btn" href="/#intake">Talk through your workflow</a>
+            <a class="btn-quiet" href="/services/">See how we work</a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="site-footer-inner">
+          <span>ΔV · DeltaV · 2026</span>
+          <nav aria-label="Footer">
+            <a href="/services/">Services</a>
+            <a href="/work/">Prototypes</a>
+            <a href="/insights/">Insights</a>
+            <a href="/faq/">FAQ</a>
+            <a href="mailto:support@deltav.build">support@deltav.build</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+    <script src="/lead-attribution.js"></script>
+  </body>
+</html>

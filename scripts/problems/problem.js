@@ -9,19 +9,22 @@
     return (n < 10 ? "0" : "") + n;
   };
 
+  var q = new URLSearchParams(location.search);
   // ?c=Company → headline, Calendly UTM, form. textContent only, 40 chars max.
-  var c = (new URLSearchParams(location.search).get("c") || "")
+  var c = (q.get("c") || "")
     .replace(/[\u0000-\u001f\u007f]/g, "")
     .replace(/\s+/g, " ")
     .trim()
     .slice(0, 40);
-  var book =
-    DV.cal +
-    "?utm_source=coldemail&utm_campaign=" +
-    DV.p +
-    "&utm_content=" +
-    DV.v +
-    (c ? "&utm_term=" + encodeURIComponent(c) : "");
+  // Links that carry their own UTM tags (e.g. from /work) keep them; cold email is the default.
+  var utm = q.get("utm_source")
+    ? ["source", "medium", "campaign", "content"]
+        .map(function (k) {
+          return "utm_" + k + "=" + encodeURIComponent((q.get("utm_" + k) || "").slice(0, 80));
+        })
+        .join("&")
+    : "utm_source=coldemail&utm_campaign=" + DV.p + "&utm_content=" + DV.v;
+  var book = DV.cal + "?" + utm + (c ? "&utm_term=" + encodeURIComponent(c) : "");
   window.DV_BOOK = book; // used by the intake "Schedule a call" button
   d.querySelectorAll("[data-book]").forEach(function (a) {
     a.href = book;
@@ -124,6 +127,8 @@
   d.addEventListener("keydown", function (e) {
     if (e.key === "Escape" && !t.hidden) close();
   });
+  // ?demo=1 (the /work gallery's "Try the workflow"): open the prototype straight away
+  if (q.get("demo") === "1") d.querySelector("[data-try]").click();
 
   // Sticky "Book 30 min" bar: after the problem, hidden near the intake form
   var bb = $("book-bar");

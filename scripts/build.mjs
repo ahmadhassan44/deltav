@@ -62,6 +62,7 @@ const taken = new Set(
 const problems = await buildProblems({
   contentRoot: problemsRoot,
   homeHtml: await readFile(path.join(sourceRoot, "index.html"), "utf8"),
+  workHtml: await readFile(path.join(sourceRoot, "work", "index.html"), "utf8"),
   taken,
 });
 
@@ -84,6 +85,9 @@ async function emit(relativePath, contents) {
 
 for (const sourcePath of sourceFiles) {
   const relativePath = path.relative(sourceRoot, sourcePath);
+
+  // src/work/index.html is a template; problems.mjs renders it into work/index.html.
+  if (relativePath === path.join("work", "index.html")) continue;
 
   if (path.extname(sourcePath).toLowerCase() === ".html") {
     let html = await readFile(sourcePath, "utf8");
