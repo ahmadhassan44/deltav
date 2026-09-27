@@ -29,7 +29,7 @@ Computer vision and inspection; industrial automation and control; embedded and 
 
 ## FAQ
 
-- Who is deltaV for? Businesses and individuals with a problem that runs on software.
+- Who is deltaV for? Companies losing hours to manual, document-heavy work: retyping from PDFs and emails, chasing approvals, reconciling spreadsheets. Common in construction, manufacturing and lending.
 - How long does a project take? Depends on complexity and the business case. Set after a free 30-minute scoping call: https://cal.com/deltav.support/30min
 - How much does it cost? Depends on complexity and the business case. Priced after the scoping call.
 - Scope changes? Talked through with the client before any work on them.
