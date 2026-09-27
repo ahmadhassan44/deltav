@@ -162,13 +162,12 @@
         text-decoration: none;
       }
       .brand-mark {
-        font-size: 1.5rem;
-        font-weight: 600;
-        letter-spacing: -0.02em;
-        line-height: 1;
+        display: block;
+        width: auto;
+        height: 1.125rem;
       }
-      .brand-mark span {
-        color: var(--accent-bright);
+      .brand-mark .v {
+        fill: var(--accent-bright);
       }
       .brand-name {
         color: var(--text);
@@ -821,7 +820,7 @@
     </script>
 
     <header class="site-header container">
-      <a class="brand" href="/" aria-label="deltaV home"><span class="brand-mark">Δ<span>V</span></span><span class="brand-name">deltaV</span></a>
+      <a class="brand" href="/" aria-label="deltaV home"><svg class="brand-mark" viewBox="0 0 506 264" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M130 0 0 264h260Zm0 90.5L64.3 224h131.4Z"/><path class="v" fill="#86c95c" d="M282 0h47.8L394 151.3 458.2 0H506L394 264Z"/></svg><span class="brand-name">deltaV</span></a>
       <nav class="site-nav" aria-label="Primary">
         <a href="/services/">Services</a>
         <a href="/work/">Prototypes</a>

@@ -78,14 +78,13 @@ a {
 }
 
 .brand-mark {
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1;
+  display: block;
+  width: auto;
+  height: 1.125rem;
 }
 
-.brand-mark span {
-  color: var(--accent-bright);
+.brand-mark .v {
+  fill: var(--accent-bright);
 }
 
 .brand-name {
