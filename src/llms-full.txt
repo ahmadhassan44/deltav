@@ -1,6 +1,6 @@
-# deltaV — full context
+# deltaV Build — full context
 
-deltaV (ΔV, deltav.build) is a five-engineer software team. Not related to Emerson's DeltaV control system.
+deltaV Build (deltaV, ΔV; deltav.build) is a five-engineer software team. Not related to Emerson or its DeltaV control system.
 
 ## What deltaV does
 
@@ -9,7 +9,7 @@ Builds custom software, workflow automation and applied AI for businesses and in
 ## Name
 
 Δv (delta-v) means change in velocity. In astronautics it is the total speed change a spacecraft can make with its propellant, set by the Tsiolkovsky rocket equation Δv = vₑ · ln(m₀ / m_f). It decides whether a vehicle reaches orbit. deltaV adds that velocity to a business.
-Spellings: deltaV, ΔV, Delta V. Emerson DeltaV is an unrelated distributed control system for process plants.
+Name: deltaV Build. Short forms: deltaV, ΔV, Delta V. Emerson DeltaV is an unrelated distributed control system for process plants.
 
 ## Engagement
 

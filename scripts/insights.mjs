@@ -79,7 +79,7 @@ function page({ url, title, description, graph, main, ogType = "website" }) {
 <link rel="preload" href="/fonts/barlow-condensed-700.v1.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="/site.css" />
 <meta property="og:type" content="${ogType}" />
-<meta property="og:site_name" content="deltaV" />
+<meta property="og:site_name" content="deltaV Build" />
 <meta property="og:title" content="${esc(title)}" />
 <meta property="og:description" content="${esc(description)}" />
 <meta property="og:url" content="${SITE}${url}" />
@@ -105,7 +105,7 @@ ${main}
 </main>
 <footer class="site-footer">
 <div class="site-footer-inner">
-<span>ΔV · deltaV · 2026</span>
+<span>ΔV · deltaV Build · 2026</span>
 <nav aria-label="Footer">
 <a href="/services/">Services</a>
 <a href="/work/">Prototypes</a>

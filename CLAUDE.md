@@ -22,6 +22,8 @@ Target audience: **businesses and individuals** with a real problem that runs on
 
 ## Name & Domain
 
+**Official name (2026-09-27): deltaV Build** — in schema `name`, og:site_name, footers, llms files, profiles and directory listings, to keep clear of Emerson's DeltaV mark. Short form **deltaV** is fine in body text; **ΔV** in display contexts. Target queries: deltaV, deltaV Build, delta v.
+
 **Team name:** deltaV (written as **ΔV** in display contexts, **deltaV** in body text — lowercase d, since 2026-09-26. Exception: "Emerson DeltaV" in the disambiguation lines refers to another product.)
 
 **Domain:** `deltav.build`
