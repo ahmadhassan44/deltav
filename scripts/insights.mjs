@@ -92,7 +92,7 @@ function page({ url, title, description, graph, main, ogType = "website" }) {
 <body>
 <div class="site-shell">
 <header class="site-header">
-<a class="brand" href="/" aria-label="deltaV home"><svg class="brand-mark" viewBox="0 0 512 264" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M128 0 0 264h256Zm0 132.9-35.4 73.1h70.8Z"/><path class="v" fill="#86c95c" d="M276 0h71l47 118.1L441 0h71L407 264h-26Z"/></svg><span class="brand-name">deltaV</span></a>
+<a class="brand" href="/" aria-label="deltaV home"><svg class="brand-mark" viewBox="0 0 475.3 264" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M128 0 0 264h256Zm0 110-51.4 106h102.8Z"/><path class="v" fill="#86c95c" d="M197.3 0H285L336.3 106 387.7 0h87.6L347.3 264h-22Z"/></svg><span class="brand-name">deltaV</span></a>
 <nav class="site-nav" aria-label="Primary">
 <a href="/services/">Services</a>
 <a href="/work/">Prototypes</a>

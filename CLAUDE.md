@@ -22,7 +22,7 @@ Target audience: **businesses and individuals** with a real problem that runs on
 
 ## Name & Domain
 
-**Logo (2026-09-27):** heavy Δ (white, small counter) and heavy flat-bottomed V (green). Header uses it as an inline SVG (`.brand-mark`, paths `M128 0 0 264h256Zm0 132.9-35.4 73.1h70.8Z` / `M276 0h71l47 118.1L441 0h71L407 264h-26Z`, viewBox `0 0 512 264`); `favicon.svg`, `brand-mark.svg`, `logo.png`, `apple-touch-icon.png` and `og-image.png` are built from the same paths.
+**Logo (2026-09-27):** heavy Δ (white) and flat-bottomed V (green), set close; the Δ's counter and the V's notch are the same triangle. Header uses it as an inline SVG (`.brand-mark`, paths `M128 0 0 264h256Zm0 110-51.4 106h102.8Z` / `M197.3 0H285L336.3 106 387.7 0h87.6L347.3 264h-22Z`, viewBox `0 0 475.3 264`); `favicon.svg`, `brand-mark.svg`, `logo.png`, `apple-touch-icon.png` and `og-image.png` are built from the same paths.
 
 **Names (2026-09-27):** **deltaV** stays the name on the site (body text, footer, og:site_name, WebSite schema). **deltaV Build** is the registered name on profiles and directory listings (kept clear of Emerson's DeltaV mark) and the Organization schema `name`. Both, plus "Delta V" and "ΔV", are listed as alternate names in schema and llms files. Never drop either: we target "delta v", "deltaV" and "deltaV Build".
 
