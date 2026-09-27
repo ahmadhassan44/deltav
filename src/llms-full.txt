@@ -14,7 +14,7 @@ Spellings: deltaV, ΔV, Delta V. Emerson DeltaV is an unrelated distributed cont
 ## Engagement
 
 1. Scope: free 30-minute call. Problem, payoff, plan.
-2. Build: fixed scope, fixed quote, weekly demos.
+2. Build: working demos as it is built. Cost and timeline depend on complexity and the business case, and are set after the scoping call.
 3. Run: deltaV hosts, monitors and maintains the software on its own infrastructure, on a monthly retainer. The client uses it; deltaV retains the code.
 
 ## Services
@@ -30,8 +30,9 @@ Computer vision and inspection; industrial automation and control; embedded and 
 ## FAQ
 
 - Who is deltaV for? Businesses and individuals with a problem that runs on software.
-- How long does a project take? Most builds ship in 2–6 weeks, first call to launch. Timeline is fixed in the quote.
-- Scope changes? Scoped and quoted before any work starts.
+- How long does a project take? Depends on complexity and the business case. Set after a free 30-minute scoping call: https://cal.com/deltav.support/30min
+- How much does it cost? Depends on complexity and the business case. Priced after the scoping call.
+- Scope changes? Talked through with the client before any work on them.
 - After launch? deltaV hosts, monitors and maintains it on a monthly retainer.
 - Who do clients work with? The engineers who build it. No account managers.
 - Location? Remote team working across time zones.
