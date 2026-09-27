@@ -3,7 +3,9 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "dev": "INCLUDE_DRAFTS=1 node scripts/build.mjs && wrangler dev --port 8790",
-    "deploy": "npm run build && wrangler deploy"
+    "deploy": "npm run build && wrangler deploy",
+    "indexnow": "node scripts/indexnow.mjs",
+    "serp": "node scripts/serp-check.mjs"
   },
   "devDependencies": {
     "html-minifier-terser": "^7.2.0",

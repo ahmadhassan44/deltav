@@ -353,6 +353,9 @@ Workflow — one post a day, generated locally, published on approval:
 2. `npm run dev` → preview at http://127.0.0.1:8790/insights/ (drafts show, labelled "Draft").
 3. On approval: remove `draft`, set `date` to publish day, update `BACKLOG.md`, commit, push (push to `main` deploys).
 4. After the Cloudflare build: `./gsc-cli/gsc.py sitemap-submit https://deltav.build/sitemap.xml`.
+5. Then `npm run indexnow` (Bing → ChatGPT search, Copilot). Key file: `src/7c63166f0a4319a77431cb5b15e3ad46.txt`.
+
+Ranks and AI Overviews: `npm run serp` (SerpApi, key in `~/.serpapi/key`, weekly; history in `data/serp.jsonl`). Bing Webmaster API key: `~/.bing/deltav.key`.
 
 Never state a number, price, client or result that isn't verified. Date-stamp third-party facts ("pricing page, September 2026").
 

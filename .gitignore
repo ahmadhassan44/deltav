@@ -4,3 +4,6 @@ dist/
 # Search Console CLI (separate repo)
 gsc-cli/
 .wrangler/
+
+# SerpApi rank history (npm run serp)
+data/
