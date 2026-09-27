@@ -8,7 +8,6 @@ Picked for buyer intent and fit with what DeltaV builds. The industrial topics (
 
 From the 2026-09-26 competitor teardown: tool-pair "keep your software" posts are unclaimed by service firms.
 
-- Fleet Cost & Care job tickets to invoices and payroll for crane companies
 - Adding AI to your TMS/WMS without migrating
 - AI estimating tools vs a custom workflow on your own takeoff and pricing data
 
@@ -27,6 +26,7 @@ From the 2026-09-26 competitor teardown: tool-pair "keep your software" posts ar
 
 ## Published
 
+- 2026-09-27 fleet-cost-care-invoicing-payroll
 - 2026-09-27 delta-v
 - 2026-09-26 procore-quickbooks-integration
 - 2026-09-26 paperless-parts-erp-integration
