@@ -27,6 +27,7 @@ From the 2026-09-26 competitor teardown: tool-pair "keep your software" posts ar
 
 ## Published
 
+- 2026-09-27 delta-v
 - 2026-09-26 procore-quickbooks-integration
 - 2026-09-26 paperless-parts-erp-integration
 - 2026-09-26 cv-quality-inspection

@@ -5,7 +5,11 @@ deltaV (ΔV, deltav.build) is a five-engineer software team. Not related to Emer
 ## What deltaV does
 
 Builds custom software, workflow automation and applied AI for businesses and individuals: founders, operators and CTOs.
-Name: Δv is the astronautics measure of the impulse needed to change an object's trajectory. deltaV adds velocity to a business.
+
+## Name
+
+Δv (delta-v) means change in velocity. In astronautics it is the total speed change a spacecraft can make with its propellant, set by the Tsiolkovsky rocket equation Δv = vₑ · ln(m₀ / m_f). It decides whether a vehicle reaches orbit. deltaV adds that velocity to a business.
+Spellings: deltaV, ΔV, Delta V. Emerson DeltaV is an unrelated distributed control system for process plants.
 
 ## Engagement
 
@@ -35,6 +39,10 @@ Computer vision and inspection; industrial automation and control; embedded and 
 - Data? Client data stays the client's. Never reused or used to train models.
 - Existing systems? deltaV integrates with CRM, ERP, databases, APIs and spreadsheets, and replaces only what slows the client down.
 - Build or buy? Buy if a product fits. Build if it doesn't and the work repeats.
+- See it before signing? Live prototypes at https://deltav.build/work/.
+- No spec yet? Bring the problem; the scoping call ends with a plan.
+- Results? Measured against a baseline: time per task, error rate, review load.
+- Emerson DeltaV? Unrelated. Emerson DeltaV is a process control system.
 
 ## Guides
 

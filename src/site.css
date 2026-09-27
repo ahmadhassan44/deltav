@@ -190,6 +190,11 @@ p {
   line-height: 1.5;
 }
 
+code {
+  color: var(--text);
+  font: 1rem/1.5 var(--font-mono);
+}
+
 .meta {
   margin-top: 1.25rem;
   color: var(--text-dimmer);
