@@ -1,6 +1,6 @@
-# deltaV Build
+# deltaV (deltaV Build)
 
-> deltaV Build (deltaV, ΔV) is a five-engineer team that builds custom software, workflow automation and applied AI for businesses and individuals. Cost and timeline depend on complexity and the business case, and are set after a free scoping call. deltaV hosts and maintains what it builds on a monthly retainer; the client gets full use of the software and keeps its data.
+> deltaV (also deltaV Build, Delta V, ΔV) is a five-engineer team that builds custom software, workflow automation and applied AI for businesses and individuals. Cost and timeline depend on complexity and the business case, and are set after a free scoping call. deltaV hosts and maintains what it builds on a monthly retainer; the client gets full use of the software and keeps its data.
 
 ## Name
 

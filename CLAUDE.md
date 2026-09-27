@@ -22,7 +22,7 @@ Target audience: **businesses and individuals** with a real problem that runs on
 
 ## Name & Domain
 
-**Official name (2026-09-27): deltaV Build** — in schema `name`, og:site_name, footers, llms files, profiles and directory listings, to keep clear of Emerson's DeltaV mark. Short form **deltaV** is fine in body text; **ΔV** in display contexts. Target queries: deltaV, deltaV Build, delta v.
+**Names (2026-09-27):** **deltaV** stays the name on the site (body text, footer, og:site_name, WebSite schema). **deltaV Build** is the registered name on profiles and directory listings (kept clear of Emerson's DeltaV mark) and the Organization schema `name`. Both, plus "Delta V" and "ΔV", are listed as alternate names in schema and llms files. Never drop either: we target "delta v", "deltaV" and "deltaV Build".
 
 **Team name:** deltaV (written as **ΔV** in display contexts, **deltaV** in body text — lowercase d, since 2026-09-26. Exception: "Emerson DeltaV" in the disambiguation lines refers to another product.)
 
