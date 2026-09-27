@@ -22,6 +22,8 @@ Target audience: **businesses and individuals** with a real problem that runs on
 
 ## Name & Domain
 
+**Logo (2026-09-27):** equal-weight Δ (white, points up) and V (green, points down). Header uses it as an inline SVG (`.brand-mark`, paths `M130 0 0 264h260Zm0 90.5L64.3 224h131.4Z` / `M282 0h47.8L394 151.3 458.2 0H506L394 264Z`, viewBox `0 0 506 264`); `favicon.svg`, `brand-mark.svg`, `logo.png`, `apple-touch-icon.png` and `og-image.png` are built from the same paths.
+
 **Names (2026-09-27):** **deltaV** stays the name on the site (body text, footer, og:site_name, WebSite schema). **deltaV Build** is the registered name on profiles and directory listings (kept clear of Emerson's DeltaV mark) and the Organization schema `name`. Both, plus "Delta V" and "ΔV", are listed as alternate names in schema and llms files. Never drop either: we target "delta v", "deltaV" and "deltaV Build".
 
 **Team name:** deltaV (written as **ΔV** in display contexts, **deltaV** in body text — lowercase d, since 2026-09-26. Exception: "Emerson DeltaV" in the disambiguation lines refers to another product.)
