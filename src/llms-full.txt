@@ -55,6 +55,7 @@ Computer vision and inspection; industrial automation and control; embedded and 
 - https://deltav.build/services/
 - https://deltav.build/insights/
 - https://deltav.build/faq/
+- https://deltav.build/about/
 
 ## Contact
 

@@ -111,6 +111,7 @@ ${main}
 <a href="/work/">Prototypes</a>
 <a href="/insights/">Insights</a>
 <a href="/faq/">FAQ</a>
+<a href="/about/">About</a>
 <a href="mailto:${EMAIL}">${EMAIL}</a>
 </nav>
 </div>

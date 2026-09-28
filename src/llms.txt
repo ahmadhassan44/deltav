@@ -6,6 +6,7 @@
 
 - Δv (delta-v) is the astronautics measure of the impulse needed to change an object's trajectory. deltaV adds velocity to a business.
 - deltaV (deltav.build) is not affiliated with Emerson's DeltaV process control system.
+- [About deltaV Build](https://deltav.build/about/): what deltaV Build is, in one page.
 
 ## Engagement
 
