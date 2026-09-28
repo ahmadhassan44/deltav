@@ -8,7 +8,6 @@ Picked for buyer intent and fit with what DeltaV builds. The industrial topics (
 
 From the 2026-09-26 competitor teardown: tool-pair "keep your software" posts are unclaimed by service firms.
 
-- Adding AI to your TMS/WMS without migrating
 - AI estimating tools vs a custom workflow on your own takeoff and pricing data
 
 1. Internal knowledge search over company documents (RAG) for ops teams
@@ -26,6 +25,7 @@ From the 2026-09-26 competitor teardown: tool-pair "keep your software" posts ar
 
 ## Published
 
+- 2026-09-28 ai-tms-wms-without-migrating
 - 2026-09-27 fleet-cost-care-invoicing-payroll
 - 2026-09-27 delta-v
 - 2026-09-26 procore-quickbooks-integration

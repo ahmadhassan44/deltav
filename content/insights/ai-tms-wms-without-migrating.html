@@ -1,0 +1,66 @@
+<!--
+{
+  "title": "Adding AI to your TMS or WMS without migrating",
+  "seoTitle": "Add AI to Your TMS or WMS Without Migrating | deltaV",
+  "description": "Where AI helps around a TMS or WMS, which data it needs, and how to add it as a layer on the systems you run instead of replacing them.",
+  "eyebrow": "Guide / Logistics",
+  "date": "2026-09-28",
+  "answer": "Keep your TMS and WMS. The manual work sits around them: rate confirmations, bills of lading, freight invoices, carrier emails and exception calls. A thin AI layer reads those documents, checks them against both systems and writes back through their APIs, so nobody retypes and nothing gets migrated.",
+  "card": ["Logistics", "Keep your TMS and WMS. Automate the paperwork around them."],
+  "cta": ["See the AP demo →", "/ap/"],
+  "faq": [
+    ["Do we need to upgrade our TMS or WMS first?", "Usually not. If it has an API, an EDI feed or even scheduled exports, a layer can read from it and write back. Upgrades are a separate decision."],
+    ["Is our data good enough for AI?", "For document reading and matching, yes: the documents are the data. Forecasting needs history, so start with the paperwork and build history as you go."],
+    ["Will AI change loads or orders on its own?", "Not unless you want it to. The default is: AI proposes, a person approves, and every change is logged with its source document."]
+  ]
+}
+-->
+
+<h2>The work that isn't in the system</h2>
+<p>A TMS plans and tracks loads. A WMS runs receiving, picking and shipping. Around them sits the work neither was built for:</p>
+<ul class="list">
+  <li><span><strong>Documents.</strong> Rate confirmations, bills of lading, PODs and packing lists arrive as PDFs and photos.</span></li>
+  <li><span><strong>Freight invoices.</strong> Checked line by line against the rate, the load and the accessorials.</span></li>
+  <li><span><strong>Carrier email.</strong> Status updates and delays read by hand and keyed into the TMS.</span></li>
+  <li><span><strong>Exceptions.</strong> Short shipments, damages and late arrivals chased across both systems.</span></li>
+  <li><span><strong>Reporting.</strong> Cost per load and dock performance rebuilt in Excel from exports.</span></li>
+</ul>
+
+<h2>Where AI earns its place</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Task</th><th>What AI does</th><th>What a person still does</th></tr></thead>
+    <tbody>
+      <tr><td>Document intake</td><td>Reads BOLs, PODs and rate cons into structured fields.</td><td>Reviews low-confidence reads.</td></tr>
+      <tr><td>Freight audit</td><td>Matches invoice lines to the rate and load, flags differences.</td><td>Approves or disputes.</td></tr>
+      <tr><td>Carrier updates</td><td>Reads status emails and updates the load.</td><td>Handles flagged delays.</td></tr>
+      <tr><td>Exceptions</td><td>Links a short or damaged receipt to the PO and the carrier.</td><td>Decides the claim.</td></tr>
+      <tr><td>Questions</td><td>Answers "where is load X" from both systems.</td><td>Nothing, unless it's wrong.</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>Start with the documents. They repeat, they are checkable, and the payoff shows up in hours saved per week.</p>
+
+<h2>How the layer connects</h2>
+<ol class="list">
+  <li><span><strong>Read.</strong> Pull loads, orders and receipts from the TMS and WMS through their API, EDI or scheduled exports.</span></li>
+  <li><span><strong>Watch.</strong> Monitor the shared inboxes where documents and carrier emails land.</span></li>
+  <li><span><strong>Match.</strong> Tie each document to its load or PO and check the numbers.</span></li>
+  <li><span><strong>Approve.</strong> Mismatches go to a person with the source attached.</span></li>
+  <li><span><strong>Write back.</strong> Post the approved update to the system of record, logged.</span></li>
+</ol>
+<p>Most current systems expose APIs. Manhattan, for one, documents REST APIs for its Manhattan Active platform, built from microservices you can call and extend (<a href="https://developer.manh.com/docs/how-to/rest-api/" rel="noopener">Manhattan developer docs</a>, September 2026). Older on-premise systems can still be read from exports or the database, with care.</p>
+
+<h2>Migrate or add a layer</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th></th><th>Replace the TMS or WMS</th><th>Add a layer</th></tr></thead>
+    <tbody>
+      <tr><td>Disruption</td><td>Cutover, retraining, parallel running.</td><td>Teams keep the screens they know.</td></tr>
+      <tr><td>Risk</td><td>Every warehouse and lane at once.</td><td>One workflow at a time.</td></tr>
+      <tr><td>Integrations</td><td>Rebuilt: ERP, carriers, EDI, portals.</td><td>Existing ones stay.</td></tr>
+      <tr><td>When it fits</td><td>The core system can't do the core job.</td><td>The core works; the paperwork around it doesn't.</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>Replace the system when it fails at planning or execution. Add a layer when the problem is the manual work around it.</p>
