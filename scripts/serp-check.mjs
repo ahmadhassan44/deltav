@@ -14,7 +14,8 @@ const key = (await readFile(path.join(os.homedir(), ".serpapi", "key"), "utf8"))
 const serp = async (params) => {
   const url = `https://serpapi.com/search.json?${new URLSearchParams({ ...params, api_key: key })}`;
   const body = await (await fetch(url)).json();
-  if (body.error) throw new Error(body.error);
+  // An empty results page comes back as an error; treat it as "not ranking".
+  if (body.error && !body.error.includes("hasn't returned any results")) throw new Error(body.error);
   return body;
 };
 
