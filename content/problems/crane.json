@@ -49,6 +49,21 @@
   "seo": {
     "title": "Crane Rental Dispatch and Billing Software | deltaV",
     "description": "Quote-to-cash for crane rental: inquiry to quote letter, a dispatch board, an operator phone app for hours, and a weekly review of what's ready to bill.",
+    "workflow": {
+      "heading": "Crane dispatch and scheduling in one flow",
+      "intro": "The prototype shows a sample rental job from quote to billing review. We'd build around your dispatch rules, operator paperwork and accounting system, keeping the dispatcher in control.",
+      "steps": [
+        ["Prepare the job.", "Keep the site, dates, equipment requirements and purchase order with the quote. The dispatcher confirms what is needed."],
+        ["Review the schedule.", "Map crane and operator availability, travel and blocked time. A changed booking returns to the dispatcher for a conflict check."],
+        ["Record the work.", "Give the operator the job details and a phone workflow for hours and signatures. Missing information stays on the review list."],
+        ["Prepare billing.", "Check the signed ticket, approved rates and purchase order. Agree an accounting export or connection and confirm receipt before marking the job invoiced."]
+      ],
+      "review": ["Bring one job from inquiry to invoice", "A quote, dispatch tag and billing checklist you can share. We'd identify what is retyped, what prevents a job from being billed and who resolves a scheduling change."],
+      "links": [
+        ["Workflow automation", "/services/workflow-automation/"],
+        ["Fleet billing and payroll guide", "/insights/fleet-cost-care-invoicing-payroll/"]
+      ]
+    },
     "faq": [
       [
         "Do we have to replace our crane management software?",
@@ -56,11 +71,15 @@
       ],
       [
         "Do operators need training?",
-        "The phone app is built for logging hours and signatures on site, in a few taps."
+        "We'd review the hours and signature workflow with your operators and agree the training needed. The prototype shows the proposed phone interface."
       ],
       [
         "Can it connect to our accounting?",
-        "Yes. Approved tickets can flow to your accounting system for invoicing."
+        "We'd check the accounting system's supported imports or API and agree how approved tickets reach invoicing. The prototype uses sample data, not a live accounting connection."
+      ],
+      [
+        "What happens when a booking changes?",
+        "The production workflow should flag the change for the dispatcher to check crane and operator availability before assigning the job."
       ]
     ],
     "guide": [

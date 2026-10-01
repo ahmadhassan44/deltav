@@ -12,13 +12,15 @@
 
 - Scope: free 30-minute call. Problem, payoff, plan.
 - Build: working demos as it is built.
-- Run: deltaV hosts, monitors and maintains it on its own infrastructure, on a monthly retainer.
+- Run: deltaV hosts, monitors and maintains it on its own AWS infrastructure, on a monthly retainer. deltaV retains the code, docs and methodology. The client gets full use of the software and owns its data.
 
 ## Services
 
 - [Custom software](https://deltav.build/services/custom-software/): internal tools, dashboards, portals.
 - [Workflow automation](https://deltav.build/services/workflow-automation/): system integration, task and approval flows, data pipelines.
 - [Applied AI](https://deltav.build/services/applied-ai/): document retrieval, computer vision, classification, forecasting.
+
+Scope is software, compute and AI. deltaV does not deliver hardware.
 
 ## FAQ
 

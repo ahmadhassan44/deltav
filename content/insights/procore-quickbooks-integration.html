@@ -5,13 +5,14 @@
   "description": "What the Procore and QuickBooks connection covers, where contractors still retype data in Excel, and how to close the gap without replacing either system.",
   "eyebrow": "Guide / Construction",
   "date": "2026-09-26",
-  "answer": "Keep Procore and QuickBooks. The connectors sync the basics, but invoice intake, PO matching, lien waivers and cross-system reporting often still run through email and Excel. A thin custom layer reads the documents, checks them against both systems and posts the approved entry, so nobody retypes.",
+  "updated": "2026-10-01",
+  "answer": "Keep Procore and QuickBooks. First check the connector for your exact accounting product, region and records. Where intake, matching or approval still happens by hand, a custom workflow can prepare the entry for review and confirm that accounting received it. The connection should preserve both systems' records and controls.",
   "card": ["Construction", "Keep Procore and QuickBooks. Automate the gaps between them."],
   "cta": ["See the AP demo →", "/ap/"],
   "faq": [
-    ["Does Procore integrate with QuickBooks?", "Yes. Procore's ERP integrations page lists QuickBooks Desktop and Online among its connectors, alongside Sage, NetSuite, Acumatica and others (Procore support, September 2026)."],
-    ["Should we move to a single platform instead?", "Only if the migration pays for itself. Most contractors keep several systems. A custom layer connects the ones you have without retraining every team."],
-    ["What does a custom layer need access to?", "Procore's API, your QuickBooks company file or online account, and the inbox where invoices arrive. Nothing posts without an approval on record."]
+    ["Does Procore integrate with QuickBooks?", "Yes. Procore documents separate Online and Desktop connectors. Its Online compatibility overview also lists Intuit Enterprise Suite. Edition, country, company and object mappings need checking for your setup (Procore documentation checked 1 October 2026)."],
+    ["How do you avoid posting the same invoice twice?", "The proposed workflow checks the vendor, invoice reference and existing accounting entry before posting. If a transfer has an uncertain result, its status must be checked before another attempt."],
+    ["What access does a custom workflow need?", "We agree access to the invoice source, relevant Procore records and the accounting import or API during scoping. Permissions, approval and confirmation of the posted entry are part of that mapping."]
   ]
 }
 -->
@@ -20,19 +21,32 @@
 <p>In ServiceTitan's <a href="https://www.servicetitan.com/blog/commercial-contractors-industry-report" rel="noopener">2026 Commercial Specialty Contractor Industry Report</a>, only 20% of surveyed contractors had reached a single platform. 34% use two to three systems; 25% use four to six. The report says core systems "rarely talk to each other."</p>
 <p>Procore plus QuickBooks is a common pair. The question isn't which to drop. It's what moves between them by hand.</p>
 
-<h2>What the connection covers</h2>
+<h2>Check which QuickBooks product you run</h2>
 <div class="table-wrap">
   <table>
-    <thead><tr><th>Area</th><th>Status</th></tr></thead>
+    <thead><tr><th>Product</th><th>Connector to check</th><th>Key consideration</th></tr></thead>
     <tbody>
-      <tr><td>Connector</td><td>QuickBooks Desktop and Online are listed among Procore's ERP integrations.</td></tr>
-      <tr><td>Payments to QuickBooks Online</td><td>Exporting payment records is available only with Procore Pay.</td></tr>
-      <tr><td>Owner billing</td><td>Procore Invoice Management handles billing periods, review and backup documents.</td></tr>
-      <tr><td>API</td><td>Public developer API and a marketplace of 500+ integrations.</td></tr>
+      <tr><td>QuickBooks Online</td><td>Procore's Online connector</td><td>Its compatibility overview lists Plus and Advanced. Check region, tax configuration and the records the connector supports.</td></tr>
+      <tr><td>QuickBooks Desktop</td><td>Procore's separate Desktop connector</td><td>It uses the QuickBooks Web Connector and maps one company file to a Procore site. Check the installed edition and sync setup.</td></tr>
+      <tr><td>Intuit Enterprise Suite</td><td>Listed in Procore's Online compatibility overview</td><td>The documented limit is one accounting company per Procore site. Multiple companies require separate sites and connectors.</td></tr>
     </tbody>
   </table>
 </div>
-<p>From Procore's support and product pages, September 2026.</p>
+<p>Sources checked 1 October 2026: Procore's <a href="https://v2.support.procore.com/en-ca/product-manuals/qbo" rel="noopener">Online compatibility overview</a> and <a href="https://support.procore.com/products/online/user-guide/company-level/erp-integrations/quickbooks-desktop/things-to-know" rel="noopener">Desktop connector requirements</a>. Confirm availability for your company and country with Procore.</p>
+
+<h2>Agree what moves and which system owns it</h2>
+<p>This is a proposed custom invoice workflow, not a claim that every native connector supports every object. Procore's <a href="https://support.procore.com/products/online/user-guide/company-level/erp-integrations/qbo/things-to-know" rel="noopener">Online data-mapping notes</a> explain object-specific limits. Check the connector before designing work around it.</p>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Record</th><th>Owner and direction</th><th>Review before transfer</th></tr></thead>
+    <tbody>
+      <tr><td>Invoice document</td><td>Inbox or upload → review workflow</td><td>Keep the source, vendor and invoice reference. Check for duplicates.</td></tr>
+      <tr><td>Commitment and job details</td><td>Procore → review workflow</td><td>Match the project, approved commitment and relevant change. Do not silently overwrite a system's record.</td></tr>
+      <tr><td>Approved bill</td><td>Review workflow → QuickBooks</td><td>Confirm the approver, company, vendor and cost mapping. Use a supported import or API.</td></tr>
+      <tr><td>Posting result</td><td>QuickBooks → review workflow</td><td>Store the accepted record reference. An error or unknown result remains on the review list.</td></tr>
+    </tbody>
+  </table>
+</div>
 
 <h2>Where the gaps show up</h2>
 <ul class="list">
@@ -49,9 +63,13 @@
   <li><span><strong>Match.</strong> Pull the commitment from Procore and check lines, retainage and waivers.</span></li>
   <li><span><strong>Approve.</strong> The AP clerk, then the project manager. Mismatches are flagged, not hidden.</span></li>
   <li><span><strong>Post.</strong> Write the approved bill to QuickBooks and attach the source.</span></li>
-  <li><span><strong>Report.</strong> One job cost view from both systems, refreshed daily.</span></li>
+  <li><span><strong>Confirm.</strong> Check the accounting result and keep its record reference beside the source invoice.</span></li>
 </ol>
-<p>Both systems stay the system of record. The layer only moves and checks data. The <a href="/ap/">AP invoice intake demo</a> shows the flow end to end.</p>
+<p>Each system keeps ownership of its own records. The <a href="/ap/">AP invoice intake prototype</a> illustrates review screens with sample data. A production Procore or QuickBooks connection requires the access and mapping agreed for your setup.</p>
+
+<h2>Worked example of a failed transfer</h2>
+<p>Suppose the same supplier PDF arrives twice. The workflow should recognize the vendor and invoice reference and send the second copy for review. If the approved bill is sent but the response is lost, check whether accounting already created it before sending again. A mismatched cost code or missing purchase order goes back to the responsible person.</p>
+<p>This is an illustrative control to design and test. Bring a sample invoice, the matching Procore record and the entry accounting expects. The <a href="/services/workflow-automation/">workflow automation service</a> describes how we map these handoffs and their exceptions.</p>
 
 <h2>Buy a connector or build the layer</h2>
 <div class="table-wrap">

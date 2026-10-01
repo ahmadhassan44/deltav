@@ -83,16 +83,25 @@
     url.searchParams.set("utm_source", firstTouch.utm_source || firstTouch.referrer_host || "website");
     url.searchParams.set("utm_medium", firstTouch.utm_medium || firstTouch.source_channel || "direct");
     url.searchParams.set("utm_campaign", firstTouch.utm_campaign || "operations-software");
-    url.searchParams.set("utm_content", firstTouch.utm_content || "book-call");
+    url.searchParams.set("utm_content", firstTouch.utm_content || firstTouch.entry_page || "book-call");
     if (firstTouch.utm_term) url.searchParams.set("utm_term", firstTouch.utm_term);
     return url.toString();
   };
 
   // Call buttons go straight to cal.com, tagged with this visit's first touch.
-  // Problem pages set DV_BOOK (cold-email tags) before this runs; keep theirs.
-  if (!window.DV_BOOK) {
-    document.querySelectorAll("a[data-book]").forEach(function (a) {
-      a.href = window.DV_BOOK_FROM_SITE(a.href);
-    });
+  // Industry pages may be found through search or shared directly. Untagged
+  // visits use the same first touch as the form, rather than inventing email.
+  if (window.DV_BOOK && !utmKeys.some(function (key) { return utm[key]; })) {
+    var problemBook = new URL(window.DV_BOOK);
+    var company = problemBook.searchParams.get("utm_term");
+    window.DV_BOOK = window.DV_BOOK_FROM_SITE(problemBook.origin + problemBook.pathname);
+    if (company) {
+      problemBook = new URL(window.DV_BOOK);
+      problemBook.searchParams.set("utm_term", company);
+      window.DV_BOOK = problemBook.toString();
+    }
   }
+  document.querySelectorAll("a[data-book]").forEach(function (a) {
+    a.href = window.DV_BOOK || window.DV_BOOK_FROM_SITE(a.href);
+  });
 })();

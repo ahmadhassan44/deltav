@@ -14,7 +14,7 @@
     "Hours come from memory, and nobody checks quote vs actual",
     "Won jobs get retyped into the traveler and inspection sheet"
   ],
-  "build": "An RFQ desk that reads each drawing, flags what drives cost, and suggests hours from similar jobs you already ran, so quotes go out in hours, not days. A won quote becomes the traveler and inspection plan, and actual hours sharpen the next estimate. The estimator approves every price.",
+  "build": "An RFQ desk that brings the drawing, cost risks and similar past jobs into one estimate for review. The estimator approves every price. A won quote can feed the traveler and inspection plan, while actual hours help review the next estimate.",
   "demo": {
     "name": "CNC RFQ to Job",
     "url": "https://proto-cnc-rfq-to-job.vercel.app/",
@@ -23,12 +23,12 @@
       {
         "file": "1.webp",
         "path": "/rfqs",
-        "caption": "New RFQ lands in the inbox, due in 2 days"
+        "caption": "Sample RFQ with drawings and a requested due date"
       },
       {
         "file": "2.webp",
         "path": "/rfqs/nw-rfq-4471/parts/nw-7720-104/read",
-        "caption": "Drawing read in 38 seconds, cost risks flagged"
+        "caption": "Drawing requirements and cost risks ready for review"
       },
       {
         "file": "3.webp",
@@ -38,7 +38,7 @@
       {
         "file": "4.webp",
         "path": "/rfqs/nw-rfq-4471/quote",
-        "caption": "Quote sent in 4 hours instead of 3 days"
+        "caption": "Sample quote prepared for the estimator's approval"
       },
       {
         "file": "5.webp",
@@ -50,6 +50,21 @@
   "seo": {
     "title": "CNC RFQ Quoting Software for Machine Shops | deltaV",
     "description": "RFQ quoting for CNC and job shops: reads each drawing, flags cost drivers, suggests hours from similar past jobs and turns won quotes into travelers.",
+    "workflow": {
+      "heading": "CNC quoting software around your shop",
+      "intro": "The prototype uses sample jobs. For your shop, we'd map the path from an RFQ to an approved quote and job record, using the drawing requirements and estimating rules your team works with.",
+      "steps": [
+        ["Collect the RFQ.", "Keep the drawing revision, material, quantity and requested delivery together. Missing details go back for clarification."],
+        ["Review the estimate.", "Compare similar jobs and actual hours. The estimator checks setup, machining, outside work and uncertain tolerances before approving a price."],
+        ["Carry the accepted quote forward.", "Agree which fields reach your ERP, traveler and inspection plan. Keep the accepted revision attached to the job."],
+        ["Compare quote with actual.", "Use recorded setup and run hours to see where an estimate differed. Sparse history stays visible rather than becoming a confident guess."]
+      ],
+      "review": ["Bring one real quoting workflow", "An RFQ you can share, your estimating sheet and where actual hours are recorded. We'd check available history, approval rules and the connection to the tools you keep."],
+      "links": [
+        ["RFQ quoting automation guide", "/insights/rfq-quoting-automation/"],
+        ["Workflow automation", "/services/workflow-automation/"]
+      ]
+    },
     "faq": [
       [
         "Does it price jobs without the estimator?",
@@ -57,11 +72,15 @@
       ],
       [
         "Can it work alongside Paperless Parts or our ERP?",
-        "Yes. It fills the gaps around the tools you keep, such as RFQ intake, quote-vs-actual and job creation."
+        "We'd check the available API or exports and agree the field mapping before building the connection. The aim is to fill gaps around the tools you keep, such as RFQ intake and quote-vs-actual."
       ],
       [
         "Where do the suggested hours come from?",
-        "From similar jobs you already ran, using your own quote and actual-hours history."
+        "The proposed workflow uses your own quote and actual-hours history. When that history is sparse, the estimator reviews the assumptions."
+      ],
+      [
+        "What happens when a drawing is incomplete?",
+        "The workflow should flag missing material, revision or requirements for review. An estimator resolves them before the quote is approved."
       ]
     ],
     "guide": [

@@ -16,15 +16,21 @@
     .replace(/\s+/g, " ")
     .trim()
     .slice(0, 40);
-  // Links that carry their own UTM tags (e.g. from /work) keep them; cold email is the default.
-  var utm = q.get("utm_source")
-    ? ["source", "medium", "campaign", "content"]
+  // Keep explicit campaign tags; shared attribution fills in untagged visits.
+  var tagKeys = ["source", "medium", "campaign", "content", "term"];
+  var utm = tagKeys.some(function (k) { return q.get("utm_" + k); })
+    ? tagKeys
         .map(function (k) {
           return "utm_" + k + "=" + encodeURIComponent((q.get("utm_" + k) || "").slice(0, 80));
         })
         .join("&")
-    : "utm_source=coldemail&utm_campaign=" + DV.p + "&utm_content=" + DV.v;
-  var book = DV.cal + "?" + utm + (c ? "&utm_term=" + encodeURIComponent(c) : "");
+    : "utm_source=website&utm_medium=direct&utm_campaign=operations-software&utm_content=" + DV.p + "-" + DV.v;
+  var book = DV.cal + "?" + utm;
+  if (c) {
+    var companyBook = new URL(book);
+    companyBook.searchParams.set("utm_term", c);
+    book = companyBook.toString();
+  }
   window.DV_BOOK = book; // used by the intake "Schedule a call" button
   d.querySelectorAll("[data-book]").forEach(function (a) {
     a.href = book;

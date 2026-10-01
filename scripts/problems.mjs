@@ -58,6 +58,15 @@ async function loadProblems(contentRoot, taken) {
       if (!seo.title || seo.title.length > 60) throw new Error(`${where}: enabled problem needs seo.title (≤60 chars)`);
       if (!seo.description || seo.description.length > 160) throw new Error(`${where}: enabled problem needs seo.description (≤160 chars)`);
       if (!Array.isArray(seo.faq) || !seo.faq.length) throw new Error(`${where}: enabled problem needs seo.faq`);
+      if (seo.workflow) {
+        const flow = seo.workflow;
+        const pair = (row) => Array.isArray(row) && row.length === 2 && row.every((s) => typeof s === "string" && s.trim());
+        if (![flow.heading, flow.intro].every((s) => typeof s === "string" && s.trim()) ||
+            !Array.isArray(flow.steps) || !flow.steps.length || !flow.steps.every(pair) || !pair(flow.review) ||
+            !Array.isArray(flow.links) || !flow.links.every((row) => pair(row) && /^\/(?!\/)[a-z0-9/-]+\/$/.test(row[1]))) {
+          throw new Error(`${where}: invalid seo.workflow heading, intro, steps, review or internal links`);
+        }
+      }
     }
     p.aliases ??= [];
     p.order ??= 999;
@@ -94,7 +103,7 @@ async function loadProblems(contentRoot, taken) {
 }
 
 function bookUrl(calendly, p, variant) {
-  return `${calendly}?utm_source=coldemail&utm_campaign=${p.slug}&utm_content=${variant}`;
+  return `${calendly}?utm_source=website&utm_medium=direct&utm_campaign=operations-software&utm_content=${p.slug}-${variant}`;
 }
 
 function renderDemo(p, urls) {
@@ -143,6 +152,25 @@ ${renderDemo(p, urls)}
 </div>
 </section>
 `;
+}
+
+// A readable workflow below the existing sample-data prototype, with no JS needed.
+function renderWorkflow(p, compact = false) {
+  const flow = p.seo.workflow;
+  if (!flow) return "";
+  if (compact) {
+    return `<section class="problem-faq"><div class="problem-faq-inner"><p class="problem-guide"><a href="/${p.slug}/#workflow-${p.slug}">${esc(flow.heading)} →</a></p></div></section>\n`;
+  }
+  const steps = flow.steps.map(([title, text], i) => `<li><span class="num">${pad(i + 1)}</span><span><strong>${esc(title)}</strong> ${esc(text)}</span></li>`).join("");
+  const links = flow.links.map(([label, href]) => `<a href="${esc(href)}">${esc(label)} →</a>`).join(" · ");
+  return `<section class="problem-faq problem-workflow" aria-labelledby="workflow-${p.slug}"><div class="problem-faq-inner">
+<h2 id="workflow-${p.slug}">${esc(flow.heading)}</h2>
+<p class="model-body">${esc(flow.intro)}</p>
+<ol class="model-list">${steps}</ol>
+<h3>${esc(flow.review[0])}</h3>
+<p class="model-body">${esc(flow.review[1])}</p>
+<p class="problem-guide">${links}</p>
+</div></section>\n`;
 }
 
 // Visible FAQ and the related guide; the same questions feed the FAQPage schema.
@@ -269,6 +297,7 @@ export async function buildProblems({ contentRoot, homeHtml, workHtml, taken }) 
       const lead =
         (stack ? renderStack(live.filter((o) => o !== p), live.length) : "") +
         renderProblem(p, urls, book, stack ? `${pad(live.length)} / ${pad(live.length)}` : "") +
+        renderWorkflow(p, stack) +
         renderFaq(p);
 
       let html = problemHead(base, p, stack);

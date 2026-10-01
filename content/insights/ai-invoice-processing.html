@@ -1,11 +1,12 @@
 <!--
 {
-  "title": "AI invoice processing: from inbox to ERP without manual entry",
-  "seoTitle": "AI Invoice Processing: Inbox to ERP Without Retyping | deltaV",
+  "title": "Invoice processing automation: from inbox to approved entry",
+  "seoTitle": "Invoice Processing Automation: Inbox to ERP | deltaV",
   "description": "How AI reads invoices, matches them to POs and posts them to your ERP, where people still approve, and what to check before you buy or build.",
   "eyebrow": "Guide / Automation",
   "date": "2026-09-26",
-  "answer": "AI invoice processing reads each invoice, matches it to the PO or subcontract, flags what doesn't match and enters it into the ERP. People approve; nobody retypes. It pays off when volume is high, formats vary and matching rules are specific to your business.",
+  "updated": "2026-10-01",
+  "answer": "Invoice processing automation reads invoice fields, checks them against the PO or subcontract and prepares an entry for approval. Uncertain fields and mismatches go to a person. The useful result is less retyping with a clear record of what was approved and what accounting accepted.",
   "card": ["Automation", "Invoices read, matched and posted, with people approving."],
   "cta": ["See the AP demo →", "/ap/"],
   "faq": [
@@ -19,7 +20,7 @@
 <h2>What gets automated</h2>
 <ol class="list">
   <li><span><strong>Intake.</strong> Invoices arrive from a shared inbox, a portal or a scan.</span></li>
-  <li><span><strong>Read.</strong> Vendor, number, dates, lines, totals and tax pulled from any layout.</span></li>
+  <li><span><strong>Read.</strong> Extract vendor, number, dates, lines, totals and tax from the formats tested for your workflow.</span></li>
   <li><span><strong>Match.</strong> Against the PO, receipt or subcontract. Differences are flagged, not hidden.</span></li>
   <li><span><strong>Check.</strong> Your rules: duplicates, retainage, missing lien waivers, wrong cost code.</span></li>
   <li><span><strong>Approve.</strong> The AP clerk, then the project manager or budget owner.</span></li>
@@ -39,6 +40,11 @@
   </table>
 </div>
 <p>The goal is fewer keystrokes, not fewer controls.</p>
+
+<h2>Worked example of a mismatched invoice</h2>
+<p>Suppose a supplier sends an invoice for more units than the receipt shows. The workflow should display the invoice and receipt together, highlight the difference and send it to the person who can resolve it. A second copy of the same invoice should be flagged as a possible duplicate.</p>
+<p>After approval, accounting must confirm the entry was accepted. A rejected cost code stays on the review list. If a transfer times out, check for an existing entry before retrying. This is an illustrative workflow to design and test, using your records and approval rules.</p>
+<p>The <a href="/insights/procore-quickbooks-integration/">Procore and QuickBooks guide</a> shows an example of the mapping to check. Our <a href="/services/workflow-automation/">workflow automation service</a> covers the handoffs around it.</p>
 
 <h2>Buy or build</h2>
 <div class="table-wrap">
@@ -60,4 +66,4 @@
   <li><span>How the ERP accepts entries: API, import or screen only.</span></li>
   <li><span>The exceptions that cost you today, written down.</span></li>
 </ul>
-<p>Our <a href="/ap/">AP invoice intake demo</a> shows the full flow on construction invoices, from shared inbox to posted entry.</p>
+<p>Our <a href="/ap/">AP invoice intake prototype</a> illustrates the review flow with sample construction invoices. A production inbox and accounting connection require the access, mapping and approval rules agreed during scoping.</p>

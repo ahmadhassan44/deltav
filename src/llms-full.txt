@@ -15,7 +15,7 @@ Names: deltaV, deltaV Build, Delta V, ΔV. Emerson DeltaV is an unrelated distri
 
 1. Scope: free 30-minute call. Problem, payoff, plan.
 2. Build: working demos as it is built. Cost and timeline depend on complexity and the business case, and are set after the scoping call.
-3. Run: deltaV hosts, monitors and maintains the software on its own infrastructure, on a monthly retainer. The client uses it; deltaV retains the code.
+3. Run: deltaV hosts, monitors and maintains the software on its own AWS infrastructure, on a monthly retainer. The client gets full use of it and owns its data. deltaV retains the code, docs and methodology.
 
 ## Services
 
@@ -25,7 +25,9 @@ Names: deltaV, deltaV Build, Delta V, ΔV. Emerson DeltaV is an unrelated distri
 
 ## Problem classes
 
-Computer vision and inspection; industrial automation and control; embedded and hardware-software integration; domain-specific AI/ML inference; robotics and sensor fusion; IoT and edge compute; fleet telematics; structural health monitoring; digital twins; OT/ICS security; SCADA; predictive maintenance; geospatial; autonomous systems; real-time industrial data pipelines; multi-agent systems; integration middleware; energy and grid-edge optimisation.
+Scope is software, compute and AI. deltaV does not deliver hardware. Work includes document-heavy workflows, system integration, data pipelines, business applications, document search, classification, computer vision using existing images or video, and forecasting.
+
+The prototype gallery uses sample data to illustrate workflows such as CNC quoting, crane dispatch and invoice intake. These are demonstrations of an approach. Production data access, connections, approvals and operating requirements are agreed during scoping.
 
 ## FAQ
 
