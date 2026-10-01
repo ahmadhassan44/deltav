@@ -1,0 +1,79 @@
+<!--
+{
+  "title": "AI search over company documents for ops teams",
+  "seoTitle": "AI Search Over Company Documents for Ops Teams | deltaV",
+  "description": "How AI search over manuals, SOPs and job files works, where it fails, and how an ops team should start: one team, one question type, sources shown.",
+  "eyebrow": "Guide / Applied AI",
+  "date": "2026-10-01",
+  "answer": "AI document search finds the passages in your own files that answer a question, then writes a short answer with a link to each source. It works when the files are current, access rules carry over, and every answer shows where it came from. Start with one team and one kind of question.",
+  "card": ["Applied AI", "Ask your files. Get the page it came from."],
+  "cta": ["Applied AI →", "/services/applied-ai/"],
+  "faq": [
+    ["Do our documents need cleaning first?", "Not all of them. Start with the folder one team uses most. Retire old versions and run text recognition on scanned PDFs. Cleaning is part of the build."],
+    ["How do we know an answer is right?", "Every answer links to the page it came from, so staff can check in one click. Questions the files can't answer should get \"not found\", not a guess."],
+    ["Can staff see files they shouldn't?", "Not if it's built right. The search follows the same access rules as your shared drive, so each person only gets answers from files they can already open."]
+  ]
+}
+-->
+
+<h2>What it is</h2>
+<p>A search box over your own files. You ask in plain words; it answers from your documents. The technical name is retrieval-augmented generation (RAG): the AI looks things up in your files before it answers.</p>
+<ol class="list">
+  <li><span><strong>Read.</strong> It reads manuals, SOPs, specs, job files and policies.</span></li>
+  <li><span><strong>Find.</strong> For each question, it pulls the few passages that match.</span></li>
+  <li><span><strong>Answer.</strong> It writes a short answer from those passages only.</span></li>
+  <li><span><strong>Cite.</strong> It links each answer to the page it came from.</span></li>
+</ol>
+
+<h2>Where ops teams use it</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Question</th><th>Answered from</th></tr></thead>
+    <tbody>
+      <tr><td>"What torque for this fitting?"</td><td>Equipment manuals and spec sheets.</td></tr>
+      <tr><td>"What are the lockout steps for line 3?"</td><td>SOPs and safety procedures.</td></tr>
+      <tr><td>"What did we agree with this customer on freight?"</td><td>Contracts and email threads.</td></tr>
+      <tr><td>"Have we fixed this fault before?"</td><td>Maintenance logs and job notes.</td></tr>
+      <tr><td>"Which form do I use for a return?"</td><td>Policies and the shared drive.</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The gain: new staff stop waiting on the one person who knows, and that person gets their day back.</p>
+
+<h2>Where it fails</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Problem</th><th>What users see</th><th>Fix</th></tr></thead>
+    <tbody>
+      <tr><td>Old versions in the folder</td><td>Answers from a superseded SOP.</td><td>One current copy; old ones archived.</td></tr>
+      <tr><td>Scanned PDFs</td><td>"Not found" for things that are there.</td><td>Text recognition before indexing.</td></tr>
+      <tr><td>Tables and drawings</td><td>Wrong numbers pulled from a spec.</td><td>Read tables as tables; test on real questions.</td></tr>
+      <tr><td>No sources shown</td><td>Nobody trusts the answer.</td><td>Every answer links to its page.</td></tr>
+      <tr><td>Access ignored</td><td>Staff see HR or pricing files.</td><td>Follow the shared drive's permissions.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Buy or build</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th></th><th>Assistant in your office suite</th><th>Custom search</th></tr></thead>
+    <tbody>
+      <tr><td>Covers</td><td>Files inside that suite.</td><td>Any source: drives, ERP notes, ticket logs, email.</td></tr>
+      <tr><td>Tuned for</td><td>General office questions.</td><td>Your parts, codes, jargon and forms.</td></tr>
+      <tr><td>Answers in</td><td>Its own chat window.</td><td>Where the work happens: a tablet on the floor, the job screen.</td></tr>
+      <tr><td>When it fits</td><td>Files live in one suite; questions are general.</td><td>Files are spread out, or the answer must be exact.</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>If the office suite's assistant answers your team's real questions, use it. Build when it doesn't.</p>
+
+<h2>Where to start</h2>
+<ol class="list">
+  <li><span><strong>Pick a team.</strong> The one that asks the same questions every day.</span></li>
+  <li><span><strong>Collect 30 real questions.</strong> With the right answer and where it lives.</span></li>
+  <li><span><strong>Clean one folder.</strong> Current versions only, scans made readable.</span></li>
+  <li><span><strong>Test against the 30.</strong> Count right, wrong and "not found".</span></li>
+  <li><span><strong>Widen.</strong> Add sources and teams once the first set holds.</span></li>
+</ol>
+<p>The test questions are the spec. If it can't answer them, it isn't ready.</p>
