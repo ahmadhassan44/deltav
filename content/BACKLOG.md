@@ -8,20 +8,20 @@ Picked for buyer intent and fit with what DeltaV builds. The industrial topics (
 
 From the 2026-09-26 competitor teardown: tool-pair "keep your software" posts are unclaimed by service firms.
 
-1. Retool and low-code vs custom internal tools
-2. Fixed-price vs time-and-materials software contracts
-3. Predictive maintenance for small plants: where to start
-4. Connecting your CRM and ERP: integration patterns that hold up
-5. Replacing Excel inventory tracking
-6. How to measure the ROI of automation
-7. Getting SCADA and PLC data into dashboards without opening the plant network
-8. Fleet dashboards from GPS and telematics data
-9. AI agents in operations: what works and what doesn't
+1. Fixed-price vs time-and-materials software contracts
+2. Predictive maintenance for small plants: where to start
+3. Connecting your CRM and ERP: integration patterns that hold up
+4. Replacing Excel inventory tracking
+5. How to measure the ROI of automation
+6. Getting SCADA and PLC data into dashboards without opening the plant network
+7. Fleet dashboards from GPS and telematics data
+8. AI agents in operations: what works and what doesn't
 
 ## Drafted
 
 ## Published
 
+- 2026-10-04 retool-vs-custom-internal-tools
 - 2026-10-01 company-document-search
 - 2026-09-29 ai-estimating-custom-workflow
 - 2026-09-28 ai-tms-wms-without-migrating
