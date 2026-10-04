@@ -276,7 +276,7 @@ No horizontal scroll at any viewport width.
 - No testimonials, case studies, or social proof sections
 - No footer with 20 links — just a minimal footer with team name and year
 - No nav links to other pages (there are no other pages)
-- No cookie banners, no tracking pixels, no analytics scripts (keep it clean)
+- No cookie banners, no tracking pixels. The one analytics script is Umami (cookieless; added 2026-10-05): `<script defer src="https://cloud.umami.is/script.js" data-website-id="…">` after `/lead-attribution.js` on every page (pages in `src/`, the insights template in `scripts/insights.mjs`; problem pages inherit it from `src/index.html`). No other analytics.
 - No loading spinners
 - No modal popups
 - No sticky nav bar
