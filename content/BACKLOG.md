@@ -21,6 +21,20 @@ From the 2026-09-26 competitor teardown: tool-pair "keep your software" posts ar
 
 ## Published
 
+- 2026-10-06 machine-shop-quoting-spreadsheet
+- 2026-10-06 machine-shop-scheduling-software
+- 2026-10-06 small-machine-shop-erp
+- 2026-10-06 job-shop-tracking-software
+- 2026-10-06 ai-cnc-quoting-software
+- 2026-10-06 bid-leveling-template
+- 2026-10-06 bid-leveling-procore-ai
+- 2026-10-06 procore-sage-intacct-integration
+- 2026-10-06 procore-netsuite-integration
+- 2026-10-06 certified-payroll-wh-347
+- 2026-10-06 equipment-rental-software-small-business
+- 2026-10-06 water-damage-estimate-template
+- 2026-10-06 water-mitigation-software
+- 2026-10-06 loan-processing-automation
 - 2026-10-04 retool-vs-custom-internal-tools
 - 2026-10-01 company-document-search
 - 2026-09-29 ai-estimating-custom-workflow

@@ -1,0 +1,79 @@
+<!--
+{
+  "title": "Procore integration with NetSuite: what moves and what stays manual",
+  "seoTitle": "Procore Integration with NetSuite: What Syncs | deltaV",
+  "description": "What the Procore NetSuite connector syncs, what its documentation says it doesn't, and how to cover the gaps without replacing either system.",
+  "eyebrow": "Guide / Construction",
+  "date": "2026-10-06",
+  "answer": "Procore's NetSuite integration is run by Procore partner Calance. It sends jobs, vendors, cost codes and subcontractor invoices to NetSuite, and brings job costs back once a day. By Procore's own documentation, budgets, commitments, change orders, prime contracts and timecards don't sync. Use the connector; build only for what it leaves out.",
+  "card": ["Construction", "Procore and NetSuite: know what the connector skips."],
+  "cta": ["See the AP demo →", "/ap/"],
+  "faq": [
+    ["Does Procore integrate with NetSuite?", "Yes. Procore's App Marketplace lists NetSuite by Calance, and Procore documents it as its NetSuite connector. It needs Procore Project Financials including Invoicing (Procore documentation, October 2026)."],
+    ["Can one Procore account connect to several NetSuite subsidiaries?", "Not through the standard connector. Procore documents a limit of one NetSuite company, one subsidiary, per Procore site (October 2026)."],
+    ["What does a custom layer for the gaps cost?", "It depends on complexity and the business case. <a href=\"https://cal.com/deltav.support/30min\" data-book>Book a call</a> and bring the record you retype most."]
+  ]
+}
+-->
+
+<h2>The Procore NetSuite connector</h2>
+<p>From Procore's documentation, checked October 2026:</p>
+<ul class="list">
+  <li><span><strong>Who runs it.</strong> Procore partner Calance manages the connection. The marketplace listing is "NetSuite by Calance".</span></li>
+  <li><span><strong>Requires</strong> Procore Project Financials including Invoicing, and NetSuite release 2022.</span></li>
+  <li><span><strong>Approval.</strong> An accounting approver in Procore starts every export. Subcontractor invoices can skip that step if Direct Export is turned on.</span></li>
+  <li><span><strong>Timing.</strong> Exports go on approval. Job costs come back once a day, or on request.</span></li>
+  <li><span><strong>Scope.</strong> One NetSuite company, one subsidiary, per Procore site.</span></li>
+</ul>
+<p>Sources: Procore's <a href="https://v2.support.procore.com/product-manuals/netsuite/" rel="noopener">NetSuite overview</a> and <a href="https://v2.support.procore.com/product-manuals/netsuite/things-to-know" rel="noopener">things to know</a>. Availability depends on your country; ask Procore.</p>
+
+<h2>What syncs between Procore and NetSuite</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Procore</th><th>NetSuite</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr><td>Cost code + cost type</td><td>Other Charge item</td><td>Created in NetSuite per project as codes are used.</td></tr>
+      <tr><td>Projects</td><td>Projects (jobs)</td><td>Export and import.</td></tr>
+      <tr><td>Companies</td><td>Vendors</td><td>Import, link or export.</td></tr>
+      <tr><td>Subcontractor invoices</td><td>Vendor bills</td><td>Retainage coded to its own item.</td></tr>
+      <tr><td>Owner invoices</td><td>Sales invoices</td><td>Created in NetSuite on export.</td></tr>
+      <tr><td>Direct costs</td><td>Vendor bills, journals</td><td>Job costs synced back daily.</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>From Procore's <a href="https://v2.support.procore.com/product-manuals/netsuite/detailed-data-mapping" rel="noopener">detailed data mapping</a>, October 2026. Check payment records against your setup; Procore marks some as US only.</p>
+
+<h2>What the Procore NetSuite integration doesn't sync</h2>
+<p>Procore's things-to-know page lists these as not syncing:</p>
+<ul class="list">
+  <li><span><strong>Budgets.</strong></span></li>
+  <li><span><strong>Commitments</strong> (subcontracts, purchase orders) and their change orders.</span></li>
+  <li><span><strong>Prime contracts</strong> and prime contract change orders.</span></li>
+  <li><span><strong>Timecards</strong> and timesheets.</span></li>
+</ul>
+<p>Also documented: single-tier cost codes, sub jobs and project-specific cost codes are not supported. At most ten cost types can be mapped to their own GL expense accounts.</p>
+
+<h2>Where the gaps show up</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Gap</th><th>What it means in the office</th></tr></thead>
+    <tbody>
+      <tr><td>Commitments</td><td>Subcontracts and change orders entered twice, or tracked in Excel.</td></tr>
+      <tr><td>Budgets</td><td>Budget against actual rebuilt by hand for WIP.</td></tr>
+      <tr><td>Timecards</td><td>Field hours keyed into payroll and job cost separately.</td></tr>
+      <tr><td>Invoices before Procore</td><td>Sub and supplier PDFs typed in before the connector can move them.</td></tr>
+      <tr><td>Several subsidiaries</td><td>Only one connects per Procore site. The others need another route.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Filling the gaps with a custom layer</h2>
+<ol class="list">
+  <li><span><strong>Pick one gap.</strong> The record retyped most often, usually commitments or invoices.</span></li>
+  <li><span><strong>Agree the owner.</strong> Which system is the source for each field.</span></li>
+  <li><span><strong>Move it.</strong> Through NetSuite's supported imports or API, with approval kept.</span></li>
+  <li><span><strong>Confirm.</strong> Check NetSuite accepted it and store the record reference.</span></li>
+  <li><span><strong>Leave the rest.</strong> Whatever the connector carries, it keeps carrying.</span></li>
+</ol>
+<p>deltaV builds and hosts the layer for a monthly retainer; your data stays yours. Same pattern for other accounting systems: <a href="/insights/procore-quickbooks-integration/">Procore and QuickBooks</a>, <a href="/insights/procore-sage-intacct-integration/">Procore and Sage Intacct</a>. When a no-code tool is enough: <a href="/insights/zapier-vs-custom-integration/">Zapier vs custom</a>. How we map handoffs: <a href="/services/workflow-automation/">workflow automation</a>.</p>
+<p>The <a href="/ap/">AP invoice intake prototype</a> shows invoices read, matched to the commitment and approved, with sample data.</p>

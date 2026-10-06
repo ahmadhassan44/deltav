@@ -1,0 +1,74 @@
+<!--
+{
+  "title": "Procore integration with Sage Intacct: what syncs and what doesn't",
+  "seoTitle": "Procore Integration with Sage Intacct: What Syncs | deltaV",
+  "description": "What Procore's Sage Intacct connector syncs, the limits in its own documentation, and how to close the gaps without replacing either system.",
+  "eyebrow": "Guide / Construction",
+  "date": "2026-10-06",
+  "answer": "Procore has its own integration with Sage Intacct. It syncs jobs, vendors, cost codes, budgets, commitments, change orders and subcontractor invoices, with an accounting approver signing off each export. It has documented limits: projects started before the connection, cost code formats, owner invoices. Use the connector; build only for the gaps it leaves.",
+  "card": ["Construction", "Procore and Sage Intacct: use the connector, fill the gaps."],
+  "cta": ["See the AP demo →", "/ap/"],
+  "faq": [
+    ["Does Procore integrate with Sage Intacct?", "Yes. Procore lists a Procore-built Sage Intacct Construction connector on its App Marketplace. It needs the Web Services and Construction subscriptions in Sage Intacct (Procore documentation, October 2026)."],
+    ["Can we connect projects already in progress?", "Not through the standard connector. Procore's documentation says in-progress or pre-existing projects can't be synced, and offers paid professional services for them (October 2026)."],
+    ["What does a custom layer around the connector cost?", "It depends on complexity and the business case. <a href=\"https://cal.com/deltav.support/30min\" data-book>Book a call</a> and bring an invoice that took too long."]
+  ]
+}
+-->
+
+<h2>The Procore Sage Intacct connector</h2>
+<p>Procore builds and lists its own Sage Intacct Construction connector. From Procore's documentation, checked October 2026:</p>
+<ul class="list">
+  <li><span><strong>Requires</strong> the Web Services and Construction subscriptions in Sage Intacct. Sage may charge for them.</span></li>
+  <li><span><strong>Approval.</strong> Every export to Sage Intacct is approved by a designated accounting approver in Procore.</span></li>
+  <li><span><strong>Timing.</strong> Exports go on approval. Imports run when your team requests them.</span></li>
+  <li><span><strong>Region.</strong> Availability depends on your country. Ask Procore.</span></li>
+</ul>
+<p>Sources: Procore's <a href="https://v2.support.procore.com/product-manuals/sage-intacct/" rel="noopener">Sage Intacct overview</a> and <a href="https://v2.support.procore.com/product-manuals/sage-intacct/things-to-know" rel="noopener">things to know</a>.</p>
+
+<h2>What syncs between Procore and Sage Intacct</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Procore</th><th>Sage Intacct</th><th>Direction</th></tr></thead>
+    <tbody>
+      <tr><td>Projects, sub jobs</td><td>Jobs, sub jobs</td><td>Both ways</td></tr>
+      <tr><td>Companies</td><td>AP vendors</td><td>Both ways</td></tr>
+      <tr><td>Cost codes, cost types</td><td>Cost codes (tasks), categories</td><td>Created in Sage Intacct, synced to Procore</td></tr>
+      <tr><td>Budget</td><td>Job estimate</td><td>Procore to Sage Intacct; estimates can be imported</td></tr>
+      <tr><td>Commitments and change orders</td><td>Subcontracts, purchase orders</td><td>Procore to Sage Intacct, once approved</td></tr>
+      <tr><td>Subcontractor invoices</td><td>Bills</td><td>Procore to Sage Intacct</td></tr>
+      <tr><td>Direct costs</td><td>General ledger</td><td>Sage Intacct to Procore</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>From Procore's <a href="https://v2.support.procore.com/product-manuals/sage-intacct/detailed-data-mapping" rel="noopener">detailed data mapping</a>, October 2026. Check each record against your setup.</p>
+
+<h2>Documented limits</h2>
+<ul class="list">
+  <li><span><strong>Old projects.</strong> Projects in progress or created before the connection can't be synced.</span></li>
+  <li><span><strong>Cost codes.</strong> Must be sectioned, with no mix of tiers or delimiters, unique names and categories turned on. New codes are created in Sage Intacct, not Procore.</span></li>
+  <li><span><strong>Owner invoices.</strong> Integrated owner invoices and their payments aren't supported.</span></li>
+  <li><span><strong>Commitments in.</strong> Commitments can't be imported from Sage Intacct to Procore.</span></li>
+  <li><span><strong>Vendors.</strong> Insurance details are managed by hand in both. Address changes don't sync after linking.</span></li>
+  <li><span><strong>Entities.</strong> Companies must be created at the top level, not the entity level.</span></li>
+</ul>
+<p>All from Procore's own pages above, October 2026.</p>
+
+<h2>Where the gaps show up day to day</h2>
+<ul class="list">
+  <li><span><strong>Before Procore.</strong> Sub and supplier invoices arrive as PDFs and get keyed in.</span></li>
+  <li><span><strong>Matching.</strong> Checking the invoice against the subcontract, retainage and change orders.</span></li>
+  <li><span><strong>Paperwork.</strong> Lien waivers and insurance certificates chased by hand.</span></li>
+  <li><span><strong>Reporting.</strong> WIP and job cost rebuilt in Excel from both systems.</span></li>
+</ul>
+
+<h2>Filling the gaps with a custom layer</h2>
+<ol class="list">
+  <li><span><strong>Read.</strong> Pull invoices from the shared AP inbox.</span></li>
+  <li><span><strong>Match.</strong> Check against the commitment in Procore. Flag differences.</span></li>
+  <li><span><strong>Approve.</strong> Through your existing approval chain.</span></li>
+  <li><span><strong>Hand off.</strong> Let the connector carry what it supports. Write only what it doesn't.</span></li>
+  <li><span><strong>Confirm.</strong> Check Sage Intacct accepted the record and keep its reference.</span></li>
+</ol>
+<p>Each system keeps its own records. deltaV builds and hosts the layer for a monthly retainer; your data stays yours. Same pattern with QuickBooks: <a href="/insights/procore-quickbooks-integration/">Procore and QuickBooks</a>. On reading invoices: <a href="/insights/ai-invoice-processing/">invoice processing automation</a>. How we map handoffs: <a href="/services/workflow-automation/">workflow automation</a>.</p>
+<p>The <a href="/ap/">AP invoice intake prototype</a> shows invoices read, matched and approved, with sample data.</p>

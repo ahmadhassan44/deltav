@@ -1,0 +1,69 @@
+<!--
+{
+  "title": "Machine shop scheduling software: Excel, your ERP, or a custom board",
+  "seoTitle": "Machine Shop Scheduling Software: Excel vs ERP | deltaV",
+  "description": "Three ways to schedule a machine shop: an Excel board, your ERP's scheduling module, or a custom schedule on top of the systems you keep. When each fits.",
+  "eyebrow": "Guide / Manufacturing",
+  "date": "2026-10-06",
+  "answer": "Machine shop scheduling software comes in three forms: an Excel board, the scheduling module in your ERP, or a custom schedule built on top of what you keep. Excel works while one person holds the whole picture. Use the ERP module if it matches how your floor runs. Build custom when it doesn't and you won't migrate.",
+  "card": ["Manufacturing", "Excel board, ERP module or custom schedule."],
+  "cta": ["See the CNC demo →", "/cnc/"],
+  "faq": [
+    ["Can we schedule a machine shop in Excel?", "Yes, while one scheduler owns the file and the floor tells them what changed. It breaks when status arrives late or several people edit the board."],
+    ["Do we need to replace our ERP to get better scheduling?", "No. A custom schedule can read jobs and routings from the ERP and write status back. The ERP stays the system of record."],
+    ["What does custom scheduling cost?", "It depends on complexity and the business case. <a href=\"https://cal.com/deltav.support/30min\" data-book>Book a call</a> and bring your current board."]
+  ]
+}
+-->
+
+<h2>What job shop scheduling has to handle</h2>
+<ul class="list">
+  <li><span>High mix, low volume. Every job has its own routing.</span></li>
+  <li><span>Setups that change with the job order on each machine.</span></li>
+  <li><span>Outside processing that leaves the building and comes back late.</span></li>
+  <li><span>Material, fixtures and programs that aren't ready when the machine is.</span></li>
+  <li><span>Hot jobs that jump the queue.</span></li>
+</ul>
+<p>Any tool that ignores these gets ignored by the floor.</p>
+
+<h2>Three options</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th></th><th>Excel board</th><th>ERP scheduling module</th><th>Custom schedule</th></tr></thead>
+    <tbody>
+      <tr><td>Data</td><td>Typed in by the scheduler.</td><td>Jobs and routings already in the ERP.</td><td>Read from the ERP and the floor.</td></tr>
+      <tr><td>Status</td><td>Whenever someone tells the scheduler.</td><td>As good as floor data entry.</td><td>Captured at the machine.</td></tr>
+      <tr><td>Your rules</td><td>In one person's head.</td><td>The vendor's logic and settings.</td><td>Built in: setups, priorities, constraints.</td></tr>
+      <tr><td>Fits when</td><td>Few machines, one scheduler.</td><td>The module matches your floor.</td><td>It doesn't, and you won't migrate.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Machine shop scheduling in Excel</h2>
+<p>A workable board has one row per operation, not per job:</p>
+<ul class="list">
+  <li><span>Job, operation, machine, setup hours, run hours.</span></li>
+  <li><span>Due date and the date the material arrives.</span></li>
+  <li><span>Status: waiting, running, at vendor, done.</span></li>
+  <li><span>Sort by machine, then by priority.</span></li>
+</ul>
+<p>It breaks when the board is a day behind the floor. See <a href="/insights/replace-spreadsheets/">how to replace a spreadsheet workflow</a>.</p>
+
+<h2>Check the ERP module first</h2>
+<p>Most shop ERPs include scheduling. JobBOSS², for one, lists drag-and-drop shop-floor scheduling, and Fulcrum lists an automatic scheduler (vendor websites, October 2026). Before buying anything new, ask:</p>
+<ol class="list">
+  <li><span><strong>Is it switched on?</strong> Many shops own a module they never set up.</span></li>
+  <li><span><strong>Is floor data fresh?</strong> A schedule is only as good as job status.</span></li>
+  <li><span><strong>Does it know your rules?</strong> Setup groups, machine limits, who can run what.</span></li>
+</ol>
+
+<h2>A custom schedule on top of what you keep</h2>
+<ol class="list">
+  <li><span><strong>Read.</strong> Jobs, routings and due dates from the ERP.</span></li>
+  <li><span><strong>Capture.</strong> Start, stop and done from a tablet at the machine.</span></li>
+  <li><span><strong>Plan.</strong> Apply your rules: group setups, hold jobs missing material or programs.</span></li>
+  <li><span><strong>Show.</strong> One board per machine for the floor; late jobs flagged for the office.</span></li>
+  <li><span><strong>Write back.</strong> Status and actual hours return to the ERP.</span></li>
+</ol>
+<p>The scheduler still decides. The board removes the chasing. deltaV builds and hosts it; your job data stays yours. See <a href="/services/workflow-automation/">workflow automation</a> and <a href="/insights/build-vs-buy-software/">build vs buy</a>.</p>
+<p>Live job status starts at the quote. The <a href="/cnc/">CNC RFQ-to-job demo</a> shows a won quote becoming the job.</p>

@@ -1,0 +1,67 @@
+<!--
+{
+  "title": "Job shop tracking software: from paper travelers to live status",
+  "seoTitle": "Job Shop Tracking Software: Paper to Live Status | deltaV",
+  "description": "What job shop tracking software should record, how to move from paper travelers to live job status on the floor, and how to keep your ERP.",
+  "eyebrow": "Guide / Manufacturing",
+  "date": "2026-10-06",
+  "answer": "Job shop tracking software replaces the paper traveler with a scan or tap at each operation. Operators record start, stop, quantity and problems; the office sees where every job is without walking the floor. Keep the ERP as the job record. The tracking layer reads jobs from it and writes hours back.",
+  "card": ["Manufacturing", "Where's my job? Answered without walking the floor."],
+  "cta": ["See the CNC demo →", "/cnc/"],
+  "faq": [
+    ["Do operators need to type on a tablet?", "Barely. Scan the traveler barcode, tap start or stop, enter a count. Anything longer than that gets skipped on a busy shift."],
+    ["Our ERP has shop-floor tracking. Why add anything?", "Use it if the floor actually uses it. A custom layer fits when the built-in screens are too slow for operators or miss steps your shop runs."],
+    ["What does it cost to set up?", "It depends on complexity and the business case. <a href=\"https://cal.com/deltav.support/30min\" data-book>Book a call</a> and bring a sample traveler."]
+  ]
+}
+-->
+
+<h2>Why paper travelers fall short</h2>
+<ul class="list">
+  <li><span>Status is only known by walking the floor.</span></li>
+  <li><span>Hours are written at the end of the shift, from memory.</span></li>
+  <li><span>Scrap and rework notes get lost or never reach the office.</span></li>
+  <li><span>The traveler lives with the parts, so the office can't see it.</span></li>
+  <li><span>Someone retypes it into the ERP, or no one does.</span></li>
+</ul>
+
+<h2>What job shop tracking software should record</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Event</th><th>Who records it</th><th>What it answers</th></tr></thead>
+    <tbody>
+      <tr><td>Start and stop per operation</td><td>Operator, one tap</td><td>Where is the job? What did it really take?</td></tr>
+      <tr><td>Setup vs run</td><td>Operator</td><td>Was the quote's setup estimate right?</td></tr>
+      <tr><td>Good and scrap count</td><td>Operator</td><td>Will we ship the full quantity?</td></tr>
+      <tr><td>Hold and reason</td><td>Operator or lead</td><td>What's blocking it: material, program, tooling, quality?</td></tr>
+      <tr><td>Inspection result</td><td>Inspector</td><td>Can it move to the next operation?</td></tr>
+      <tr><td>Out to vendor and back</td><td>Shipping</td><td>Is outside processing late?</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>Track less, not more. Every field an operator skips makes the rest less trusted.</p>
+
+<h2>From paper to live status</h2>
+<ol class="list">
+  <li><span><strong>Keep the traveler.</strong> Print a barcode on it. Paper stays with the parts.</span></li>
+  <li><span><strong>Put a tablet at each cell.</strong> Scan the traveler, tap start, tap stop.</span></li>
+  <li><span><strong>Show the board.</strong> Every open job, its operation and anything on hold.</span></li>
+  <li><span><strong>Flag the late ones.</strong> Jobs behind their due date surface on their own.</span></li>
+  <li><span><strong>Feed it back.</strong> Actual hours sit next to quoted hours for the next quote.</span></li>
+</ol>
+<p>Start with one cell. Fix what operators push back on, then roll out.</p>
+
+<h2>Keep the ERP</h2>
+<p>Tracking doesn't need a new ERP. Many shop ERPs include floor tracking; check yours first. If it's too slow for operators, a custom layer sits beside it:</p>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Record</th><th>Owner</th><th>Direction</th></tr></thead>
+    <tbody>
+      <tr><td>Job, routing, due date</td><td>ERP</td><td>ERP → tracking</td></tr>
+      <tr><td>Status, hours, counts, holds</td><td>Tracking</td><td>Tracking → ERP</td></tr>
+      <tr><td>Quote vs actual</td><td>Tracking</td><td>Shown to the estimator</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>deltaV builds and hosts the layer; your job data stays yours. See <a href="/services/custom-software/">custom software</a> and <a href="/insights/replace-spreadsheets/">replacing spreadsheet workflows</a>.</p>
+<p>The <a href="/cnc/">CNC RFQ-to-job demo</a> shows quote vs actual hours feeding the next estimate.</p>

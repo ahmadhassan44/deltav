@@ -1,0 +1,78 @@
+<!--
+{
+  "title": "Machine shop quoting spreadsheet: the formulas and where it breaks",
+  "seoTitle": "Machine Shop Quoting Spreadsheet: Formulas & Limits | deltaV",
+  "description": "The columns and formulas of a solid machine shop quoting spreadsheet, how to estimate CNC machine time, and the signs the sheet has stopped working.",
+  "eyebrow": "Guide / Manufacturing",
+  "date": "2026-10-06",
+  "answer": "A solid machine shop quoting spreadsheet prices five things: material, setup, cycle time times quantity, outside processing and margin. Setup is spread over the lot; run time grows with quantity. It works until several people quote from copies, quoted hours never meet actual hours, and won quotes get retyped into the job.",
+  "card": ["Manufacturing", "The quoting sheet that works, and when it stops."],
+  "cta": ["See the CNC demo →", "/cnc/"],
+  "faq": [
+    ["What shop rate goes in the sheet?", "Your own. Work out what each machine costs to run per hour, with labor and overhead. Keep a rate per machine class, not one blended rate for the whole shop."],
+    ["Is there a free machine shop quoting template?", "The table above is the structure. Build it in your own workbook so the rates and rules are yours. Lock the rate cells and keep one master copy."],
+    ["What does it cost to move quoting off the spreadsheet?", "It depends on complexity and the business case. <a href=\"https://cal.com/deltav.support/30min\" data-book>Book a call</a> and bring your current sheet."]
+  ]
+}
+-->
+
+<h2>The machine shop quoting template</h2>
+<p>One row per part and quantity. These columns cover most made-to-print work:</p>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Column</th><th>What goes in</th><th>Formula</th></tr></thead>
+    <tbody>
+      <tr><td>Part</td><td>Part number, revision, quantity.</td><td>Input.</td></tr>
+      <tr><td>Material</td><td>Stock size per part, price per unit, scrap allowance.</td><td>Stock per part × price × (1 + scrap %).</td></tr>
+      <tr><td>Setup</td><td>Setup hours per operation.</td><td>Setup hours × machine rate.</td></tr>
+      <tr><td>Run</td><td>Cycle time per part, in minutes.</td><td>Cycle minutes ÷ 60 × quantity × machine rate.</td></tr>
+      <tr><td>Secondary ops</td><td>Deburr, inspection, packing.</td><td>Hours × labor rate.</td></tr>
+      <tr><td>Outside processing</td><td>Anodize, plating, heat treat.</td><td>Vendor quote × (1 + handling %).</td></tr>
+      <tr><td>Tooling</td><td>Special cutters, fixtures, soft jaws.</td><td>One-off cost for the lot.</td></tr>
+      <tr><td>Margin</td><td>Target margin for this customer and job.</td><td>Total cost ÷ (1 − margin %).</td></tr>
+      <tr><td>Unit price</td><td>What the customer sees.</td><td>Price ÷ quantity.</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>Quote several quantities from the same row. Setup and tooling spread over more parts, so the unit price drops at each break.</p>
+
+<h2>Estimating CNC machine time</h2>
+<p>Cycle time drives most of the price. Use the best source you have, and note which one:</p>
+<ol class="list">
+  <li><span><strong>CAM.</strong> The programmed cycle time, if the part is already programmed.</span></li>
+  <li><span><strong>History.</strong> Actual hours from a similar part you ran.</span></li>
+  <li><span><strong>Estimate.</strong> The estimator's call, feature by feature.</span></li>
+</ol>
+<p>Add load, unload and in-process checks per part. Leaving them out is the most common miss.</p>
+
+<h2>Keep the quoting formulas honest</h2>
+<ul class="list">
+  <li><span>Rates live on one locked tab. Rows look them up; nobody types a rate.</span></li>
+  <li><span>One master file. Quotes are saved as copies, never edited from copies.</span></li>
+  <li><span>Every quote records who priced it and which hour source they used.</span></li>
+  <li><span>Material prices carry the date they were checked.</span></li>
+</ul>
+
+<h2>Where the spreadsheet breaks</h2>
+<ul class="list">
+  <li><span>Two estimators, two copies, two prices for the same part.</span></li>
+  <li><span>Quoted hours are never compared to actual hours.</span></li>
+  <li><span>Past jobs are hard to find, so similar parts get priced from scratch.</span></li>
+  <li><span>Drawings and RFQ emails live outside the sheet.</span></li>
+  <li><span>Won quotes get retyped into the ERP, traveler and inspection sheet.</span></li>
+</ul>
+
+<h2>What to do next</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>If this hurts most</th><th>Do this</th></tr></thead>
+    <tbody>
+      <tr><td>Copies and drifting rates</td><td>Fix the sheet: one master, locked rates.</td></tr>
+      <tr><td>Hours that miss</td><td>Feed actual hours back against each quote.</td></tr>
+      <tr><td>Slow turnaround</td><td>Automate RFQ intake and past-job lookup. See <a href="/insights/rfq-quoting-automation/">quoting automation</a>.</td></tr>
+      <tr><td>Retyping won jobs</td><td>Connect quoting to the ERP. See <a href="/insights/paperless-parts-erp-integration/">closing the quoting gaps</a>.</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>Moving off the sheet entirely? Keep its rules. <a href="/insights/replace-spreadsheets/">How to replace a spreadsheet workflow</a> covers the steps.</p>
+<p>The <a href="/cnc/">CNC RFQ-to-job demo</a> shows the same costing with drawing review, similar-job hours and quote vs actual.</p>
