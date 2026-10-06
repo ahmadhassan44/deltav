@@ -1,0 +1,71 @@
+{
+  "slug": "tpa-file-audit",
+  "order": 91,
+  "enabled": true,
+  "aliases": [
+    "tpa-audit",
+    "job-file-audit"
+  ],
+  "audience": "Owners and TPA coordinators at restoration companies on carrier programs",
+  "headline": "Job files kicked back by the TPA?",
+  "symptoms": [
+    "Every job file is checked by hand before it goes in",
+    "A missing signature holds up payment",
+    "Each program has its own rules"
+  ],
+  "build": "A file audit desk that checks each job file against the program's guidelines before you submit, flags what is missing or out of line, and points to the page so it gets fixed the first time.",
+  "demo": {
+    "name": "TPA Job File Audit",
+    "url": "https://proto-file-audit-desk.vercel.app/runs/bluestem-restoration/",
+    "device": "browser",
+    "screens": [
+      {
+        "file": "1.webp",
+        "path": "/runs/bluestem-restoration/",
+        "caption": "20 job files checked before submission"
+      },
+      {
+        "file": "2.webp",
+        "path": "/runs/bluestem-restoration/",
+        "caption": "4 loss photos where the program needs 10"
+      },
+      {
+        "file": "3.webp",
+        "path": "/runs/bluestem-restoration/",
+        "caption": "After-hours charge flagged on the estimate"
+      },
+      {
+        "file": "4.webp",
+        "path": "/runs/bluestem-restoration/",
+        "caption": "Invoice that does not match the estimate"
+      },
+      {
+        "file": "5.webp",
+        "path": "/runs/bluestem-restoration/",
+        "caption": "5 issues their own sheet marked complete"
+      }
+    ]
+  },
+  "seo": {
+    "title": "TPA Job File Audit for Restoration Companies | deltaV",
+    "description": "Check restoration job files against each TPA program's guidelines before you submit. Missing photos, signatures and logs are flagged with the page behind them.",
+    "faq": [
+      [
+        "Does it submit files to the TPA?",
+        "No. It checks the file before you submit. Your team still sends it through the program's portal."
+      ],
+      [
+        "Which programs does it cover?",
+        "Each program's guidelines are set up as a checklist during scoping, so it follows the rules your programs actually use."
+      ],
+      [
+        "What about homeowner data and photos?",
+        "Data handling is agreed during scoping and the system runs where your compliance requires."
+      ]
+    ],
+    "guide": [
+      "Replacing spreadsheets with custom software",
+      "/insights/replace-spreadsheets/"
+    ]
+  }
+}

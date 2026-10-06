@@ -1,0 +1,71 @@
+{
+  "slug": "dq-file-audit",
+  "order": 90,
+  "enabled": true,
+  "aliases": [
+    "dq-files",
+    "driver-qualification"
+  ],
+  "audience": "Owners and safety managers at trucking fleets with 10 to 50 drivers",
+  "headline": "DQ files ready for a DOT audit?",
+  "symptoms": [
+    "Driver files get checked by hand before an audit",
+    "An expired medical card turns up too late",
+    "The audit sheet says complete when it is not"
+  ],
+  "build": "A file audit desk that reads every driver file, fills in your audit sheet item by item, and shows the page behind every answer, so you see which files would fail and why before an auditor does.",
+  "demo": {
+    "name": "DQ File Audit",
+    "url": "https://proto-file-audit-desk.vercel.app/runs/ironwood-freight/",
+    "device": "browser",
+    "screens": [
+      {
+        "file": "1.webp",
+        "path": "/runs/ironwood-freight/",
+        "caption": "20 driver files, 10 checks each"
+      },
+      {
+        "file": "2.webp",
+        "path": "/runs/ironwood-freight/",
+        "caption": "Expired medical card, on the page it came from"
+      },
+      {
+        "file": "3.webp",
+        "path": "/runs/ironwood-freight/",
+        "caption": "Missing MVR: all 11 pages searched"
+      },
+      {
+        "file": "4.webp",
+        "path": "/runs/ironwood-freight/",
+        "caption": "License number mismatch caught across documents"
+      },
+      {
+        "file": "5.webp",
+        "path": "/runs/ironwood-freight/",
+        "caption": "6 issues their own sheet marked complete"
+      }
+    ]
+  },
+  "seo": {
+    "title": "DQ File Audit Software for Trucking Fleets | deltaV",
+    "description": "Audit driver qualification files against your own checklist. Every Yes, No or Missing comes with the page behind it, so files get fixed before a DOT audit.",
+    "faq": [
+      [
+        "Does it replace our DQ file software?",
+        "No. It checks the files you already keep, in folders or scanned PDFs, and fills in the audit sheet you already use."
+      ],
+      [
+        "Does it decide whether we are compliant?",
+        "No. It flags what is missing, expired or unsigned and shows the page. A person makes the call on every item."
+      ],
+      [
+        "What about driver data like license numbers?",
+        "Data handling is agreed during scoping and the system runs where your compliance requires."
+      ]
+    ],
+    "guide": [
+      "Replacing spreadsheets with custom software",
+      "/insights/replace-spreadsheets/"
+    ]
+  }
+}
